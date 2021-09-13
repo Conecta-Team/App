@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
+		A21A221726EF67260052384A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221626EF67260052384A /* SceneDelegate.swift */; };
+		A21A221926EF67260052384A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221826EF67260052384A /* ViewController.swift */; };
+		A21A221E26EF67270052384A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21A221D26EF67270052384A /* Assets.xcassets */; };
+		A21A222126EF67270052384A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21A221F26EF67270052384A /* LaunchScreen.storyboard */; };
+		A21A222C26EF67280052384A /* ConectaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A222B26EF67280052384A /* ConectaAppTests.swift */; };
+		A21A223726EF67280052384A /* ConectaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A223626EF67280052384A /* ConectaAppUITests.swift */; };
+		A21A224526EF67A80052384A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A224426EF67A80052384A /* View.swift */; };
+		A21A224D26EF6C730052384A /* cells in Resources */ = {isa = PBXBuildFile; fileRef = A21A224C26EF6C730052384A /* cells */; };
+		A21A224F26EF6C880052384A /* viewmodels in Resources */ = {isa = PBXBuildFile; fileRef = A21A224E26EF6C880052384A /* viewmodels */; };
+		A21A225126EF6C920052384A /* models in Resources */ = {isa = PBXBuildFile; fileRef = A21A225026EF6C920052384A /* models */; };
+		A21A225426EF6CA00052384A /* protocols in Resources */ = {isa = PBXBuildFile; fileRef = A21A225326EF6CA00052384A /* protocols */; };
+		A21A225726EF6CB50052384A /* coordinators in Resources */ = {isa = PBXBuildFile; fileRef = A21A225626EF6CB50052384A /* coordinators */; };
+		A21A225A26EF6CCE0052384A /* enums in Resources */ = {isa = PBXBuildFile; fileRef = A21A225926EF6CCE0052384A /* enums */; };
+		A21A225D26EF6CDD0052384A /* services in Resources */ = {isa = PBXBuildFile; fileRef = A21A225C26EF6CDD0052384A /* services */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A21A222826EF67280052384A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A21A220926EF67260052384A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A21A221026EF67260052384A;
+			remoteInfo = ConectaApp;
+		};
+		A21A223326EF67280052384A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A21A220926EF67260052384A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A21A221026EF67260052384A;
+			remoteInfo = ConectaApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21A221426EF67260052384A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A21A221626EF67260052384A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A21A221826EF67260052384A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A21A221D26EF67270052384A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A21A222026EF67270052384A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A21A222226EF67270052384A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21A222726EF67280052384A /* ConectaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConectaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21A222B26EF67280052384A /* ConectaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectaAppTests.swift; sourceTree = "<group>"; };
+		A21A222D26EF67280052384A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21A223226EF67280052384A /* ConectaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConectaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21A223626EF67280052384A /* ConectaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectaAppUITests.swift; sourceTree = "<group>"; };
+		A21A223826EF67280052384A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21A224426EF67A80052384A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		A21A224C26EF6C730052384A /* cells */ = {isa = PBXFileReference; lastKnownFileType = text; path = cells; sourceTree = "<group>"; };
+		A21A224E26EF6C880052384A /* viewmodels */ = {isa = PBXFileReference; lastKnownFileType = text; path = viewmodels; sourceTree = "<group>"; };
+		A21A225026EF6C920052384A /* models */ = {isa = PBXFileReference; lastKnownFileType = text; path = models; sourceTree = "<group>"; };
+		A21A225326EF6CA00052384A /* protocols */ = {isa = PBXFileReference; lastKnownFileType = text; path = protocols; sourceTree = "<group>"; };
+		A21A225626EF6CB50052384A /* coordinators */ = {isa = PBXFileReference; lastKnownFileType = text; path = coordinators; sourceTree = "<group>"; };
+		A21A225926EF6CCE0052384A /* enums */ = {isa = PBXFileReference; lastKnownFileType = text; path = enums; sourceTree = "<group>"; };
+		A21A225C26EF6CDD0052384A /* services */ = {isa = PBXFileReference; lastKnownFileType = text; path = services; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A21A220E26EF67260052384A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21A222426EF67280052384A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21A222F26EF67280052384A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A21A220826EF67260052384A = {
+			isa = PBXGroup;
+			children = (
+				A21A221326EF67260052384A /* ConectaApp */,
+				A21A222A26EF67280052384A /* ConectaAppTests */,
+				A21A223526EF67280052384A /* ConectaAppUITests */,
+				A21A221226EF67260052384A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A21A221226EF67260052384A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A21A221126EF67260052384A /* ConectaApp.app */,
+				A21A222726EF67280052384A /* ConectaAppTests.xctest */,
+				A21A223226EF67280052384A /* ConectaAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A21A221326EF67260052384A /* ConectaApp */ = {
+			isa = PBXGroup;
+			children = (
+				A21A225B26EF6CD50052384A /* Services */,
+				A21A225826EF6CC20052384A /* Enums */,
+				A21A225526EF6CA80052384A /* Coordinators */,
+				A21A225226EF6C970052384A /* Protocols */,
+				A21A224926EF6C450052384A /* ViewControllers */,
+				A21A224826EF6C390052384A /* ViewModels */,
+				A21A224726EF6C300052384A /* Models */,
+				A21A221426EF67260052384A /* AppDelegate.swift */,
+				A21A221626EF67260052384A /* SceneDelegate.swift */,
+				A21A221D26EF67270052384A /* Assets.xcassets */,
+				A21A221F26EF67270052384A /* LaunchScreen.storyboard */,
+				A21A222226EF67270052384A /* Info.plist */,
+			);
+			path = ConectaApp;
+			sourceTree = "<group>";
+		};
+		A21A222A26EF67280052384A /* ConectaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A21A222B26EF67280052384A /* ConectaAppTests.swift */,
+				A21A222D26EF67280052384A /* Info.plist */,
+			);
+			path = ConectaAppTests;
+			sourceTree = "<group>";
+		};
+		A21A223526EF67280052384A /* ConectaAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A21A223626EF67280052384A /* ConectaAppUITests.swift */,
+				A21A223826EF67280052384A /* Info.plist */,
+			);
+			path = ConectaAppUITests;
+			sourceTree = "<group>";
+		};
+		A21A224726EF6C300052384A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A21A225026EF6C920052384A /* models */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A21A224826EF6C390052384A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A21A224E26EF6C880052384A /* viewmodels */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A21A224926EF6C450052384A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A21A221826EF67260052384A /* ViewController.swift */,
+				A21A224B26EF6C520052384A /* Cells */,
+				A21A224A26EF6C4D0052384A /* Views */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A21A224A26EF6C4D0052384A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A21A224426EF67A80052384A /* View.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A21A224B26EF6C520052384A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A21A224C26EF6C730052384A /* cells */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A21A225226EF6C970052384A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A21A225326EF6CA00052384A /* protocols */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A21A225526EF6CA80052384A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				A21A225626EF6CB50052384A /* coordinators */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		A21A225826EF6CC20052384A /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A21A225926EF6CCE0052384A /* enums */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		A21A225B26EF6CD50052384A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A21A225C26EF6CDD0052384A /* services */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A21A221026EF67260052384A /* ConectaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A21A223B26EF67280052384A /* Build configuration list for PBXNativeTarget "ConectaApp" */;
+			buildPhases = (
+				A21A220D26EF67260052384A /* Sources */,
+				A21A220E26EF67260052384A /* Frameworks */,
+				A21A220F26EF67260052384A /* Resources */,
+				A21A224626EF68360052384A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConectaApp;
+			productName = ConectaApp;
+			productReference = A21A221126EF67260052384A /* ConectaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A21A222626EF67280052384A /* ConectaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A21A223E26EF67280052384A /* Build configuration list for PBXNativeTarget "ConectaAppTests" */;
+			buildPhases = (
+				A21A222326EF67280052384A /* Sources */,
+				A21A222426EF67280052384A /* Frameworks */,
+				A21A222526EF67280052384A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A21A222926EF67280052384A /* PBXTargetDependency */,
+			);
+			name = ConectaAppTests;
+			productName = ConectaAppTests;
+			productReference = A21A222726EF67280052384A /* ConectaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A21A223126EF67280052384A /* ConectaAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A21A224126EF67280052384A /* Build configuration list for PBXNativeTarget "ConectaAppUITests" */;
+			buildPhases = (
+				A21A222E26EF67280052384A /* Sources */,
+				A21A222F26EF67280052384A /* Frameworks */,
+				A21A223026EF67280052384A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A21A223426EF67280052384A /* PBXTargetDependency */,
+			);
+			name = ConectaAppUITests;
+			productName = ConectaAppUITests;
+			productReference = A21A223226EF67280052384A /* ConectaAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A21A220926EF67260052384A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					A21A221026EF67260052384A = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					A21A222626EF67280052384A = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = A21A221026EF67260052384A;
+					};
+					A21A223126EF67280052384A = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = A21A221026EF67260052384A;
+					};
+				};
+			};
+			buildConfigurationList = A21A220C26EF67260052384A /* Build configuration list for PBXProject "ConectaApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A21A220826EF67260052384A;
+			productRefGroup = A21A221226EF67260052384A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A21A221026EF67260052384A /* ConectaApp */,
+				A21A222626EF67280052384A /* ConectaAppTests */,
+				A21A223126EF67280052384A /* ConectaAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A21A220F26EF67260052384A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A21A225126EF6C920052384A /* models in Resources */,
+				A21A225726EF6CB50052384A /* coordinators in Resources */,
+				A21A224D26EF6C730052384A /* cells in Resources */,
+				A21A225426EF6CA00052384A /* protocols in Resources */,
+				A21A224F26EF6C880052384A /* viewmodels in Resources */,
+				A21A225D26EF6CDD0052384A /* services in Resources */,
+				A21A225A26EF6CCE0052384A /* enums in Resources */,
+				A21A222126EF67270052384A /* LaunchScreen.storyboard in Resources */,
+				A21A221E26EF67270052384A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21A222526EF67280052384A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21A223026EF67280052384A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A21A224626EF68360052384A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A21A220D26EF67260052384A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A21A224526EF67A80052384A /* View.swift in Sources */,
+				A21A221926EF67260052384A /* ViewController.swift in Sources */,
+				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
+				A21A221726EF67260052384A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21A222326EF67280052384A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A21A222C26EF67280052384A /* ConectaAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21A222E26EF67280052384A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A21A223726EF67280052384A /* ConectaAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A21A222926EF67280052384A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A21A221026EF67260052384A /* ConectaApp */;
+			targetProxy = A21A222826EF67280052384A /* PBXContainerItemProxy */;
+		};
+		A21A223426EF67280052384A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A21A221026EF67260052384A /* ConectaApp */;
+			targetProxy = A21A223326EF67280052384A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A21A221F26EF67270052384A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A21A222026EF67270052384A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A21A223926EF67280052384A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A21A223A26EF67280052384A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A21A223C26EF67280052384A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				INFOPLIST_FILE = ConectaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A21A223D26EF67280052384A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				INFOPLIST_FILE = ConectaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A21A223F26EF67280052384A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				INFOPLIST_FILE = ConectaAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConectaApp.app/ConectaApp";
+			};
+			name = Debug;
+		};
+		A21A224026EF67280052384A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				INFOPLIST_FILE = ConectaAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConectaApp.app/ConectaApp";
+			};
+			name = Release;
+		};
+		A21A224226EF67280052384A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				INFOPLIST_FILE = ConectaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ConectaApp;
+			};
+			name = Debug;
+		};
+		A21A224326EF67280052384A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				INFOPLIST_FILE = ConectaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ConectaApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A21A220C26EF67260052384A /* Build configuration list for PBXProject "ConectaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A21A223926EF67280052384A /* Debug */,
+				A21A223A26EF67280052384A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A21A223B26EF67280052384A /* Build configuration list for PBXNativeTarget "ConectaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A21A223C26EF67280052384A /* Debug */,
+				A21A223D26EF67280052384A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A21A223E26EF67280052384A /* Build configuration list for PBXNativeTarget "ConectaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A21A223F26EF67280052384A /* Debug */,
+				A21A224026EF67280052384A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A21A224126EF67280052384A /* Build configuration list for PBXNativeTarget "ConectaAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A21A224226EF67280052384A /* Debug */,
+				A21A224326EF67280052384A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A21A220926EF67260052384A /* Project object */;
+}
