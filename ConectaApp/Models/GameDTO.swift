@@ -10,36 +10,13 @@ import CloudKit
 class GameDTO {
     static let recordType = "Game"
 
-//    let name: String
-//    let category: CategoryDTO
-//    
-//    init(record: CKRecord) {}
+    let gameId: CKRecord.ID
+    let name: String
+    let category: CategoryDTO
 
-//        if let name = record["name"] as? String {
-//            self.name  = name
-//        } else {
-//            self.nome  = nil
-//            self.numero = nil
-//        }
-//    }
+    init(record: CKRecord, category: CategoryDTO) {
+        self.name = record["name"] as! String
+        self.gameId = record.recordID
+        self.category = category
+    }
 }
-
-// class Alunos {
-//    static let recordType = "Alunos"
-//    let id: CKRecord.ID
-//
-//    let nome: String?
-//    let numero: Int?
-//
-//    init(record: CKRecord) {
-//        self.id = record.recordID
-//
-//        if let nome = record["Nome"] as? String, let numero = record["Numero"] as? Int {
-//            self.nome  = nome
-//            self.numero = numero
-//        } else {
-//            self.nome  = nil
-//            self.numero = nil
-//        }
-//    }
-// }

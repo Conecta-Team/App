@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8841C18926F21E080051BEFF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18826F21E080051BEFF /* UserDTO.swift */; };
+		8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18A26F21EE20051BEFF /* PurposeDTO.swift */; };
+		8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */; };
 		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
 		A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B326F0DDF900309605 /* CloudKitService.swift */; };
 		A21425B626F0E54500309605 /* GameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B526F0E54500309605 /* GameDTO.swift */; };
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8841C18826F21E080051BEFF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		8841C18A26F21EE20051BEFF /* PurposeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeDTO.swift; sourceTree = "<group>"; };
+		8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInfosDTO.swift; sourceTree = "<group>"; };
 		A21425AF26F0DC6000309605 /* ConectaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConectaApp.entitlements; sourceTree = "<group>"; };
 		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A21425B326F0DDF900309605 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
@@ -175,6 +181,9 @@
 				A21A225026EF6C920052384A /* models */,
 				A21425B526F0E54500309605 /* GameDTO.swift */,
 				A21425B726F0E58300309605 /* CategoryDTO.swift */,
+				8841C18826F21E080051BEFF /* UserDTO.swift */,
+				8841C18A26F21EE20051BEFF /* PurposeDTO.swift */,
+				8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -408,10 +417,13 @@
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
 				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
 				A21425BA26F0EDA600309605 /* CloudKitErrors.swift in Sources */,
+				8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */,
 				A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */,
 				A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */,
+				8841C18926F21E080051BEFF /* UserDTO.swift in Sources */,
 				A21A221726EF67260052384A /* SceneDelegate.swift in Sources */,
 				A21425B626F0E54500309605 /* GameDTO.swift in Sources */,
+				8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
