@@ -14,15 +14,14 @@ class CloudKitService {
     let privateDatabse: CKDatabase
 
     static var currentModel = CloudKitService()
-
+    
     init() {
         self.container = CKContainer(identifier: "iCloud.ConectApp")
         self.publicDatabase = container.publicCloudDatabase
         self.privateDatabse = container.privateCloudDatabase
     }
 
-    /// @brief Find all categories saved on CloudKit
-    /// @param completion a closure of type ([CKRecord]) -> Void)
+    // MARK: Find all categories saved on iCloud Container
     func getCategories(completion: @escaping ([CKRecord]) -> Void) {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Category", predicate: predicate)
@@ -32,9 +31,7 @@ class CloudKitService {
         }
     }
 
-    /// @brief Find all games saved on CloudKit by a category
-    /// @param category used for filter
-    /// @param completion a closure of type ([CKRecord]) -> Void)
+    // MARK: Find all games saved on iCloud by a category
     func getGamesByCategory(category: CKRecord, completion: @escaping (CKRecord) -> Void) {
         let recordToMatch = CKRecord.Reference(recordID: category.recordID, action: .deleteSelf)
         let predicate = NSPredicate(format: "categoryReference == %@", recordToMatch)
@@ -46,9 +43,8 @@ class CloudKitService {
         }
         self.publicDatabase.add(queryOp)
     }
-    
-    /// @brief Find all purpose saved on CloudKit
-    /// @param completion a closure of type ([CKRecord]) -> Void)
+
+    // MARK: Find all purpose saved on iCloud Container
     func getAllPurposes(completion: @escaping ([CKRecord]) -> Void) {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Purpose", predicate: predicate)
@@ -57,10 +53,8 @@ class CloudKitService {
             completion(results!)
         }
     }
-    
-    /// @brief Find all games saved on CloudKit by a category
-    /// @param category used for filter
-    /// @param completion a closure of type ([CKRecord]) -> Void)
+
+    // MARK: Get a specific purpose on iCloud Container
     func getPurpose(purpose: CKRecord.ID, completion: @escaping ([CKRecord]) -> Void) {
         let predicate = NSPredicate(format: "recordID == %@", purpose)
         let query = CKQuery(recordType: "Purpose", predicate: predicate)
@@ -68,8 +62,8 @@ class CloudKitService {
             completion(result ?? [CKRecord]())
         }
     }
-    
-    ///OK
+
+    // MARK: Get a specific socialInfos on iCloud Container
     func getSocialInfos(socialInfoId: CKRecord.ID, completion: @escaping ([CKRecord]) -> Void) {
         let predicate = NSPredicate(format: "recordID == %@", socialInfoId)
         let query = CKQuery(recordType: "SocialInfos", predicate: predicate)
@@ -78,8 +72,8 @@ class CloudKitService {
             completion(result ?? [CKRecord]())
         }
     }
-    
-    /// OK
+
+    // MARK: Get all user ids by game id. You must add one user id to not included on fetch
     func getUsersByGame(notIncluded userID: CKRecord.ID, gameID: CKRecord.ID, completion: @escaping ([CKRecord]) -> Void) {
         let gameReference = CKRecord.Reference(recordID: gameID, action: .deleteSelf)
         let userReference = CKRecord.Reference(recordID: userID, action: .deleteSelf)
@@ -91,13 +85,64 @@ class CloudKitService {
         }
     }
     
-    ///OK
+    // MARK: Get a specific user on iCloud Container
     func getUsers(usersID: [CKRecord.ID], completion: @escaping ([CKRecord]) -> Void) {
         let predicate = NSPredicate(format: "recordID IN %@", usersID)
         let query = CKQuery(recordType: "User", predicate: predicate)
         
         self.publicDatabase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { (result, _) in
             completion(result ?? [CKRecord]())
+        }
+    }
+    
+    // MARK: Create a SocialInfos record and save into Public database iCloud
+    func createSocialInfos(instagram: String? = nil, facebook: String? = nil, steam: String? = nil, discord: String? = nil, completion: @escaping (CKRecord?) -> Void) {
+        
+        let socialInfos = CKRecord(recordType: "SocialInfos")
+        socialInfos["instagram"] = instagram
+        socialInfos["facebook"] = facebook
+        socialInfos["steam"] = steam
+        socialInfos["discord"] = discord
+    
+        self.publicDatabase.save(socialInfos) { (record, _) in
+            completion(record)
+        }
+    }
+
+    // TODO: acrescentar os dados faltantes quando forem inseridos na interface
+    // MARK: Create a User record and save into Public database iCloud
+    func createUser(name: String, purpose: CKRecord, socialInfos: CKRecord, completion: @escaping (CKRecord?) -> Void) {
+        let purposeReference = CKRecord.Reference(recordID: purpose.recordID, action: .none)
+        let socialInfosReference = CKRecord.Reference(recordID: socialInfos.recordID, action: .none)
+        
+        let user = CKRecord(recordType: "User")
+        user["name"] = name
+        user["purposeReference"] = purposeReference
+        user["socialInfosReference"] = socialInfosReference
+        
+        self.publicDatabase.save(user) { (record, _) in
+            if let user = record {
+                let userIDString = user.recordID.recordName
+                
+                let userPrivate = CKRecord(recordType: "UserPrivate")
+                userPrivate["userPublicReference"] = userIDString
+
+                self.privateDatabse.save(userPrivate) { _, _ in
+                    completion(user)
+                }
+            } else {
+                completion(nil)
+            }
+        }
+    }
+
+    // MARK: Get a public userID on iCloud Container
+    func getUserPublicReference(completion: @escaping ([CKRecord]?) -> Void) {
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "UserPrivate", predicate: predicate)
+
+        self.privateDatabse.perform(query, inZoneWith: CKRecordZone.default().zoneID) { (results, _) in
+            completion(results)
         }
     }
 }
