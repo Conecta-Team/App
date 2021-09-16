@@ -6,8 +6,20 @@
 //
 
 import UIKit
+import AuthenticationServices
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, LoginProtocols {
+
+  func observerLoginAuth(_ sender: UIButton) {
+    let appleIDProvider = ASAuthorizationAppleIDProvider()
+    let request = appleIDProvider.createRequest()
+    request.requestedScopes = [.fullName, .email]
+
+    let controller = ASAuthorizationController(authorizationRequests: [request])
+    controller.delegate = self
+    controller.presentationContextProvider = self
+    controller.performRequests()
+  }
 
   weak var coordinator: MainCoordinator?
   let mainView: LoginView
@@ -26,4 +38,33 @@ class LoginViewController: UIViewController {
     self.view = mainView
     self.view.backgroundColor = .white
   }
+
+  override func loadView() {
+    mainView.loginHandler = self
+  }
+}
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+  func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+    print("deu ruim")
+  }
+  func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+    switch authorization.credential {
+    case let credential as ASAuthorizationAppleIDCredential:
+      let firstName = credential.fullName?.givenName
+      let lastName = credential.fullName?.familyName
+      let email = credential.email
+      break
+    default:
+      break
+    }
+  }
+}
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+  func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+    return view.window!
+  }
+
+
 }

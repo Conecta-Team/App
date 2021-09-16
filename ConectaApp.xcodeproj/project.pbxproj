@@ -11,6 +11,7 @@
 		684C8D9D26F0BFA300603526 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8D9C26F0BFA300603526 /* LoginViewController.swift */; };
 		684C8D9F26F0C24900603526 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8D9E26F0C24900603526 /* Coordinator.swift */; };
 		684C8DA126F0C27B00603526 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8DA026F0C27B00603526 /* MainCoordinator.swift */; };
+		684C8DA326F21A4C00603526 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8DA226F21A4C00603526 /* LoginProtocols.swift */; };
 		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
 		A21A221726EF67260052384A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221626EF67260052384A /* SceneDelegate.swift */; };
 		A21A221926EF67260052384A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221826EF67260052384A /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		684C8D9C26F0BFA300603526 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		684C8D9E26F0C24900603526 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		684C8DA026F0C27B00603526 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		684C8DA226F21A4C00603526 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21A221426EF67260052384A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A21A221626EF67260052384A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				A21A225326EF6CA00052384A /* protocols */,
 				684C8D9E26F0C24900603526 /* Coordinator.swift */,
+				684C8DA226F21A4C00603526 /* LoginProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684C8DA326F21A4C00603526 /* LoginProtocols.swift in Sources */,
 				684C8D9D26F0BFA300603526 /* LoginViewController.swift in Sources */,
 				684C8DA126F0C27B00603526 /* MainCoordinator.swift in Sources */,
 				A21A224526EF67A80052384A /* View.swift in Sources */,
@@ -566,7 +570,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				DEVELOPMENT_TEAM = 78HCYJFJ6W;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -585,7 +589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				DEVELOPMENT_TEAM = 78HCYJFJ6W;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
