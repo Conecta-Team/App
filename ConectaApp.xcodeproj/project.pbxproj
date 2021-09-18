@@ -12,6 +12,9 @@
 		684C8D9F26F0C24900603526 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8D9E26F0C24900603526 /* Coordinator.swift */; };
 		684C8DA126F0C27B00603526 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8DA026F0C27B00603526 /* MainCoordinator.swift */; };
 		684C8DA326F21A4C00603526 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8DA226F21A4C00603526 /* LoginProtocols.swift */; };
+		8816D0FF26F6544600AB6C4E /* ShareTechMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */; };
+		8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10026F654BB00AB6C4E /* FontConfiguration.swift */; };
+		8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */; };
 		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
 		A21A221726EF67260052384A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221626EF67260052384A /* SceneDelegate.swift */; };
 		A21A221926EF67260052384A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221826EF67260052384A /* ViewController.swift */; };
@@ -52,6 +55,9 @@
 		684C8D9E26F0C24900603526 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		684C8DA026F0C27B00603526 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		684C8DA226F21A4C00603526 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShareTechMono-Regular.ttf"; sourceTree = "<group>"; };
+		8816D10026F654BB00AB6C4E /* FontConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfiguration.swift; sourceTree = "<group>"; };
+		8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfiguration.swift; sourceTree = "<group>"; };
 		8841C18E26F36A640051BEFF /* ConectaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConectaApp.entitlements; sourceTree = "<group>"; };
 		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21A221426EF67260052384A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8816D0FD26F6540700AB6C4E /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */,
+				8816D10026F654BB00AB6C4E /* FontConfiguration.swift */,
+				8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
 		A21A220826EF67260052384A = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +140,7 @@
 		A21A221326EF67260052384A /* ConectaApp */ = {
 			isa = PBXGroup;
 			children = (
+				8816D0FD26F6540700AB6C4E /* Extras */,
 				8841C18E26F36A640051BEFF /* ConectaApp.entitlements */,
 				A21A225B26EF6CD50052384A /* Services */,
 				A21A225826EF6CC20052384A /* Enums */,
@@ -348,6 +365,7 @@
 				A21A225426EF6CA00052384A /* protocols in Resources */,
 				A21A224F26EF6C880052384A /* viewmodels in Resources */,
 				A21A225D26EF6CDD0052384A /* services in Resources */,
+				8816D0FF26F6544600AB6C4E /* ShareTechMono-Regular.ttf in Resources */,
 				A21A225A26EF6CCE0052384A /* enums in Resources */,
 				A21A222126EF67270052384A /* LaunchScreen.storyboard in Resources */,
 				A21A221E26EF67270052384A /* Assets.xcassets in Resources */,
@@ -403,7 +421,9 @@
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
 				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
 				684C8D9B26EF769200603526 /* LoginView.swift in Sources */,
+				8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */,
 				A21A221726EF67260052384A /* SceneDelegate.swift in Sources */,
+				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +593,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -593,7 +613,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

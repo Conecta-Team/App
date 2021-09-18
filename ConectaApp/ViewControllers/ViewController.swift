@@ -13,8 +13,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view = View()
-
+        self.view.backgroundColor = .red
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationItem.leftBarButtonItem?.isEnabled = false
     }
 }

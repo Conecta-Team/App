@@ -7,64 +7,58 @@
 
 import UIKit
 import AuthenticationServices
+import Security
 
 class LoginViewController: UIViewController, LoginProtocols {
 
-  func observerLoginAuth(_ sender: UIButton) {
-    let appleIDProvider = ASAuthorizationAppleIDProvider()
-    let request = appleIDProvider.createRequest()
-    request.requestedScopes = [.fullName, .email]
+    weak var coordinator: MainCoordinator?
+    let mainView: LoginView
 
-    let controller = ASAuthorizationController(authorizationRequests: [request])
-    controller.delegate = self
-    controller.presentationContextProvider = self
-    controller.performRequests()
-  }
+    init() {
+        self.mainView = LoginView()
+        super.init(nibName: nil, bundle: nil)
+    }
 
-  weak var coordinator: MainCoordinator?
-  let mainView: LoginView
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
-  init() {
-    self.mainView = LoginView()
-    super.init(nibName: nil, bundle: nil)
-  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view = mainView
+        self.view.backgroundColor = .backgroundGray
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
 
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
+    override func loadView() {
+        mainView.loginHandler = self
+    }
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    self.view = mainView
-    self.view.backgroundColor = .white
-  }
+    func observerLoginAuth(_ sender: UIButton) {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
 
-  override func loadView() {
-    mainView.loginHandler = self
-  }
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self
+        controller.performRequests()
+    }
 }
 
 extension LoginViewController: ASAuthorizationControllerDelegate {
-  func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-    print("deu ruim")
-  }
-  func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-    switch authorization.credential {
-    case let credential as ASAuthorizationAppleIDCredential:
-      let firstName = credential.fullName?.givenName
-      let lastName = credential.fullName?.familyName
-      let email = credential.email
-      break
-    default:
-      break
+
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error)
     }
-  }
+
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        navigationController?.pushViewController(ViewController(), animated: true)
+    }
 }
 
 extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
-  func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-    return view.window!
-  }
-
-
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window!
+    }
 }

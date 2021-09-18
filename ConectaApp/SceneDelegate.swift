@@ -7,22 +7,19 @@
 
 // swiftlint:disable line_length
 import UIKit
+import AuthenticationServices
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var coordinator: MainCoordinator?
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-      let navigation = UINavigationController()
-        coordinator = MainCoordinator(navigationController: navigation)
-        coordinator?.login()
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-      //        window?.rootViewController = UINavigationController(rootViewController: ViewController())
-        window?.rootViewController = navigation
         window?.makeKeyAndVisible()
+        self.window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -16,15 +16,14 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = ViewController()
-        vc.coordinator = self
-        self.navigationController.pushViewController(vc, animated: true)
+        let viewController = ViewController()
+        viewController.coordinator = self
+        self.navigationController.pushViewController(viewController, animated: true)
     }
 
     func login() {
-      let vc = LoginViewController()
-      vc.coordinator = self
-      self.navigationController.pushViewController(vc, animated: true)
+      let viewController = LoginViewController()
+      viewController.coordinator = self
+      self.navigationController.pushViewController(viewController, animated: true)
     }
-
 }
