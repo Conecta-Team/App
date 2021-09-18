@@ -1,0 +1,3 @@
+force_cast: warning
+disabled_rules:
+- trailing_whitespace

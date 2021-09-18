@@ -15,6 +15,14 @@
 		8816D0FF26F6544600AB6C4E /* ShareTechMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */; };
 		8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10026F654BB00AB6C4E /* FontConfiguration.swift */; };
 		8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */; };
+		8841C18926F21E080051BEFF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18826F21E080051BEFF /* UserDTO.swift */; };
+		8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18A26F21EE20051BEFF /* PurposeDTO.swift */; };
+		8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */; };
+		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
+		A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B326F0DDF900309605 /* CloudKitService.swift */; };
+		A21425B626F0E54500309605 /* GameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B526F0E54500309605 /* GameDTO.swift */; };
+		A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B726F0E58300309605 /* CategoryDTO.swift */; };
+		A21425BA26F0EDA600309605 /* CloudKitErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B926F0EDA600309605 /* CloudKitErrors.swift */; };
 		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
 		A21A221726EF67260052384A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221626EF67260052384A /* SceneDelegate.swift */; };
 		A21A221926EF67260052384A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221826EF67260052384A /* ViewController.swift */; };
@@ -25,11 +33,6 @@
 		A21A224526EF67A80052384A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A224426EF67A80052384A /* View.swift */; };
 		A21A224D26EF6C730052384A /* cells in Resources */ = {isa = PBXBuildFile; fileRef = A21A224C26EF6C730052384A /* cells */; };
 		A21A224F26EF6C880052384A /* viewmodels in Resources */ = {isa = PBXBuildFile; fileRef = A21A224E26EF6C880052384A /* viewmodels */; };
-		A21A225126EF6C920052384A /* models in Resources */ = {isa = PBXBuildFile; fileRef = A21A225026EF6C920052384A /* models */; };
-		A21A225426EF6CA00052384A /* protocols in Resources */ = {isa = PBXBuildFile; fileRef = A21A225326EF6CA00052384A /* protocols */; };
-		A21A225726EF6CB50052384A /* coordinators in Resources */ = {isa = PBXBuildFile; fileRef = A21A225626EF6CB50052384A /* coordinators */; };
-		A21A225A26EF6CCE0052384A /* enums in Resources */ = {isa = PBXBuildFile; fileRef = A21A225926EF6CCE0052384A /* enums */; };
-		A21A225D26EF6CDD0052384A /* services in Resources */ = {isa = PBXBuildFile; fileRef = A21A225C26EF6CDD0052384A /* services */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +61,15 @@
 		8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShareTechMono-Regular.ttf"; sourceTree = "<group>"; };
 		8816D10026F654BB00AB6C4E /* FontConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfiguration.swift; sourceTree = "<group>"; };
 		8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfiguration.swift; sourceTree = "<group>"; };
-		8841C18E26F36A640051BEFF /* ConectaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConectaApp.entitlements; sourceTree = "<group>"; };
+		8835AAE326F6A3400006398E /* ConectaApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ConectaApp.entitlements; sourceTree = "<group>"; };
+		8841C18826F21E080051BEFF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		8841C18A26F21EE20051BEFF /* PurposeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeDTO.swift; sourceTree = "<group>"; };
+		8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInfosDTO.swift; sourceTree = "<group>"; };
+		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		A21425B326F0DDF900309605 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		A21425B526F0E54500309605 /* GameDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDTO.swift; sourceTree = "<group>"; };
+		A21425B726F0E58300309605 /* CategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDTO.swift; sourceTree = "<group>"; };
+		A21425B926F0EDA600309605 /* CloudKitErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitErrors.swift; sourceTree = "<group>"; };
 		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21A221426EF67260052384A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A21A221626EF67260052384A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,11 +86,6 @@
 		A21A224426EF67A80052384A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		A21A224C26EF6C730052384A /* cells */ = {isa = PBXFileReference; lastKnownFileType = text; path = cells; sourceTree = "<group>"; };
 		A21A224E26EF6C880052384A /* viewmodels */ = {isa = PBXFileReference; lastKnownFileType = text; path = viewmodels; sourceTree = "<group>"; };
-		A21A225026EF6C920052384A /* models */ = {isa = PBXFileReference; lastKnownFileType = text; path = models; sourceTree = "<group>"; };
-		A21A225326EF6CA00052384A /* protocols */ = {isa = PBXFileReference; lastKnownFileType = text; path = protocols; sourceTree = "<group>"; };
-		A21A225626EF6CB50052384A /* coordinators */ = {isa = PBXFileReference; lastKnownFileType = text; path = coordinators; sourceTree = "<group>"; };
-		A21A225926EF6CCE0052384A /* enums */ = {isa = PBXFileReference; lastKnownFileType = text; path = enums; sourceTree = "<group>"; };
-		A21A225C26EF6CDD0052384A /* services */ = {isa = PBXFileReference; lastKnownFileType = text; path = services; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +124,14 @@
 			path = Extras;
 			sourceTree = "<group>";
 		};
+		A21425B026F0DC6500309605 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A21425B126F0DC6500309605 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A21A220826EF67260052384A = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +139,7 @@
 				A21A222A26EF67280052384A /* ConectaAppTests */,
 				A21A223526EF67280052384A /* ConectaAppUITests */,
 				A21A221226EF67260052384A /* Products */,
+				A21425B026F0DC6500309605 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,8 +156,9 @@
 		A21A221326EF67260052384A /* ConectaApp */ = {
 			isa = PBXGroup;
 			children = (
+				8835AAE326F6A3400006398E /* ConectaApp.entitlements */,
+				8835AAE526F6A3CF0006398E /* ConectaApp.entitlements */,
 				8816D0FD26F6540700AB6C4E /* Extras */,
-				8841C18E26F36A640051BEFF /* ConectaApp.entitlements */,
 				A21A225B26EF6CD50052384A /* Services */,
 				A21A225826EF6CC20052384A /* Enums */,
 				A21A225526EF6CA80052384A /* Coordinators */,
@@ -179,7 +196,11 @@
 		A21A224726EF6C300052384A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A21A225026EF6C920052384A /* models */,
+				A21425B526F0E54500309605 /* GameDTO.swift */,
+				A21425B726F0E58300309605 /* CategoryDTO.swift */,
+				8841C18826F21E080051BEFF /* UserDTO.swift */,
+				8841C18A26F21EE20051BEFF /* PurposeDTO.swift */,
+				8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,7 +244,6 @@
 		A21A225226EF6C970052384A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A21A225326EF6CA00052384A /* protocols */,
 				684C8D9E26F0C24900603526 /* Coordinator.swift */,
 				684C8DA226F21A4C00603526 /* LoginProtocols.swift */,
 			);
@@ -233,7 +253,6 @@
 		A21A225526EF6CA80052384A /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				A21A225626EF6CB50052384A /* coordinators */,
 				684C8DA026F0C27B00603526 /* MainCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -242,7 +261,7 @@
 		A21A225826EF6CC20052384A /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				A21A225926EF6CCE0052384A /* enums */,
+				A21425B926F0EDA600309605 /* CloudKitErrors.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -250,7 +269,7 @@
 		A21A225B26EF6CD50052384A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A21A225C26EF6CDD0052384A /* services */,
+				A21425B326F0DDF900309605 /* CloudKitService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -359,14 +378,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A21A225126EF6C920052384A /* models in Resources */,
-				A21A225726EF6CB50052384A /* coordinators in Resources */,
 				A21A224D26EF6C730052384A /* cells in Resources */,
-				A21A225426EF6CA00052384A /* protocols in Resources */,
 				A21A224F26EF6C880052384A /* viewmodels in Resources */,
-				A21A225D26EF6CDD0052384A /* services in Resources */,
 				8816D0FF26F6544600AB6C4E /* ShareTechMono-Regular.ttf in Resources */,
-				A21A225A26EF6CCE0052384A /* enums in Resources */,
 				A21A222126EF67270052384A /* LaunchScreen.storyboard in Resources */,
 				A21A221E26EF67270052384A /* Assets.xcassets in Resources */,
 			);
@@ -422,7 +436,14 @@
 				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
 				684C8D9B26EF769200603526 /* LoginView.swift in Sources */,
 				8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */,
+				A21425BA26F0EDA600309605 /* CloudKitErrors.swift in Sources */,
+				8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */,
+				A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */,
+				A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */,
+				8841C18926F21E080051BEFF /* UserDTO.swift in Sources */,
 				A21A221726EF67260052384A /* SceneDelegate.swift in Sources */,
+				A21425B626F0E54500309605 /* GameDTO.swift in Sources */,
+				8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */,
 				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
