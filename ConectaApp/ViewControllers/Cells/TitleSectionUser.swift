@@ -13,7 +13,7 @@ class TitleSectionUser: UITableViewHeaderFooterView {
 
     let title: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.font = .appRegularFont(with: 24)
         label.text = "Nickname"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -38,6 +38,6 @@ class TitleSectionUser: UITableViewHeaderFooterView {
 
     public func configure(color: ColorManager) {
         self.contentView.backgroundColor = color.lightColor
-        self.title.textColor = color.darkColor
+        self.title.textColor = color.fontColor
     }
 }

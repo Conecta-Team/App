@@ -23,7 +23,7 @@ class UserInfosTableViewCell: UITableViewCell {
 
     let discordLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.font = .appRegularFont(with: 16)
         label.text = ""
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -36,7 +36,7 @@ class UserInfosTableViewCell: UITableViewCell {
         let configurationWeightIcon = UIImage.SymbolConfiguration(weight: .regular)
         let configurations = configurationSizeIcon.applying(configurationWeightIcon)
         let configurationNameIcon =  UIImage(systemName: "doc.on.doc", withConfiguration: configurations)
-        let icon = configurationNameIcon?.withTintColor(UIColor.red, renderingMode: .alwaysOriginal)
+        let icon = configurationNameIcon?.withTintColor(UIColor.actionPink, renderingMode: .alwaysOriginal)
         button.setImage(icon, for: .normal)
         button.tag = UserInfosButton.discord.rawValue
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +52,7 @@ class UserInfosTableViewCell: UITableViewCell {
 
     let steamLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.font = .appRegularFont(with: 16)
         label.text = ""
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -65,7 +65,7 @@ class UserInfosTableViewCell: UITableViewCell {
         let configurationWeightIcon = UIImage.SymbolConfiguration(weight: .regular)
         let configurations = configurationSizeIcon.applying(configurationWeightIcon)
         let configurationNameIcon =  UIImage(systemName: "doc.on.doc", withConfiguration: configurations)
-        let icon = configurationNameIcon?.withTintColor(UIColor.red, renderingMode: .alwaysOriginal)
+        let icon = configurationNameIcon?.withTintColor(UIColor.actionPink, renderingMode: .alwaysOriginal)
         button.setImage(icon, for: .normal)
         button.tag = UserInfosButton.steam.rawValue
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -81,7 +81,7 @@ class UserInfosTableViewCell: UITableViewCell {
 
     let instagramLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.font = .appRegularFont(with: 16)
         label.text = ""
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -94,7 +94,7 @@ class UserInfosTableViewCell: UITableViewCell {
         let configurationWeightIcon = UIImage.SymbolConfiguration(weight: .regular)
         let configurations = configurationSizeIcon.applying(configurationWeightIcon)
         let configurationNameIcon =  UIImage(systemName: "doc.on.doc", withConfiguration: configurations)
-        let icon = configurationNameIcon?.withTintColor(UIColor.red, renderingMode: .alwaysOriginal)
+        let icon = configurationNameIcon?.withTintColor(UIColor.actionPink, renderingMode: .alwaysOriginal)
         button.setImage(icon, for: .normal)
         button.tag = UserInfosButton.instagram.rawValue
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -135,11 +135,11 @@ class UserInfosTableViewCell: UITableViewCell {
 
     private func animateButtonIcon(button: UIButton) {
         UIView.animate(withDuration: 6) {
-            let icon = self.changeIcon(name: "checkmark", color: .green)
+            let icon = self.changeIcon(name: "checkmark", color: .actionPink)
             button.setImage(icon, for: .normal)
             button.alpha = 0
         } completion: { _ in
-            let icon = self.changeIcon(name: "doc.on.doc", color: .red)
+            let icon = self.changeIcon(name: "doc.on.doc", color: .actionPink)
             button.setImage(icon, for: .normal)
             button.alpha = 1
         }
@@ -205,9 +205,9 @@ class UserInfosTableViewCell: UITableViewCell {
 
     public func configure(discordName: String? = nil, steamName: String? = nil, instagramName: String? = nil, color: ColorManager) {
         self.backgroundColor = color.lightColor
-        self.discordLabel.textColor = color.darkColor
-        self.steamLabel.textColor = color.darkColor
-        self.instagramLabel.textColor = color.darkColor
+        self.discordLabel.textColor = color.fontColor
+        self.steamLabel.textColor = color.fontColor
+        self.instagramLabel.textColor = color.fontColor
 
         self.discordLabel.text = "Discord: \(discordName ?? "-")"
         self.steamLabel.text = "Steam: \(steamName ?? "-")"

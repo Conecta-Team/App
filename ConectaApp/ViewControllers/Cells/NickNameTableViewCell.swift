@@ -10,14 +10,9 @@ import UIKit
 class NickNameTableViewCell: UITableViewCell {
     static let reuseIdentifier = "nickNameTableViewCell"
 
-    let rectangle: UIView = {
-        let view = UIView()
-        return view
-    }()
-
     let nickName: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        label.font = .appRegularFont(with: 32)
         label.text = ""
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -46,7 +41,7 @@ class NickNameTableViewCell: UITableViewCell {
 
     public func configure(nickName: String, color: ColorManager) {
         self.backgroundColor = color.lightColor
-        self.nickName.textColor = color.darkColor
+        self.nickName.textColor = color.fontColor
         self.nickName.text = nickName.uppercased()
     }
 }

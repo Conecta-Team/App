@@ -20,7 +20,7 @@ class UserGamesTableViewCell: UITableViewCell {
 
     let gameName: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        label.font = .appRegularFont(with: 24)
         label.text = ""
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -54,7 +54,7 @@ class UserGamesTableViewCell: UITableViewCell {
 
     public func configure(gameName: String, color: ColorManager) {
         self.backgroundColor = color.lightColor
-        self.gameName.textColor = color.darkColor
+        self.gameName.textColor = color.fontColor
         self.gameName.text = gameName
         self.shape.tintColor = color.darkColor
     }

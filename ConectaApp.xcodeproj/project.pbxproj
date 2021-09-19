@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		684C8D9B26EF769200603526 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8D9A26EF769200603526 /* LoginView.swift */; };
+		684C8D9D26F0BFA300603526 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8D9C26F0BFA300603526 /* LoginViewController.swift */; };
+		684C8D9F26F0C24900603526 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8D9E26F0C24900603526 /* Coordinator.swift */; };
+		684C8DA126F0C27B00603526 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8DA026F0C27B00603526 /* MainCoordinator.swift */; };
+		684C8DA326F21A4C00603526 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C8DA226F21A4C00603526 /* LoginProtocols.swift */; };
+		8816D0FF26F6544600AB6C4E /* ShareTechMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */; };
+		8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10026F654BB00AB6C4E /* FontConfiguration.swift */; };
+		8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */; };
+		8841C18926F21E080051BEFF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18826F21E080051BEFF /* UserDTO.swift */; };
+		8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18A26F21EE20051BEFF /* PurposeDTO.swift */; };
+		8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */; };
+		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
+		A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B326F0DDF900309605 /* CloudKitService.swift */; };
+		A21425B626F0E54500309605 /* GameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B526F0E54500309605 /* GameDTO.swift */; };
+		A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B726F0E58300309605 /* CategoryDTO.swift */; };
+		A21425BA26F0EDA600309605 /* CloudKitErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B926F0EDA600309605 /* CloudKitErrors.swift */; };
 		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
 		A21A221726EF67260052384A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221626EF67260052384A /* SceneDelegate.swift */; };
 		A21A221926EF67260052384A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221826EF67260052384A /* ViewController.swift */; };
@@ -17,11 +33,6 @@
 		A21A224526EF67A80052384A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A224426EF67A80052384A /* View.swift */; };
 		A21A224D26EF6C730052384A /* cells in Resources */ = {isa = PBXBuildFile; fileRef = A21A224C26EF6C730052384A /* cells */; };
 		A21A224F26EF6C880052384A /* viewmodels in Resources */ = {isa = PBXBuildFile; fileRef = A21A224E26EF6C880052384A /* viewmodels */; };
-		A21A225126EF6C920052384A /* models in Resources */ = {isa = PBXBuildFile; fileRef = A21A225026EF6C920052384A /* models */; };
-		A21A225426EF6CA00052384A /* protocols in Resources */ = {isa = PBXBuildFile; fileRef = A21A225326EF6CA00052384A /* protocols */; };
-		A21A225726EF6CB50052384A /* coordinators in Resources */ = {isa = PBXBuildFile; fileRef = A21A225626EF6CB50052384A /* coordinators */; };
-		A21A225A26EF6CCE0052384A /* enums in Resources */ = {isa = PBXBuildFile; fileRef = A21A225926EF6CCE0052384A /* enums */; };
-		A21A225D26EF6CDD0052384A /* services in Resources */ = {isa = PBXBuildFile; fileRef = A21A225C26EF6CDD0052384A /* services */; };
 		A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798826F538C400E5B0FF /* MatchViewController.swift */; };
 		A226798B26F538D500E5B0FF /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798A26F538D500E5B0FF /* MatchView.swift */; };
 		A226798D26F5393700E5B0FF /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798C26F5393700E5B0FF /* MatchViewModel.swift */; };
@@ -54,6 +65,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		684C8D9A26EF769200603526 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		684C8D9C26F0BFA300603526 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		684C8D9E26F0C24900603526 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		684C8DA026F0C27B00603526 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		684C8DA226F21A4C00603526 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShareTechMono-Regular.ttf"; sourceTree = "<group>"; };
+		8816D10026F654BB00AB6C4E /* FontConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfiguration.swift; sourceTree = "<group>"; };
+		8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfiguration.swift; sourceTree = "<group>"; };
+		8835AAE326F6A3400006398E /* ConectaApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ConectaApp.entitlements; sourceTree = "<group>"; };
+		8841C18826F21E080051BEFF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		8841C18A26F21EE20051BEFF /* PurposeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeDTO.swift; sourceTree = "<group>"; };
+		8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInfosDTO.swift; sourceTree = "<group>"; };
+		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		A21425B326F0DDF900309605 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		A21425B526F0E54500309605 /* GameDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDTO.swift; sourceTree = "<group>"; };
+		A21425B726F0E58300309605 /* CategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDTO.swift; sourceTree = "<group>"; };
+		A21425B926F0EDA600309605 /* CloudKitErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitErrors.swift; sourceTree = "<group>"; };
 		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21A221426EF67260052384A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A21A221626EF67260052384A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,11 +98,7 @@
 		A21A224426EF67A80052384A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		A21A224C26EF6C730052384A /* cells */ = {isa = PBXFileReference; lastKnownFileType = text; path = cells; sourceTree = "<group>"; };
 		A21A224E26EF6C880052384A /* viewmodels */ = {isa = PBXFileReference; lastKnownFileType = text; path = viewmodels; sourceTree = "<group>"; };
-		A21A225026EF6C920052384A /* models */ = {isa = PBXFileReference; lastKnownFileType = text; path = models; sourceTree = "<group>"; };
 		A21A225326EF6CA00052384A /* protocols */ = {isa = PBXFileReference; lastKnownFileType = text; path = protocols; sourceTree = "<group>"; };
-		A21A225626EF6CB50052384A /* coordinators */ = {isa = PBXFileReference; lastKnownFileType = text; path = coordinators; sourceTree = "<group>"; };
-		A21A225926EF6CCE0052384A /* enums */ = {isa = PBXFileReference; lastKnownFileType = text; path = enums; sourceTree = "<group>"; };
-		A21A225C26EF6CDD0052384A /* services */ = {isa = PBXFileReference; lastKnownFileType = text; path = services; sourceTree = "<group>"; };
 		A226798826F538C400E5B0FF /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		A226798A26F538D500E5B0FF /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		A226798C26F5393700E5B0FF /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
@@ -94,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +139,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8816D0FD26F6540700AB6C4E /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */,
+				8816D10026F654BB00AB6C4E /* FontConfiguration.swift */,
+				8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
+		A21425B026F0DC6500309605 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A21425B126F0DC6500309605 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A21A220826EF67260052384A = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +164,7 @@
 				A21A222A26EF67280052384A /* ConectaAppTests */,
 				A21A223526EF67280052384A /* ConectaAppUITests */,
 				A21A221226EF67260052384A /* Products */,
+				A21425B026F0DC6500309605 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +181,8 @@
 		A21A221326EF67260052384A /* ConectaApp */ = {
 			isa = PBXGroup;
 			children = (
+				8835AAE326F6A3400006398E /* ConectaApp.entitlements */,
+				8816D0FD26F6540700AB6C4E /* Extras */,
 				A21A225B26EF6CD50052384A /* Services */,
 				A21A225826EF6CC20052384A /* Enums */,
 				A21A225526EF6CA80052384A /* Coordinators */,
@@ -174,7 +220,11 @@
 		A21A224726EF6C300052384A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A21A225026EF6C920052384A /* models */,
+				A21425B526F0E54500309605 /* GameDTO.swift */,
+				A21425B726F0E58300309605 /* CategoryDTO.swift */,
+				8841C18826F21E080051BEFF /* UserDTO.swift */,
+				8841C18A26F21EE20051BEFF /* PurposeDTO.swift */,
+				8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,6 +243,7 @@
 			children = (
 				A21A221826EF67260052384A /* ViewController.swift */,
 				A226798826F538C400E5B0FF /* MatchViewController.swift */,
+				684C8D9C26F0BFA300603526 /* LoginViewController.swift */,
 				A2ABAADD26F7AC1F00274289 /* Resusable */,
 				A21A224B26EF6C520052384A /* Cells */,
 				A21A224A26EF6C4D0052384A /* Views */,
@@ -204,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				A21A224426EF67A80052384A /* View.swift */,
+				684C8D9A26EF769200603526 /* LoginView.swift */,
 				A226798A26F538D500E5B0FF /* MatchView.swift */,
 			);
 			path = Views;
@@ -225,6 +277,8 @@
 		A21A225226EF6C970052384A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				684C8D9E26F0C24900603526 /* Coordinator.swift */,
+				684C8DA226F21A4C00603526 /* LoginProtocols.swift */,
 				A21A225326EF6CA00052384A /* protocols */,
 				A226798E26F5395300E5B0FF /* ViewModelProtocols.swift */,
 			);
@@ -234,7 +288,7 @@
 		A21A225526EF6CA80052384A /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				A21A225626EF6CB50052384A /* coordinators */,
+				684C8DA026F0C27B00603526 /* MainCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -242,7 +296,7 @@
 		A21A225826EF6CC20052384A /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				A21A225926EF6CCE0052384A /* enums */,
+				A21425B926F0EDA600309605 /* CloudKitErrors.swift */,
 				A226799426F66BBD00E5B0FF /* ColorsManager.swift */,
 				A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */,
 			);
@@ -252,7 +306,7 @@
 		A21A225B26EF6CD50052384A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A21A225C26EF6CDD0052384A /* services */,
+				A21425B326F0DDF900309605 /* CloudKitService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -369,13 +423,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A21A225126EF6C920052384A /* models in Resources */,
-				A21A225726EF6CB50052384A /* coordinators in Resources */,
 				A21A224D26EF6C730052384A /* cells in Resources */,
-				A21A225426EF6CA00052384A /* protocols in Resources */,
 				A21A224F26EF6C880052384A /* viewmodels in Resources */,
-				A21A225D26EF6CDD0052384A /* services in Resources */,
-				A21A225A26EF6CCE0052384A /* enums in Resources */,
+				8816D0FF26F6544600AB6C4E /* ShareTechMono-Regular.ttf in Resources */,
 				A21A222126EF67270052384A /* LaunchScreen.storyboard in Resources */,
 				A21A221E26EF67270052384A /* Assets.xcassets in Resources */,
 			);
@@ -422,7 +472,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684C8DA326F21A4C00603526 /* LoginProtocols.swift in Sources */,
+				684C8D9D26F0BFA300603526 /* LoginViewController.swift in Sources */,
+				684C8DA126F0C27B00603526 /* MainCoordinator.swift in Sources */,
 				A21A224526EF67A80052384A /* View.swift in Sources */,
+				684C8D9F26F0C24900603526 /* Coordinator.swift in Sources */,
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
 				A226798D26F5393700E5B0FF /* MatchViewModel.swift in Sources */,
 				A226799126F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift in Sources */,
@@ -430,6 +484,13 @@
 				A226799326F5417A00E5B0FF /* ProfileCollectionViewCell.swift in Sources */,
 				A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */,
 				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
+				684C8D9B26EF769200603526 /* LoginView.swift in Sources */,
+				8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */,
+				A21425BA26F0EDA600309605 /* CloudKitErrors.swift in Sources */,
+				8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */,
+				A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */,
+				A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */,
+				8841C18926F21E080051BEFF /* UserDTO.swift in Sources */,
 				A226799726F6806500E5B0FF /* NickNameTableViewCell.swift in Sources */,
 				A226799D26F6881A00E5B0FF /* TitleSectionUser.swift in Sources */,
 				A226798F26F5395300E5B0FF /* ViewModelProtocols.swift in Sources */,
@@ -438,6 +499,9 @@
 				A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */,
 				A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */,
 				A226799926F680B600E5B0FF /* UserGamesTableViewCell.swift in Sources */,
+				A21425B626F0E54500309605 /* GameDTO.swift in Sources */,
+				8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */,
+				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
@@ -624,6 +689,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;

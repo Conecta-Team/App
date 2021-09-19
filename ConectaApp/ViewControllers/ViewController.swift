@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import CloudKit
 
 class ViewController: UIViewController {
+
+  weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view = View()
     }
 }

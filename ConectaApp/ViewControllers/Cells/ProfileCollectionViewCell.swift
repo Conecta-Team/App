@@ -22,7 +22,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
     let imageProfile: UILabel = {
         let label: UILabel = UILabel()
-        label.font = UIFont.systemFont(ofSize: 96)
+        label.font = .appRegularFont(with: 96)
         label.text = "J"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

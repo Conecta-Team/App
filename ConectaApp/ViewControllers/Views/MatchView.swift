@@ -94,17 +94,4 @@ class MatchView: UIView {
         self.topViewColor.backgroundColor = color.darkColor
         self.mainColor = color
     }
-
-}
-
-extension UIColor {
-    static let purpleProfile = UIColor(red: 0.33, green: 0.00, blue: 0.77, alpha: 1.00)
-    static let purpleBackground = UIColor(red: 0.93, green: 0.90, blue: 0.98, alpha: 1.00)
-
-    static let orangeProfile = UIColor(red: 0.91, green: 0.32, blue: 0.14, alpha: 1.00)
-    static let orangeBackground = UIColor(red: 0.99, green: 0.93, blue: 0.91, alpha: 1.00)
-
-    static let blueProfile = UIColor(red: 0.00, green: 0.66, blue: 0.73, alpha: 1.00)
-    static let blueBackground = UIColor(red: 0.90, green: 0.96, blue: 0.97, alpha: 1.00)
-
 }

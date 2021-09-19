@@ -16,11 +16,11 @@ enum ColorManager {
     var darkColor: UIColor {
         switch self {
         case .blue:
-            return UIColor.blueProfile
+            return UIColor.darkBlue
         case .orange:
-            return UIColor.orangeProfile
+            return UIColor.darkOrange
         case .purple:
-            return UIColor.purpleProfile
+            return UIColor.darkPurple
         case .defaultColor:
             return UIColor.clear
         }
@@ -29,11 +29,24 @@ enum ColorManager {
     var lightColor: UIColor {
         switch self {
         case .blue:
-            return UIColor.blueBackground
+            return UIColor.lightBlue
         case .orange:
-            return UIColor.orangeBackground
+            return UIColor.lightOrange
         case .purple:
-            return UIColor.purpleBackground
+            return UIColor.lightPurple
+        case .defaultColor:
+            return UIColor.clear
+        }
+    }
+
+    var fontColor: UIColor {
+        switch self {
+        case .blue:
+            return UIColor.textGreen
+        case .orange:
+            return UIColor.textBrown
+        case .purple:
+            return UIColor.textPurple
         case .defaultColor:
             return UIColor.clear
         }
