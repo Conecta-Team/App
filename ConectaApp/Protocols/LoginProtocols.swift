@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol LoginProtocols: class {
+protocol LoginProtocols: AnyObject {
   func observerLoginAuth(_ sender: UIButton)
 }
