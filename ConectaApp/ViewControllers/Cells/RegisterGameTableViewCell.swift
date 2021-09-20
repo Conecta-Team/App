@@ -1,0 +1,60 @@
+//
+//  RegisterGameTableViewCell.swift
+//  ConectaApp
+//
+//  Created by Helaine Pontes on 19/09/21.
+//
+
+import UIKit
+
+class RegisterGameTableViewCell: UITableViewCell {
+    
+    static let reuseIdentifier = "registerGameTableViewCell"
+    let buttonUnselectedImage = UIImage(named: "shapeButtonUnselected")
+    let buttonSelectedImage = UIImage(named: "shapeButtonSelected")
+    
+    
+    internal lazy var gameButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(buttonUnselectedImage, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(.darkBlue, for: .normal)
+        button.titleLabel?.font = .appRegularFont(with: 20)
+        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+        return button
+    }()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.setupCell()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    @objc func handleTap(_ sender: UIButton) {
+        self.gameButton.setBackgroundImage(buttonSelectedImage, for: .normal)
+        self.gameButton.setTitleColor(.white, for: .normal)
+    }
+    
+    private func setupCell() {
+        self.addSubview(self.gameButton)
+        self.backgroundColor = .backgroundGray
+        self.contentView.isUserInteractionEnabled = false
+        NSLayoutConstraint.activate([
+            gameButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            gameButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
+        ])
+    }
+    
+    public func configure(gameName: String) {
+        self.gameButton.setTitle(gameName, for: .normal)
+    }
+
+}
