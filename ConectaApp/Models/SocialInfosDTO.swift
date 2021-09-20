@@ -20,6 +20,6 @@ struct SocialInfosDTO {
         self.discord = record["discord"]
         self.facebook = record["facebook"]
         self.steam = record["steam"]
-        self.intagram = record["intagram"]
+        self.intagram = record["instagram"]
     }
 }

@@ -62,7 +62,16 @@ class CloudKitService {
             completion(result ?? [CKRecord]())
         }
     }
-
+    
+    // MARK: Get a specific game on iCloud Container
+    func getGame(game: CKRecord.ID, completion: @escaping ([CKRecord]) -> Void) {
+        let predicate = NSPredicate(format: "recordID == %@", game)
+        let query = CKQuery(recordType: "Game", predicate: predicate)
+        self.publicDatabase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { (result, _) in
+            completion(result ?? [CKRecord]())
+        }
+    }
+    
     // MARK: Get a specific socialInfos on iCloud Container
     func getSocialInfos(socialInfoId: CKRecord.ID, completion: @escaping ([CKRecord]) -> Void) {
         let predicate = NSPredicate(format: "recordID == %@", socialInfoId)
@@ -74,8 +83,8 @@ class CloudKitService {
     }
 
     // MARK: Get all user ids by game id. You must add one user id to not included on fetch
-    func getUsersByGame(notIncluded userID: CKRecord.ID, gameID: CKRecord.ID, completion: @escaping ([CKRecord]) -> Void) {
-        let gameReference = CKRecord.Reference(recordID: gameID, action: .deleteSelf)
+    func getUsersByGame(notIncluded userID: CKRecord.ID, gameReference: CKRecord.Reference, completion: @escaping ([CKRecord]) -> Void) {
+//        let gameReference = CKRecord.Reference(recordID: gameID, action: .deleteSelf)
         let userReference = CKRecord.Reference(recordID: userID, action: .deleteSelf)
         let predicate = NSPredicate(format: "gameReference == %@ AND NOT (userReference == %@)", gameReference, userReference)
         let query = CKQuery(recordType: "UserGames", predicate: predicate)
@@ -85,6 +94,19 @@ class CloudKitService {
         }
     }
     
+    // MARK: Get a game about
+    func getUserGame(userID: String, completion: @escaping ([CKRecord]) -> Void) {
+        let recordId = CKRecord.ID(recordName: userID)
+        let reference = CKRecord.Reference(recordID: recordId, action: .deleteSelf)
+    
+        let predicate = NSPredicate(format: "userReference == %@", reference)
+        let query = CKQuery(recordType: "UserGames", predicate: predicate)
+
+        self.publicDatabase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { (result, _) in
+            completion(result ?? [CKRecord]())
+        }
+    }
+
     // MARK: Get a specific user on iCloud Container
     func getUsers(usersID: [CKRecord.ID], completion: @escaping ([CKRecord]) -> Void) {
         let predicate = NSPredicate(format: "recordID IN %@", usersID)
@@ -145,4 +167,16 @@ class CloudKitService {
             completion(results)
         }
     }
+    
+//    func getUser(id: String) {
+//        let recordId = CKRecord.ID(recordName: id)
+//        let reference = CKRecord.Reference(recordID: recordId, action: .deleteSelf)
+//    
+//        let predicate = NSPredicate(format: "userReference == %@", reference)
+//        let query = CKQuery(recordType: "UserGames", predicate: predicate)
+//        
+//        self.publicDatabase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { (result, _) in
+//            print(result)
+//        }
+//    }
 }

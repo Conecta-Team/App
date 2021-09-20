@@ -33,6 +33,18 @@
 		A21A224526EF67A80052384A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A224426EF67A80052384A /* View.swift */; };
 		A21A224D26EF6C730052384A /* cells in Resources */ = {isa = PBXBuildFile; fileRef = A21A224C26EF6C730052384A /* cells */; };
 		A21A224F26EF6C880052384A /* viewmodels in Resources */ = {isa = PBXBuildFile; fileRef = A21A224E26EF6C880052384A /* viewmodels */; };
+		A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798826F538C400E5B0FF /* MatchViewController.swift */; };
+		A226798B26F538D500E5B0FF /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798A26F538D500E5B0FF /* MatchView.swift */; };
+		A226798D26F5393700E5B0FF /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798C26F5393700E5B0FF /* MatchViewModel.swift */; };
+		A226798F26F5395300E5B0FF /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798E26F5395300E5B0FF /* ViewModelProtocols.swift */; };
+		A226799126F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799026F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift */; };
+		A226799326F5417A00E5B0FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799226F5417A00E5B0FF /* ProfileCollectionViewCell.swift */; };
+		A226799526F66BBD00E5B0FF /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799426F66BBD00E5B0FF /* ColorsManager.swift */; };
+		A226799726F6806500E5B0FF /* NickNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799626F6806500E5B0FF /* NickNameTableViewCell.swift */; };
+		A226799926F680B600E5B0FF /* UserGamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799826F680B600E5B0FF /* UserGamesTableViewCell.swift */; };
+		A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */; };
+		A226799D26F6881A00E5B0FF /* TitleSectionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */; };
+		A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +98,18 @@
 		A21A224426EF67A80052384A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		A21A224C26EF6C730052384A /* cells */ = {isa = PBXFileReference; lastKnownFileType = text; path = cells; sourceTree = "<group>"; };
 		A21A224E26EF6C880052384A /* viewmodels */ = {isa = PBXFileReference; lastKnownFileType = text; path = viewmodels; sourceTree = "<group>"; };
+		A226798826F538C400E5B0FF /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		A226798A26F538D500E5B0FF /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
+		A226798C26F5393700E5B0FF /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
+		A226798E26F5395300E5B0FF /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
+		A226799026F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
+		A226799226F5417A00E5B0FF /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		A226799426F66BBD00E5B0FF /* ColorsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
+		A226799626F6806500E5B0FF /* NickNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameTableViewCell.swift; sourceTree = "<group>"; };
+		A226799826F680B600E5B0FF /* UserGamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGamesTableViewCell.swift; sourceTree = "<group>"; };
+		A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfosTableViewCell.swift; sourceTree = "<group>"; };
+		A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSectionUser.swift; sourceTree = "<group>"; };
+		A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfosButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				8835AAE326F6A3400006398E /* ConectaApp.entitlements */,
-				8835AAE526F6A3CF0006398E /* ConectaApp.entitlements */,
 				8816D0FD26F6540700AB6C4E /* Extras */,
 				A21A225B26EF6CD50052384A /* Services */,
 				A21A225826EF6CC20052384A /* Enums */,
@@ -209,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				A21A224E26EF6C880052384A /* viewmodels */,
+				A226798C26F5393700E5B0FF /* MatchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -217,9 +241,11 @@
 			isa = PBXGroup;
 			children = (
 				A21A221826EF67260052384A /* ViewController.swift */,
+				A226798826F538C400E5B0FF /* MatchViewController.swift */,
+				684C8D9C26F0BFA300603526 /* LoginViewController.swift */,
+				A2ABAADD26F7AC1F00274289 /* Resusable */,
 				A21A224B26EF6C520052384A /* Cells */,
 				A21A224A26EF6C4D0052384A /* Views */,
-				684C8D9C26F0BFA300603526 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -229,6 +255,7 @@
 			children = (
 				A21A224426EF67A80052384A /* View.swift */,
 				684C8D9A26EF769200603526 /* LoginView.swift */,
+				A226798A26F538D500E5B0FF /* MatchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +264,11 @@
 			isa = PBXGroup;
 			children = (
 				A21A224C26EF6C730052384A /* cells */,
+				A226799226F5417A00E5B0FF /* ProfileCollectionViewCell.swift */,
+				A226799626F6806500E5B0FF /* NickNameTableViewCell.swift */,
+				A226799826F680B600E5B0FF /* UserGamesTableViewCell.swift */,
+				A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */,
+				A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -246,6 +278,7 @@
 			children = (
 				684C8D9E26F0C24900603526 /* Coordinator.swift */,
 				684C8DA226F21A4C00603526 /* LoginProtocols.swift */,
+				A226798E26F5395300E5B0FF /* ViewModelProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -262,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				A21425B926F0EDA600309605 /* CloudKitErrors.swift */,
+				A226799426F66BBD00E5B0FF /* ColorsManager.swift */,
+				A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -272,6 +307,14 @@
 				A21425B326F0DDF900309605 /* CloudKitService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A2ABAADD26F7AC1F00274289 /* Resusable */ = {
+			isa = PBXGroup;
+			children = (
+				A226799026F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift */,
+			);
+			path = Resusable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +476,11 @@
 				A21A224526EF67A80052384A /* View.swift in Sources */,
 				684C8D9F26F0C24900603526 /* Coordinator.swift in Sources */,
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
+				A226798D26F5393700E5B0FF /* MatchViewModel.swift in Sources */,
+				A226799126F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift in Sources */,
+				A226799526F66BBD00E5B0FF /* ColorsManager.swift in Sources */,
+				A226799326F5417A00E5B0FF /* ProfileCollectionViewCell.swift in Sources */,
+				A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */,
 				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
 				684C8D9B26EF769200603526 /* LoginView.swift in Sources */,
 				8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */,
@@ -441,7 +489,14 @@
 				A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */,
 				A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */,
 				8841C18926F21E080051BEFF /* UserDTO.swift in Sources */,
+				A226799726F6806500E5B0FF /* NickNameTableViewCell.swift in Sources */,
+				A226799D26F6881A00E5B0FF /* TitleSectionUser.swift in Sources */,
+				A226798F26F5395300E5B0FF /* ViewModelProtocols.swift in Sources */,
 				A21A221726EF67260052384A /* SceneDelegate.swift in Sources */,
+				A226798B26F538D500E5B0FF /* MatchView.swift in Sources */,
+				A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */,
+				A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */,
+				A226799926F680B600E5B0FF /* UserGamesTableViewCell.swift in Sources */,
 				A21425B626F0E54500309605 /* GameDTO.swift in Sources */,
 				8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */,
 				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
