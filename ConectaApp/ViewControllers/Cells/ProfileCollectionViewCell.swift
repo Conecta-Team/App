@@ -23,7 +23,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     let imageProfile: UILabel = {
         let label: UILabel = UILabel()
         label.font = .appRegularFont(with: 96)
-        label.text = "J"
+        label.text = ""
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,7 +53,9 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         ])
     }
 
-    public func configureCell(cellColor: ColorManager) {
+    public func configureCell(cellColor: ColorManager, profileLetter: String) {
+        self.imageProfile.text = profileLetter
+
         self.shapeCell.tintColor = cellColor.darkColor
         self.cellColor = cellColor
 

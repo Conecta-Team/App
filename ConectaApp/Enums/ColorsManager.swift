@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum ColorManager {
+enum ColorManager: Int {
     case purple
     case blue
     case orange

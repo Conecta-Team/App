@@ -47,7 +47,7 @@ class UserGamesTableViewCell: UITableViewCell {
             self.gameName.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             self.gameName.centerXAnchor.constraint(equalTo: self.shape.centerXAnchor),
             self.shape.centerYAnchor.constraint(equalTo: self.gameName.centerYAnchor),
-            self.shape.widthAnchor.constraint(equalTo: self.gameName.widthAnchor, constant: 24),
+            self.shape.widthAnchor.constraint(equalTo: self.gameName.widthAnchor, constant: 12),
             self.shape.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16)
         ])
     }

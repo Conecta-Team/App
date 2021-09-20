@@ -15,7 +15,9 @@ class MatchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.viewModel.delegate = self
+        self.viewModel.initialization()
+    
         mainView.collection.dataSource = self
         mainView.collection.delegate = self
 
@@ -23,21 +25,27 @@ class MatchViewController: UIViewController {
         mainView.tableView.delegate = self
 
         self.view = mainView
-        self.mainView.configureViewColors(color: self.viewModel.dados[0])
     }
 }
 
 extension MatchViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.viewModel.dados.count
+        self.viewModel.users.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.mainView.collection.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.reuseIdentifier, for: indexPath) as? ProfileCollectionViewCell
 
+        if indexPath.row == 0 {
+            self.mainView.configureViewColors(color: self.viewModel.users[0].mainColor)
+            self.mainView.tableView.reloadData()
+        }
+
         if let profileCell = cell {
-            let colorCell = self.viewModel.dados[indexPath.row]
-            profileCell.configureCell(cellColor: colorCell)
+            let colorCell = self.viewModel.users[indexPath.row].mainColor
+            let profileLetter = self.viewModel.getProfileLetter(index: indexPath.row)
+
+            profileCell.configureCell(cellColor: colorCell, profileLetter: profileLetter)
             return profileCell
         }
         return ProfileCollectionViewCell()
@@ -58,32 +66,40 @@ extension MatchViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         }).first as? ProfileCollectionViewCell
 
         self.mainView.configureViewColors(color: centerCell?.cellColor ?? ColorManager.defaultColor)
+        let index = self.mainView.collection.indexPathForItem(at: centerCell!.center)!
+        self.viewModel.setIndexCurrentUser(index: index.row)
         self.mainView.tableView.reloadData()
     }
 }
 
 extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        self.viewModel.users.count == 0 ? 0 : 1
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        3
+        self.viewModel.users.count == 0 ? 0 : 3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = NickNameTableViewCell()
-            cell.configure(nickName: "Joana", color: self.mainView.mainColor)
+            let cell = tableView.dequeueReusableCell(withIdentifier: NickNameTableViewCell.reuseIdentifier, for: indexPath) as! NickNameTableViewCell
+
+            let userName = self.viewModel.getUserName()
+            cell.configure(nickName: userName, color: self.mainView.mainColor)
             return cell
         case 1:
-            let cell = UserGamesTableViewCell()
-            cell.configure(gameName: "Valorant", color: self.mainView.mainColor)
+            let cell = tableView.dequeueReusableCell(withIdentifier: UserGamesTableViewCell.reuseIdentifier, for: indexPath) as! UserGamesTableViewCell
+            if let gameName = self.viewModel.userGame {
+                cell.configure(gameName: gameName.name, color: self.mainView.mainColor)
+            }
             return cell
         default:
-            let cell = UserInfosTableViewCell()
-            cell.configure(discordName: "jjoaosilvaDisc", steamName: "jjoaoSteam", instagramName: "ze_jao_", color: self.mainView.mainColor)
+            let cell = tableView.dequeueReusableCell(withIdentifier: UserInfosTableViewCell.reuseIdentifier, for: indexPath) as! UserInfosTableViewCell
+            if let userInfos = self.viewModel.socialInfo {
+                cell.configure(discordName: userInfos.discord, steamName: userInfos.steam, instagramName: userInfos.intagram, color: self.mainView.mainColor)
+            }
             return cell
         }
     }
@@ -112,9 +128,24 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 50
         case 1:
-            return 50
+            return 80
         default:
             return 144
+        }
+    }
+}
+
+extension MatchViewController: ViewModelDelegate {
+    func willLoadData() {
+        DispatchQueue.main.async {
+            self.mainView.tableView.reloadData()
+        }
+    }
+    
+    func didLoadData() {
+        DispatchQueue.main.async {
+            self.mainView.collection.reloadData()
+            self.mainView.tableView.reloadData()
         }
     }
 }

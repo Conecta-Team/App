@@ -12,9 +12,9 @@ class GameDTO {
 
     let gameId: CKRecord.ID
     let name: String
-    let category: CategoryDTO
+    let category: CategoryDTO?
 
-    init(record: CKRecord, category: CategoryDTO) {
+    init(record: CKRecord, category: CategoryDTO? = nil) {
         self.name = record["name"] as! String
         self.gameId = record.recordID
         self.category = category

@@ -98,7 +98,6 @@
 		A21A224426EF67A80052384A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		A21A224C26EF6C730052384A /* cells */ = {isa = PBXFileReference; lastKnownFileType = text; path = cells; sourceTree = "<group>"; };
 		A21A224E26EF6C880052384A /* viewmodels */ = {isa = PBXFileReference; lastKnownFileType = text; path = viewmodels; sourceTree = "<group>"; };
-		A21A225326EF6CA00052384A /* protocols */ = {isa = PBXFileReference; lastKnownFileType = text; path = protocols; sourceTree = "<group>"; };
 		A226798826F538C400E5B0FF /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		A226798A26F538D500E5B0FF /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		A226798C26F5393700E5B0FF /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
@@ -279,7 +278,6 @@
 			children = (
 				684C8D9E26F0C24900603526 /* Coordinator.swift */,
 				684C8DA226F21A4C00603526 /* LoginProtocols.swift */,
-				A21A225326EF6CA00052384A /* protocols */,
 				A226798E26F5395300E5B0FF /* ViewModelProtocols.swift */,
 			);
 			path = Protocols;
