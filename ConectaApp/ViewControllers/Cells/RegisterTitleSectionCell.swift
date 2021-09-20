@@ -15,7 +15,7 @@ class RegisterTitleSectionCell: UITableViewHeaderFooterView {
     let title: UILabel = {
         let label = UILabel()
         label.font = .appRegularFont(with: 24)
-        label.textColor = .textGreen
+        label.textColor = .textGreen2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

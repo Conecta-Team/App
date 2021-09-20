@@ -13,7 +13,7 @@ class RegisterGameView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .appRegularFont(with: 32)
-        label.textColor = .textGreen
+        label.textColor = .textGreen2
         label.text = "Jogos de Interesse"
         return label
     }()

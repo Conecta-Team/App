@@ -27,6 +27,7 @@
 		886B0B0026F7E69600A4E7D7 /* RegisterSocialInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AFF26F7E69600A4E7D7 /* RegisterSocialInfoView.swift */; };
 		886B0B0226F7F78900A4E7D7 /* RegisterGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0B0126F7F78900A4E7D7 /* RegisterGameTableViewCell.swift */; };
 		886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0B0326F8025600A4E7D7 /* RegisterTitleSectionCell.swift */; };
+		887D518126F8C8ED00DC8BEC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */; };
 		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
 		A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B326F0DDF900309605 /* CloudKitService.swift */; };
 		A21425B626F0E54500309605 /* GameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B526F0E54500309605 /* GameDTO.swift */; };
@@ -83,6 +84,7 @@
 		886B0AFF26F7E69600A4E7D7 /* RegisterSocialInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSocialInfoView.swift; sourceTree = "<group>"; };
 		886B0B0126F7F78900A4E7D7 /* RegisterGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameTableViewCell.swift; sourceTree = "<group>"; };
 		886B0B0326F8025600A4E7D7 /* RegisterTitleSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTitleSectionCell.swift; sourceTree = "<group>"; };
+		887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A21425B326F0DDF900309605 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		A21425B526F0E54500309605 /* GameDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDTO.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				A21A224E26EF6C880052384A /* viewmodels */,
+				887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */,
 				886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */,
 				886B0AFC26F7DC6700A4E7D7 /* RegisterNameView.swift in Sources */,
+				887D518126F8C8ED00DC8BEC /* LoginViewModel.swift in Sources */,
 				A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */,
 				A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */,
 				8841C18926F21E080051BEFF /* UserDTO.swift in Sources */,
