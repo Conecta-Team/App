@@ -12,7 +12,7 @@ class RegisterGameTableViewCell: UITableViewCell {
     static let reuseIdentifier = "registerGameTableViewCell"
     let buttonUnselectedImage = UIImage(named: "shapeButtonUnselected")
     let buttonSelectedImage = UIImage(named: "shapeButtonSelected")
-    
+    var gameSelected = false
     
     internal lazy var gameButton: UIButton = {
         let button = UIButton()
@@ -39,8 +39,11 @@ class RegisterGameTableViewCell: UITableViewCell {
     }
     
     @objc func handleTap(_ sender: UIButton) {
-        self.gameButton.setBackgroundImage(buttonSelectedImage, for: .normal)
-        self.gameButton.setTitleColor(.white, for: .normal)
+        gameSelected.toggle()
+        let image = self.gameSelected ? buttonSelectedImage : buttonUnselectedImage
+        let color: UIColor = self.gameSelected ? .white : .darkBlue
+        self.gameButton.setBackgroundImage(image, for: .normal)
+        self.gameButton.setTitleColor(color, for: .normal)
     }
     
     private func setupCell() {

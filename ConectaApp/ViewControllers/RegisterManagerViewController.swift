@@ -13,7 +13,13 @@ class RegisterManagerViewController: UIPageViewController {
     var pages = [UIViewController]()
     var pageControl = UIPageControl()
     var initialPage = 0
+    
+    let registerNameViewController = RegisterNameViewController()
+    let registerGameViewController = RegisterGameViewController()
+    let registerSocialInfoViewController = RegisterSocialInfoViewController()
 
+    let viewModel = RegisterManagerViewModel()
+    
     let buttonNext: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -52,10 +58,6 @@ class RegisterManagerViewController: UIPageViewController {
         delegate = self
 
         pageControl.isUserInteractionEnabled = false
-
-        let registerNameViewController = RegisterNameViewController()
-        let registerGameViewController = RegisterGameViewController()
-        let registerSocialInfoViewController = RegisterSocialInfoViewController()
 
         pages.append(registerNameViewController)
         pages.append(registerGameViewController)
@@ -97,6 +99,7 @@ class RegisterManagerViewController: UIPageViewController {
         ])
 
     }
+
     func changeColor() {
         switch pageControl.currentPage {
         case 1:
@@ -108,12 +111,23 @@ class RegisterManagerViewController: UIPageViewController {
         }
     }
 
+    func validadeInfos() -> Bool {
+        switch pageControl.currentPage {
+        case 0:
+            return viewModel.setName(name: registerNameViewController.getName())
+        default:
+            return false
+        }
+    }
+
     @objc func nextTapped(_ sender: UIButton) {
         guard let currentPage = viewControllers?[0] else { return }
         guard let nextPage = dataSource?.pageViewController(self, viewControllerAfter: currentPage) else { return }
-        pageControl.currentPage += 1
-        changeColor()
-        setViewControllers([nextPage], direction: .forward, animated: true, completion: nil)
+        if validadeInfos() {
+            pageControl.currentPage += 1
+            changeColor()
+            setViewControllers([nextPage], direction: .forward, animated: true, completion: nil)
+        }
     }
 
     @objc func backTapped(_ sender: UIButton) {

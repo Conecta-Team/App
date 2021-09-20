@@ -18,6 +18,7 @@
 		8841C18926F21E080051BEFF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18826F21E080051BEFF /* UserDTO.swift */; };
 		8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18A26F21EE20051BEFF /* PurposeDTO.swift */; };
 		8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */; };
+		8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */; };
 		886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */; };
 		886B0AF626F7B9F100A4E7D7 /* RegisterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF526F7B9F100A4E7D7 /* RegisterNameViewController.swift */; };
 		886B0AF826F7BA2200A4E7D7 /* RegisterGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF726F7BA2200A4E7D7 /* RegisterGameViewController.swift */; };
@@ -87,6 +88,7 @@
 		8841C18826F21E080051BEFF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		8841C18A26F21EE20051BEFF /* PurposeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeDTO.swift; sourceTree = "<group>"; };
 		8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInfosDTO.swift; sourceTree = "<group>"; };
+		8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewModel.swift; sourceTree = "<group>"; };
 		886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewController.swift; sourceTree = "<group>"; };
 		886B0AF526F7B9F100A4E7D7 /* RegisterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameViewController.swift; sourceTree = "<group>"; };
 		886B0AF726F7BA2200A4E7D7 /* RegisterGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				A21A224E26EF6C880052384A /* viewmodels */,
 				A226798C26F5393700E5B0FF /* MatchViewModel.swift */,
 				887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */,
+				8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				684C8D9B26EF769200603526 /* LoginView.swift in Sources */,
 				8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */,
 				A21425BA26F0EDA600309605 /* CloudKitErrors.swift in Sources */,
+				8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */,
 				8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */,
 				886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */,
 				886B0AFC26F7DC6700A4E7D7 /* RegisterNameView.swift in Sources */,

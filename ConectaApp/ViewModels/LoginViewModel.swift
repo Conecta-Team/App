@@ -7,4 +7,9 @@
 
 import Foundation
 
-
+class LoginViewModel: ViewModelType {
+    var delegate: ViewModelDelegate?
+    
+    func initialization() {
+    }
+}

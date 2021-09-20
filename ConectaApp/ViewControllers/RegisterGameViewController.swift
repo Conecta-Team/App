@@ -21,6 +21,16 @@ class RegisterGameViewController: UIViewController {
         self.view = registerGameView
         self.view.backgroundColor = .backgroundGray
     }
+    
+//    public func getGame() -> GameDTO? {
+//        for index in 0...2 {
+//           let cell = self.registerGameView.gamesTableView.cellForRow(at: IndexPath(row: 0, section: index)) as! RegisterGameTableViewCell
+//            if cell.gameSelected {
+//                self.games =
+//            }
+//        }
+//        return
+//    }
 }
 
 extension RegisterGameViewController: UITableViewDelegate, UITableViewDataSource {
