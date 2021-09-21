@@ -54,6 +54,10 @@ class RegisterNameView: UIView {
         addSubview(nameTitle)
         addSubview(nameSubtitle)
         addSubview(nameTextField)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIView.endEditing))
+        self.addGestureRecognizer(tap)
+        
         setConstraints()
     }
     

@@ -26,14 +26,14 @@ class CloudKitService {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Category", predicate: predicate)
 
-        self.publicDatabase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { (results, _) in
+        self.publicDatabase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { (results, error) in
             completion(results!)
         }
     }
 
     // MARK: Find all games saved on iCloud by a category
-    func getGamesByCategory(category: CKRecord, completion: @escaping (CKRecord) -> Void) {
-        let recordToMatch = CKRecord.Reference(recordID: category.recordID, action: .deleteSelf)
+    func getGamesByCategory(category: CKRecord.ID, completion: @escaping (CKRecord) -> Void) {
+        let recordToMatch = CKRecord.Reference(recordID: category, action: .deleteSelf)
         let predicate = NSPredicate(format: "categoryReference == %@", recordToMatch)
         let query = CKQuery(recordType: "Game", predicate: predicate)
 
@@ -111,8 +111,8 @@ class CloudKitService {
 
     // TODO: acrescentar os dados faltantes quando forem inseridos na interface
     // MARK: Create a User record and save into Public database iCloud
-    func createUser(name: String, purpose: CKRecord, socialInfos: CKRecord, completion: @escaping (CKRecord?) -> Void) {
-        let purposeReference = CKRecord.Reference(recordID: purpose.recordID, action: .none)
+    func createUser(name: String, purpose: CKRecord.ID, socialInfos: CKRecord, completion: @escaping (CKRecord?) -> Void) {
+        let purposeReference = CKRecord.Reference(recordID: purpose, action: .none)
         let socialInfosReference = CKRecord.Reference(recordID: socialInfos.recordID, action: .none)
         
         let user = CKRecord(recordType: "User")
@@ -133,6 +133,20 @@ class CloudKitService {
             } else {
                 completion(nil)
             }
+        }
+    }
+    
+    //MARK: Create a UserGames record and save into Public database iCloud
+    func createUserGames(user: CKRecord.ID, game: CKRecord.ID, completion: @escaping (CKRecord?) -> Void) {
+        let userReference = CKRecord.Reference(recordID: user, action: .none)
+        let gameReference = CKRecord.Reference(recordID: game, action: .none)
+        
+        let userGames = CKRecord(recordType: "UserGames")
+        userGames["userReference"] = userReference
+        userGames["gameReference"] = gameReference
+        
+        self.publicDatabase.save(userGames) { record, _ in
+            completion(record)
         }
     }
 

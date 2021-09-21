@@ -19,6 +19,7 @@
 		8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18A26F21EE20051BEFF /* PurposeDTO.swift */; };
 		8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */; };
 		8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */; };
+		8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524926F952B100E6E759 /* RegisterGameViewModel.swift */; };
 		886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */; };
 		886B0AF626F7B9F100A4E7D7 /* RegisterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF526F7B9F100A4E7D7 /* RegisterNameViewController.swift */; };
 		886B0AF826F7BA2200A4E7D7 /* RegisterGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF726F7BA2200A4E7D7 /* RegisterGameViewController.swift */; };
@@ -89,6 +90,7 @@
 		8841C18A26F21EE20051BEFF /* PurposeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeDTO.swift; sourceTree = "<group>"; };
 		8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInfosDTO.swift; sourceTree = "<group>"; };
 		8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewModel.swift; sourceTree = "<group>"; };
+		8861524926F952B100E6E759 /* RegisterGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameViewModel.swift; sourceTree = "<group>"; };
 		886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewController.swift; sourceTree = "<group>"; };
 		886B0AF526F7B9F100A4E7D7 /* RegisterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameViewController.swift; sourceTree = "<group>"; };
 		886B0AF726F7BA2200A4E7D7 /* RegisterGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				A226798C26F5393700E5B0FF /* MatchViewModel.swift */,
 				887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */,
 				8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */,
+				8861524926F952B100E6E759 /* RegisterGameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */,
 				886B0B0026F7E69600A4E7D7 /* RegisterSocialInfoView.swift in Sources */,
 				684C8D9F26F0C24900603526 /* Coordinator.swift in Sources */,
+				8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */,
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
 				A226798D26F5393700E5B0FF /* MatchViewModel.swift in Sources */,
 				A226799126F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift in Sources */,

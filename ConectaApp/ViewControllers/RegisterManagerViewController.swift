@@ -13,13 +13,12 @@ class RegisterManagerViewController: UIPageViewController {
     var pages = [UIViewController]()
     var pageControl = UIPageControl()
     var initialPage = 0
-    
+    let viewModel = RegisterManagerViewModel()
+
     let registerNameViewController = RegisterNameViewController()
     let registerGameViewController = RegisterGameViewController()
     let registerSocialInfoViewController = RegisterSocialInfoViewController()
 
-    let viewModel = RegisterManagerViewModel()
-    
     let buttonNext: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -48,15 +47,13 @@ class RegisterManagerViewController: UIPageViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        viewModel.initialization()
         setup()
         style()
         layout()
     }
 
     func setup() {
-        dataSource = self
-        delegate = self
-
         pageControl.isUserInteractionEnabled = false
 
         pages.append(registerNameViewController)
@@ -115,66 +112,31 @@ class RegisterManagerViewController: UIPageViewController {
         switch pageControl.currentPage {
         case 0:
             return viewModel.setName(name: registerNameViewController.getName())
+        case 1:
+            return viewModel.setGame(game: registerGameViewController.getGame())
+        case 2:
+            let socialInfos = registerSocialInfoViewController.getSocialInfos()
+            return viewModel.setSocialInfos(discord: socialInfos.discord, steam: socialInfos.steam, instagram: socialInfos.instagram)
         default:
             return false
         }
     }
 
     @objc func nextTapped(_ sender: UIButton) {
-        guard let currentPage = viewControllers?[0] else { return }
-        guard let nextPage = dataSource?.pageViewController(self, viewControllerAfter: currentPage) else { return }
-        if validadeInfos() {
+        if pageControl.currentPage < pages.count - 1 && validadeInfos() {
             pageControl.currentPage += 1
             changeColor()
-            setViewControllers([nextPage], direction: .forward, animated: true, completion: nil)
+            setViewControllers([pages[pageControl.currentPage]], direction: .forward, animated: true, completion: nil)
+        } else if validadeInfos() && pageControl.currentPage == pages.count - 1 {
+            self.viewModel.saveInfosUser()
         }
     }
 
     @objc func backTapped(_ sender: UIButton) {
-        guard let currentPage = viewControllers?[0] else { return }
-        guard let prevPage = dataSource?.pageViewController(self, viewControllerBefore: currentPage) else { return }
-        pageControl.currentPage -= 1
-        changeColor()
-        setViewControllers([prevPage], direction: .reverse, animated: true, completion: nil)
-    }
-}
-
-extension RegisterManagerViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
-
-        if currentIndex == 0 {
-            return nil
-        } else {
-            return pages[currentIndex - 1]
-        }
-    }
-
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
-
-        if currentIndex < pages.count - 1 {
-            return pages[currentIndex + 1]
-        } else {
-            return nil
-        }
-    }
-
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-
-        guard let viewControllers = pageViewController.viewControllers else { return }
-        guard let currentIndex = pages.firstIndex(of: viewControllers[0]) else { return }
-
-        pageControl.currentPage = currentIndex
-
-        switch currentIndex {
-        case 1:
-            pageControl.currentPageIndicatorTintColor = .darkBlue
-        case 2:
-            pageControl.currentPageIndicatorTintColor = .darkOrange
-        default:
-            pageControl.currentPageIndicatorTintColor = .darkPurple
+        if pageControl.currentPage != 0 {
+            pageControl.currentPage -= 1
+            changeColor()
+            setViewControllers([pages[pageControl.currentPage]], direction: .reverse, animated: true, completion: nil)
         }
     }
 }

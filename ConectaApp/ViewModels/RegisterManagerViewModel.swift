@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CloudKit
 
 class RegisterManagerViewModel: ViewModelType {
     var delegate: ViewModelDelegate?
@@ -15,7 +16,9 @@ class RegisterManagerViewModel: ViewModelType {
     private var discord: String?
     private var steam: String?
     private var instagram: String?
-    
+    let cloudKitService = CloudKitService.currentModel
+    let purposeID = CKRecord.ID(recordName: "1B35A248-4423-6FB4-8A90-561F3F198677")
+
     func initialization() {
     }
     
@@ -43,5 +46,19 @@ class RegisterManagerViewModel: ViewModelType {
             return true
         }
         return false
+    }
+    
+    func saveInfosUser() {
+        cloudKitService.createSocialInfos(instagram: self.instagram, steam: self.steam, discord: self.discord) { socialInfo in
+            if let socialInfo = socialInfo {
+                self.cloudKitService.createUser(name: self.nickName!, purpose: self.purposeID, socialInfos: socialInfo) { user in
+                    if let user = user {
+                        self.cloudKitService.createUserGames(user: user.recordID, game: self.game!.gameId) { userGame in
+                            print(userGame)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
