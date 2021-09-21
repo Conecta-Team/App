@@ -151,6 +151,7 @@ class CloudKitService {
                 
                 let operation = CKModifyRecordsOperation(recordsToSave: [user], recordIDsToDelete: [])
                 
+                operation.savePolicy = .allKeys
                 operation.completionBlock = {
                     completion(user, userPrivate)
                 }
