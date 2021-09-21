@@ -31,7 +31,7 @@ class LoginView: UIView {
     }()
 
     let imageIcon: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "rectangle"))
+        let image = UIImageView(image: UIImage(named: "logo"))
         image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -62,8 +62,11 @@ extension LoginView {
         // MARK: Constraints
         NSLayoutConstraint.activate([
             self.imageIcon.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 32),
-            self.imageIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            self.imageIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.imageIcon.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7),
+            self.imageIcon.heightAnchor.constraint(equalTo: self.imageIcon.widthAnchor)
         ])
+
         NSLayoutConstraint.activate([
             self.titleApp.topAnchor.constraint(equalTo: imageIcon.bottomAnchor, constant: 24),
             self.titleApp.centerXAnchor.constraint(equalTo: self.centerXAnchor)
