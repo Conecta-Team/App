@@ -142,24 +142,17 @@ class CloudKitService {
         user["purposeReference"] = purposeReference
         user["socialInfosReference"] = socialInfosReference
         
+        //
         self.publicDatabase.save(user) { (record, _) in
             if let user = record {
                 let userIDString = user.recordID.recordName
-
+                
                 let userPrivate = CKRecord(recordType: "UserPrivate")
                 userPrivate["userPublicReference"] = userIDString
-                
-                let operation = CKModifyRecordsOperation(recordsToSave: [user], recordIDsToDelete: [])
-                
-                operation.savePolicy = .allKeys
-                operation.completionBlock = {
-                    completion(user, userPrivate)
+
+                self.privateDatabse.save(userPrivate) { userPrivateRecord, _ in
+                    completion(user, userPrivateRecord)
                 }
-                
-                self.privateDatabse.add(operation)
-//                self.privateDatabse.save(userPrivate) { userPrivateRecord, _ in
-//                    completion(user, userPrivateRecord)
-//                }
             } else {
                 completion(nil, nil)
             }

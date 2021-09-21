@@ -136,7 +136,7 @@ class RegisterManagerViewController: UIPageViewController {
             setViewControllers([pages[pageControl.currentPage]], direction: .forward, animated: true, completion: nil)
         } else if pageControl.currentPage == pages.count - 1 && validadeInfos() {
             self.viewModel.saveInfosUser { user in
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                     self.navigationController?.pushViewController(MatchViewController(user: user), animated: true)
                 }
             }
