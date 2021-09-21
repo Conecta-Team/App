@@ -133,7 +133,7 @@ class CloudKitService {
 
     // TODO: acrescentar os dados faltantes quando forem inseridos na interface
     // MARK: Create a User record and save into Public database iCloud
-    func createUser(name: String, purpose: CKRecord.ID, socialInfos: CKRecord, completion: @escaping (CKRecord?) -> Void) {
+    func createUser(name: String, purpose: CKRecord.ID, socialInfos: CKRecord, completion: @escaping (CKRecord?, CKRecord?) -> Void) {
         let purposeReference = CKRecord.Reference(recordID: purpose, action: .none)
         let socialInfosReference = CKRecord.Reference(recordID: socialInfos.recordID, action: .none)
         
@@ -149,11 +149,11 @@ class CloudKitService {
                 let userPrivate = CKRecord(recordType: "UserPrivate")
                 userPrivate["userPublicReference"] = userIDString
 
-                self.privateDatabse.save(userPrivate) { _, _ in
-                    completion(user)
+                self.privateDatabse.save(userPrivate) { userPrivate, _ in
+                    completion(user, userPrivate)
                 }
             } else {
-                completion(nil)
+                completion(nil, nil)
             }
         }
     }

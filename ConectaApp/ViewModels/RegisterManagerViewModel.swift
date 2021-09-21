@@ -51,10 +51,10 @@ class RegisterManagerViewModel: ViewModelType {
     func saveInfosUser(completion: @escaping (CKRecord) -> Void) {
         cloudKitService.createSocialInfos(instagram: self.instagram, steam: self.steam, discord: self.discord) { socialInfo in
             if let socialInfo = socialInfo {
-                self.cloudKitService.createUser(name: self.nickName!, purpose: self.purposeID, socialInfos: socialInfo) { user in
-                    if let user = user {
-                        self.cloudKitService.createUserGames(user: user.recordID, game: self.game!.gameId) { userGame in
-                            completion(user)
+                self.cloudKitService.createUser(name: self.nickName!, purpose: self.purposeID, socialInfos: socialInfo) { user, userPrivate in
+                    if let user = user, let userPrivate = userPrivate {
+                        self.cloudKitService.createUserGames(user: user.recordID, game: self.game!.gameId) { _ in
+                            completion(userPrivate)
                         }
                     }
                 }
