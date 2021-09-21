@@ -105,6 +105,17 @@ class RegisterSocialInfoView: UIView {
         textField.textColor = .textDarkGray
         return textField
     }()
+    
+    internal lazy var errorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .appRegularFont(with: 12)
+        label.textColor = .red
+        label.text = "Você precisa preencher pelo menos um campo!"
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -123,7 +134,7 @@ class RegisterSocialInfoView: UIView {
         addSubview(instagramView)
         instagramView.addSubview(instagramLabel)
         instagramView.addSubview(instagramTextField)
-        
+        addSubview(errorMessageLabel)
         setupContraints()
     }
     
@@ -199,6 +210,12 @@ class RegisterSocialInfoView: UIView {
             instagramTextField.leadingAnchor.constraint(equalTo: instagramLabel.trailingAnchor, constant: 4),
             instagramTextField.trailingAnchor.constraint(equalTo: instagramView.trailingAnchor),
             instagramTextField.bottomAnchor.constraint(equalTo: instagramView.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            errorMessageLabel.topAnchor.constraint(equalTo: instagramTextField.bottomAnchor, constant: 8),
+            errorMessageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            errorMessageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
         ])
     }
 }

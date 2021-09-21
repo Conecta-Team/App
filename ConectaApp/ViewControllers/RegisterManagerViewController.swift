@@ -111,12 +111,18 @@ class RegisterManagerViewController: UIPageViewController {
     func validadeInfos() -> Bool {
         switch pageControl.currentPage {
         case 0:
-            return viewModel.setName(name: registerNameViewController.getName())
+            let verification = viewModel.setName(name: registerNameViewController.getName())
+            registerNameViewController.setErrorMessage(ishidden: verification)
+            return verification
         case 1:
-            return viewModel.setGame(game: registerGameViewController.getGame())
+            let verification = viewModel.setGame(game: registerGameViewController.getGame())
+            registerGameViewController.setErrorMessage(ishidden: verification)
+            return verification
         case 2:
             let socialInfos = registerSocialInfoViewController.getSocialInfos()
-            return viewModel.setSocialInfos(discord: socialInfos.discord, steam: socialInfos.steam, instagram: socialInfos.instagram)
+            let verification = viewModel.setSocialInfos(discord: socialInfos.discord, steam: socialInfos.steam, instagram: socialInfos.instagram)
+            registerSocialInfoViewController.setErrorMessage(ishidden: verification)
+            return verification
         default:
             return false
         }

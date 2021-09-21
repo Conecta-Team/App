@@ -21,4 +21,8 @@ class RegisterNameViewController: UIViewController {
     public func getName() -> String? {
         return registerNameView.nameTextField.text
     }
+    
+    public func setErrorMessage(ishidden: Bool) {
+        registerNameView.errorMessageLabel.isHidden = ishidden
+    }
 }
