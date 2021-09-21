@@ -133,7 +133,7 @@ class CloudKitService {
 
     // TODO: acrescentar os dados faltantes quando forem inseridos na interface
     // MARK: Create a User record and save into Public database iCloud
-    func createUser(name: String, purpose: CKRecord.ID, socialInfos: CKRecord, completion: @escaping (CKRecord?) -> Void) {
+    func createUser(name: String, purpose: CKRecord.ID, socialInfos: CKRecord, completion: @escaping (CKRecord?, CKRecord?) -> Void) {
         let purposeReference = CKRecord.Reference(recordID: purpose, action: .none)
         let socialInfosReference = CKRecord.Reference(recordID: socialInfos.recordID, action: .none)
         
@@ -142,6 +142,7 @@ class CloudKitService {
         user["purposeReference"] = purposeReference
         user["socialInfosReference"] = socialInfosReference
         
+        //
         self.publicDatabase.save(user) { (record, _) in
             if let user = record {
                 let userIDString = user.recordID.recordName
@@ -149,11 +150,11 @@ class CloudKitService {
                 let userPrivate = CKRecord(recordType: "UserPrivate")
                 userPrivate["userPublicReference"] = userIDString
 
-                self.privateDatabse.save(userPrivate) { _, _ in
-                    completion(user)
+                self.privateDatabse.save(userPrivate) { userPrivateRecord, _ in
+                    completion(user, userPrivateRecord)
                 }
             } else {
-                completion(nil)
+                completion(nil, nil)
             }
         }
     }
@@ -181,16 +182,14 @@ class CloudKitService {
             completion(results)
         }
     }
-    
-//    func getUser(id: String) {
-//        let recordId = CKRecord.ID(recordName: id)
-//        let reference = CKRecord.Reference(recordID: recordId, action: .deleteSelf)
-//    
-//        let predicate = NSPredicate(format: "userReference == %@", reference)
-//        let query = CKQuery(recordType: "UserGames", predicate: predicate)
-//        
-//        self.publicDatabase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { (result, _) in
-//            print(result)
-//        }
-//    }
+
+    func deletePrivateUser() {
+        self.getUserPublicReference { record in
+            if let record = record, let user = record.first {
+                self.privateDatabse.delete(withRecordID: user.recordID) { record, error in
+                    print(record, error)
+                }
+            }
+        }
+    }
 }

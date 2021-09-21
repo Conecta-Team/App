@@ -27,7 +27,7 @@ class RegisterGameViewController: UIViewController {
     
     public func getGame() -> GameDTO? {
         if viewModel.games.count > 0 {
-            for index in 0...2 {
+            for index in 0..<viewModel.games.count {
                 let cell = self.registerGameView.gamesTableView.cellForRow(at: IndexPath(row: 0, section: index)) as! RegisterGameTableViewCell
                 if cell.gameSelected {
                     return cell.game

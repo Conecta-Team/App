@@ -48,6 +48,7 @@ class RegisterManagerViewController: UIPageViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         viewModel.initialization()
+        self.navigationItem.setHidesBackButton(true, animated: false)
         setup()
         style()
         layout()
@@ -133,8 +134,12 @@ class RegisterManagerViewController: UIPageViewController {
             pageControl.currentPage += 1
             changeColor()
             setViewControllers([pages[pageControl.currentPage]], direction: .forward, animated: true, completion: nil)
-        } else if validadeInfos() && pageControl.currentPage == pages.count - 1 {
-            self.viewModel.saveInfosUser()
+        } else if pageControl.currentPage == pages.count - 1 && validadeInfos() {
+            self.viewModel.saveInfosUser { user in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    self.navigationController?.pushViewController(MatchViewController(user: user), animated: true)
+                }
+            }
         }
     }
 

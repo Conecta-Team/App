@@ -7,16 +7,31 @@
 // swiftlint:disable force_cast
 
 import UIKit
+import CloudKit
 
 class MatchViewController: UIViewController {
 
     let mainView = MatchView()
     let viewModel: MatchViewModel = MatchViewModel()
-
+    
+    init(user: CKRecord? = nil) {
+        if let user = user {
+            self.viewModel.configureInitialData(user: user)
+        }
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.delegate = self
         self.viewModel.initialization()
+        //self.viewModel.configureInitialData()
+        
+        self.navigationItem.setHidesBackButton(true, animated: false)
     
         mainView.collection.dataSource = self
         mainView.collection.delegate = self

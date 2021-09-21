@@ -13,7 +13,8 @@ class MatchViewModel: ViewModelType {
     let cloudKitService: CloudKitService = CloudKitService.currentModel
 
     weak var delegate: ViewModelDelegate?
-    private var indexCurrentUser: Int = 0 
+    private var indexCurrentUser: Int = 0
+    var user: CKRecord?
 
     private var userRecord: CKRecord? {
         didSet {
@@ -42,7 +43,15 @@ class MatchViewModel: ViewModelType {
     }
 
     func initialization() {
-        self.getUserPublicId()
+        if let user = user {
+            self.userRecord = user
+        } else {
+            self.getUserPublicId()
+        }
+    }
+    
+    public func configureInitialData(user: CKRecord? = nil) {
+        self.user = user
     }
     
     public func getProfileLetter(index: Int) -> String {

@@ -267,11 +267,11 @@
 		A21A224926EF6C450052384A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A21A224A26EF6C4D0052384A /* Views */,
+				A21A224B26EF6C520052384A /* Cells */,
+				A2ABAADD26F7AC1F00274289 /* Resusable */,
 				A21A221826EF67260052384A /* ViewController.swift */,
 				A226798826F538C400E5B0FF /* MatchViewController.swift */,
-				A2ABAADD26F7AC1F00274289 /* Resusable */,
-				A21A224B26EF6C520052384A /* Cells */,
-				A21A224A26EF6C4D0052384A /* Views */,
 				684C8D9C26F0BFA300603526 /* LoginViewController.swift */,
 				886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */,
 				886B0AF526F7B9F100A4E7D7 /* RegisterNameViewController.swift */,
@@ -726,7 +726,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -746,7 +746,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

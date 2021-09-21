@@ -45,7 +45,7 @@ class RegisterGameView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .appRegularFont(with: 12)
         label.textColor = .red
-        label.text = "Você precisa preencher pelo menos um campo!"
+        label.text = "Você precisa escoolher pelo menos um jogo!"
         label.numberOfLines = 0
         label.isHidden = true
         return label
