@@ -36,6 +36,10 @@ class RegisterGameViewController: UIViewController {
         }
         return nil
     }
+    
+    public func setErrorMessage(ishidden: Bool) {
+        registerGameView.errorMessageLabel.isHidden = ishidden
+    }
 }
 
 extension RegisterGameViewController: UITableViewDelegate, UITableViewDataSource {

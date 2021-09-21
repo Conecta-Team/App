@@ -10,15 +10,19 @@ import UIKit
 
 class RegisterSocialInfoViewController: UIViewController {
     
-    let registerGameView = RegisterSocialInfoView()
+    let registerSocialInfo = RegisterSocialInfoView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = registerGameView
+        self.view = registerSocialInfo
         self.view.backgroundColor = .backgroundGray
     }
     
     public func getSocialInfos() -> (discord: String?, steam: String?, instagram: String?) {
-        return (registerGameView.discordTextField.text, registerGameView.steamTextField.text, registerGameView.instagramTextField.text)
+        return (registerSocialInfo.discordTextField.text, registerSocialInfo.steamTextField.text, registerSocialInfo.instagramTextField.text)
+    }
+    
+    public func setErrorMessage(ishidden: Bool) {
+        registerSocialInfo.errorMessageLabel.isHidden = ishidden
     }
 }

@@ -40,6 +40,17 @@ class RegisterGameView: UIView {
         return tableView
     }()
     
+    internal lazy var errorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .appRegularFont(with: 12)
+        label.textColor = .red
+        label.text = "Você precisa preencher pelo menos um campo!"
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         setupView()
@@ -49,6 +60,7 @@ class RegisterGameView: UIView {
         addSubview(gameTitle)
         addSubview(gameSubtitle)
         addSubview(gamesTableView)
+        addSubview(errorMessageLabel)
         
         setupConstraints()
     }
@@ -67,7 +79,13 @@ class RegisterGameView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            gamesTableView.topAnchor.constraint(equalTo: gameSubtitle.bottomAnchor, constant: 16),
+            errorMessageLabel.topAnchor.constraint(equalTo: gameSubtitle.bottomAnchor, constant: 8),
+            errorMessageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            errorMessageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
+        ])
+        
+        NSLayoutConstraint.activate([
+            gamesTableView.topAnchor.constraint(equalTo: errorMessageLabel.bottomAnchor, constant: 16),
             gamesTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             gamesTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             gamesTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -100)

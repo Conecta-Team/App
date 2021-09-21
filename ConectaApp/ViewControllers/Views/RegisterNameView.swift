@@ -44,6 +44,18 @@ class RegisterNameView: UIView {
         textField.textColor = .textDarkGray
         return textField
     }()
+    
+    internal lazy var errorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .appRegularFont(with: 12)
+        label.textColor = .red
+        label.text = "Esse campo não pode estar vazio!"
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
+    
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -54,6 +66,7 @@ class RegisterNameView: UIView {
         addSubview(nameTitle)
         addSubview(nameSubtitle)
         addSubview(nameTextField)
+        addSubview(errorMessageLabel)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIView.endEditing))
         self.addGestureRecognizer(tap)
@@ -79,6 +92,12 @@ class RegisterNameView: UIView {
             nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             nameTextField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)
+        ])
+        
+        NSLayoutConstraint.activate([
+            errorMessageLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 8),
+            errorMessageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            errorMessageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
         ])
     }
 }
