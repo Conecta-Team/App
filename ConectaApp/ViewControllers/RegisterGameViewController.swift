@@ -56,7 +56,7 @@ extension RegisterGameViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
                                                                 RegisterTitleSectionCell.reuseIdentifier) as! RegisterTitleSectionCell
-        view.configure(title: viewModel.games[section].category.name)
+        view.configure(title: viewModel.games[section].category!.name)
         return view
     }
     
