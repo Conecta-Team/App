@@ -181,16 +181,14 @@ class CloudKitService {
             completion(results)
         }
     }
-    
-//    func getUser(id: String) {
-//        let recordId = CKRecord.ID(recordName: id)
-//        let reference = CKRecord.Reference(recordID: recordId, action: .deleteSelf)
-//    
-//        let predicate = NSPredicate(format: "userReference == %@", reference)
-//        let query = CKQuery(recordType: "UserGames", predicate: predicate)
-//        
-//        self.publicDatabase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { (result, _) in
-//            print(result)
-//        }
-//    }
+
+    func deletePrivateUser() {
+        self.getUserPublicReference { record in
+            if let record = record, let user = record.first {
+                self.privateDatabse.delete(withRecordID: user.recordID) { record, error in
+                    print(record, error)
+                }
+            }
+        }
+    }
 }
