@@ -13,6 +13,7 @@ class LoginViewController: UIViewController, LoginProtocols {
 
     weak var coordinator: MainCoordinator?
     let mainView: LoginView
+    let viewModel: LoginViewModel = LoginViewModel()
 
     init() {
         self.mainView = LoginView()
@@ -26,6 +27,8 @@ class LoginViewController: UIViewController, LoginProtocols {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = mainView
+        self.viewModel.delegate = self
+
         self.view.backgroundColor = .backgroundGray
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -53,12 +56,22 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     }
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        navigationController?.pushViewController(ViewController(), animated: true)
+        self.viewModel.getPrivateUser()
+//        navigationController?.pushViewController(ViewController(), animated: true)
     }
 }
 
 extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return view.window!
+    }
+}
+
+extension LoginViewController: ViewModelDelegate {
+    func willLoadData() {
+    }
+    
+    func didLoadData() {
+        print(self.viewModel.hasUser)
     }
 }

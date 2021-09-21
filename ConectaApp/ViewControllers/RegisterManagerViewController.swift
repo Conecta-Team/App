@@ -134,7 +134,7 @@ class RegisterManagerViewController: UIPageViewController {
             changeColor()
             setViewControllers([pages[pageControl.currentPage]], direction: .forward, animated: true, completion: nil)
         } else if validadeInfos() && pageControl.currentPage == pages.count - 1 {
-            self.viewModel.saveInfosUser()
+//            self.viewModel.saveInfosUser()
         }
     }
 

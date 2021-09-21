@@ -120,6 +120,9 @@ class RegisterSocialInfoView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         setupView()
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIView.endEditing))
+        self.addGestureRecognizer(tap)
     }
     
     func setupView() {
