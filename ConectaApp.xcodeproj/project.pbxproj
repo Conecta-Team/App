@@ -18,6 +18,18 @@
 		8841C18926F21E080051BEFF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18826F21E080051BEFF /* UserDTO.swift */; };
 		8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18A26F21EE20051BEFF /* PurposeDTO.swift */; };
 		8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */; };
+		8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */; };
+		8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524926F952B100E6E759 /* RegisterGameViewModel.swift */; };
+		886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */; };
+		886B0AF626F7B9F100A4E7D7 /* RegisterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF526F7B9F100A4E7D7 /* RegisterNameViewController.swift */; };
+		886B0AF826F7BA2200A4E7D7 /* RegisterGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF726F7BA2200A4E7D7 /* RegisterGameViewController.swift */; };
+		886B0AFA26F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF926F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift */; };
+		886B0AFC26F7DC6700A4E7D7 /* RegisterNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AFB26F7DC6700A4E7D7 /* RegisterNameView.swift */; };
+		886B0AFE26F7E5C400A4E7D7 /* RegisterGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AFD26F7E5C400A4E7D7 /* RegisterGameView.swift */; };
+		886B0B0026F7E69600A4E7D7 /* RegisterSocialInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AFF26F7E69600A4E7D7 /* RegisterSocialInfoView.swift */; };
+		886B0B0226F7F78900A4E7D7 /* RegisterGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0B0126F7F78900A4E7D7 /* RegisterGameTableViewCell.swift */; };
+		886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0B0326F8025600A4E7D7 /* RegisterTitleSectionCell.swift */; };
+		887D518126F8C8ED00DC8BEC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */; };
 		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
 		A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B326F0DDF900309605 /* CloudKitService.swift */; };
 		A21425B626F0E54500309605 /* GameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B526F0E54500309605 /* GameDTO.swift */; };
@@ -77,6 +89,18 @@
 		8841C18826F21E080051BEFF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		8841C18A26F21EE20051BEFF /* PurposeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeDTO.swift; sourceTree = "<group>"; };
 		8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInfosDTO.swift; sourceTree = "<group>"; };
+		8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewModel.swift; sourceTree = "<group>"; };
+		8861524926F952B100E6E759 /* RegisterGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameViewModel.swift; sourceTree = "<group>"; };
+		886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewController.swift; sourceTree = "<group>"; };
+		886B0AF526F7B9F100A4E7D7 /* RegisterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameViewController.swift; sourceTree = "<group>"; };
+		886B0AF726F7BA2200A4E7D7 /* RegisterGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameViewController.swift; sourceTree = "<group>"; };
+		886B0AF926F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSocialInfoViewController.swift; sourceTree = "<group>"; };
+		886B0AFB26F7DC6700A4E7D7 /* RegisterNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameView.swift; sourceTree = "<group>"; };
+		886B0AFD26F7E5C400A4E7D7 /* RegisterGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameView.swift; sourceTree = "<group>"; };
+		886B0AFF26F7E69600A4E7D7 /* RegisterSocialInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSocialInfoView.swift; sourceTree = "<group>"; };
+		886B0B0126F7F78900A4E7D7 /* RegisterGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameTableViewCell.swift; sourceTree = "<group>"; };
+		886B0B0326F8025600A4E7D7 /* RegisterTitleSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTitleSectionCell.swift; sourceTree = "<group>"; };
+		887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A21425B326F0DDF900309605 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		A21425B526F0E54500309605 /* GameDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDTO.swift; sourceTree = "<group>"; };
@@ -233,6 +257,9 @@
 			children = (
 				A21A224E26EF6C880052384A /* viewmodels */,
 				A226798C26F5393700E5B0FF /* MatchViewModel.swift */,
+				887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */,
+				8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */,
+				8861524926F952B100E6E759 /* RegisterGameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -242,10 +269,14 @@
 			children = (
 				A21A221826EF67260052384A /* ViewController.swift */,
 				A226798826F538C400E5B0FF /* MatchViewController.swift */,
-				684C8D9C26F0BFA300603526 /* LoginViewController.swift */,
 				A2ABAADD26F7AC1F00274289 /* Resusable */,
 				A21A224B26EF6C520052384A /* Cells */,
 				A21A224A26EF6C4D0052384A /* Views */,
+				684C8D9C26F0BFA300603526 /* LoginViewController.swift */,
+				886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */,
+				886B0AF526F7B9F100A4E7D7 /* RegisterNameViewController.swift */,
+				886B0AF726F7BA2200A4E7D7 /* RegisterGameViewController.swift */,
+				886B0AF926F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -256,6 +287,9 @@
 				A21A224426EF67A80052384A /* View.swift */,
 				684C8D9A26EF769200603526 /* LoginView.swift */,
 				A226798A26F538D500E5B0FF /* MatchView.swift */,
+				886B0AFB26F7DC6700A4E7D7 /* RegisterNameView.swift */,
+				886B0AFD26F7E5C400A4E7D7 /* RegisterGameView.swift */,
+				886B0AFF26F7E69600A4E7D7 /* RegisterSocialInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +303,8 @@
 				A226799826F680B600E5B0FF /* UserGamesTableViewCell.swift */,
 				A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */,
 				A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */,
+				886B0B0126F7F78900A4E7D7 /* RegisterGameTableViewCell.swift */,
+				886B0B0326F8025600A4E7D7 /* RegisterTitleSectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -473,19 +509,31 @@
 				684C8DA326F21A4C00603526 /* LoginProtocols.swift in Sources */,
 				684C8D9D26F0BFA300603526 /* LoginViewController.swift in Sources */,
 				684C8DA126F0C27B00603526 /* MainCoordinator.swift in Sources */,
+				886B0AFE26F7E5C400A4E7D7 /* RegisterGameView.swift in Sources */,
 				A21A224526EF67A80052384A /* View.swift in Sources */,
+				886B0AF626F7B9F100A4E7D7 /* RegisterNameViewController.swift in Sources */,
+				886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */,
+				886B0B0026F7E69600A4E7D7 /* RegisterSocialInfoView.swift in Sources */,
 				684C8D9F26F0C24900603526 /* Coordinator.swift in Sources */,
+				8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */,
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
 				A226798D26F5393700E5B0FF /* MatchViewModel.swift in Sources */,
 				A226799126F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift in Sources */,
 				A226799526F66BBD00E5B0FF /* ColorsManager.swift in Sources */,
 				A226799326F5417A00E5B0FF /* ProfileCollectionViewCell.swift in Sources */,
 				A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */,
+				886B0AFA26F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift in Sources */,
 				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
+				886B0B0226F7F78900A4E7D7 /* RegisterGameTableViewCell.swift in Sources */,
+				886B0AF826F7BA2200A4E7D7 /* RegisterGameViewController.swift in Sources */,
 				684C8D9B26EF769200603526 /* LoginView.swift in Sources */,
 				8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */,
 				A21425BA26F0EDA600309605 /* CloudKitErrors.swift in Sources */,
+				8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */,
 				8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */,
+				886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */,
+				886B0AFC26F7DC6700A4E7D7 /* RegisterNameView.swift in Sources */,
+				887D518126F8C8ED00DC8BEC /* LoginViewModel.swift in Sources */,
 				A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */,
 				A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */,
 				8841C18926F21E080051BEFF /* UserDTO.swift in Sources */,

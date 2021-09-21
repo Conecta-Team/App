@@ -19,13 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        
-        let navigation = UINavigationController(rootViewController: MatchViewController())
-
-        navigation.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigation.navigationBar.shadowImage = UIImage()
-
-        self.window?.rootViewController = navigation
+        self.window?.rootViewController = UINavigationController(rootViewController: RegisterManagerViewController())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

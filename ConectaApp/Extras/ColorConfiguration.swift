@@ -21,6 +21,7 @@ extension UIColor {
     static let darkBlue = UIColor(red: 0.00, green: 0.66, blue: 0.73, alpha: 1.00)
     static let lightBlue = UIColor(red: 0.90, green: 0.96, blue: 0.97, alpha: 1.00)
     static let textGreen = UIColor(red: 0.00, green: 0.16, blue: 0.18, alpha: 1.00)
+    static let textGreen2 = UIColor(red: 0.00, green: 0.37, blue: 0.41, alpha: 1.00)
 
     static let actionPink = UIColor(red: 0.97, green: 0.00, blue: 0.36, alpha: 1.00)
 
