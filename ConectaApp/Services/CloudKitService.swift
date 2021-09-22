@@ -16,7 +16,7 @@ class CloudKitService {
     static var currentModel = CloudKitService()
     
     init() {
-        self.container = CKContainer(identifier: "iCloud.ConectApp")
+        self.container = CKContainer(identifier: "iCloud.ConectaApp")
         self.publicDatabase = container.publicCloudDatabase
         self.privateDatabse = container.privateCloudDatabase
     }

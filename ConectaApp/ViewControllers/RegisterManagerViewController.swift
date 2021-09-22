@@ -135,6 +135,7 @@ class RegisterManagerViewController: UIPageViewController {
             changeColor()
             setViewControllers([pages[pageControl.currentPage]], direction: .forward, animated: true, completion: nil)
         } else if pageControl.currentPage == pages.count - 1 && validadeInfos() {
+            self.buttonNext.isUserInteractionEnabled = false
             self.viewModel.saveInfosUser { user in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                     self.navigationController?.pushViewController(MatchViewController(user: user), animated: true)
