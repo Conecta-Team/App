@@ -17,7 +17,8 @@ class RegisterManagerViewModel: ViewModelType {
     private var steam: String?
     private var instagram: String?
     let cloudKitService = CloudKitService.currentModel
-    let purposeID = CKRecord.ID(recordName: "1B35A248-4423-6FB4-8A90-561F3F198677")
+    //TODO: Mock de purpose
+    let purposeID = CKRecord.ID(recordName: "36EC6625-E032-7219-03C1-E64114CDDA37")
 
     func initialization() {
     }
