@@ -10,8 +10,6 @@ import AuthenticationServices
 
 class LoginView: UIView {
 
-    weak var loginHandler: LoginProtocols?
-
     let titleApp: UILabel = {
         let label = UILabel()
         label.text = "Conecta"
@@ -39,15 +37,10 @@ class LoginView: UIView {
 
     let buttonLogin: ASAuthorizationAppleIDButton = {
         let button = ASAuthorizationAppleIDButton()
-        button.addTarget(self, action: #selector(login(_:)), for: .touchUpInside)
         button.setValue(24, forKey: "cornerRadius")
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
-    @objc func login(_ sender: UIButton) {
-        loginHandler?.observerLoginAuth(sender)
-    }
 }
 
 extension LoginView {

@@ -9,7 +9,7 @@ import UIKit
 import AuthenticationServices
 import Security
 
-class LoginViewController: UIViewController, LoginProtocols {
+class LoginViewController: UIViewController {
 
     weak var coordinator: MainCoordinator?
     let mainView: LoginView
@@ -28,17 +28,21 @@ class LoginViewController: UIViewController, LoginProtocols {
         super.viewDidLoad()
         self.view = mainView
         self.viewModel.delegate = self
-
+        mainView.buttonLogin.addTarget(self, action: #selector(login(_:)), for: .touchUpInside)
         self.view.backgroundColor = .backgroundGray
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
-
-    override func loadView() {
-        mainView.loginHandler = self
+    
+    @objc func login(_ sender: UIButton) {
+        if FileManager.default.ubiquityIdentityToken != nil {
+            self.viewModel.getPrivateUser()
+        } else {
+            observerLoginAuth()
+        }
     }
 
-    func observerLoginAuth(_ sender: UIButton) {
+    func observerLoginAuth() {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
 
@@ -57,7 +61,6 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         self.viewModel.getPrivateUser()
-//        navigationController?.pushViewController(ViewController(), animated: true)
     }
 }
 
@@ -70,7 +73,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
 extension LoginViewController: ViewModelDelegate {
     func willLoadData() {
     }
-    
+
     func didLoadData() {
         DispatchQueue.main.async {
             if self.viewModel.hasUser {
