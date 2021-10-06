@@ -7,6 +7,9 @@
 
 import UIKit
 
-enum CloudKitErrors: Error {
+enum CloudKitError: Error {
     case fetchError
+    case cantCreateUSer
+    case cantGetUser
+    case cantGetUsersToMatch
 }

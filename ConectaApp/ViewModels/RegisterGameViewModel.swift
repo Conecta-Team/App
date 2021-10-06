@@ -11,13 +11,13 @@ import CloudKit
 class RegisterGameViewModel: ViewModelType {
     var delegate: ViewModelDelegate?
     
-    private let cloudKitService = CloudKitService.currentModel
+    private let cloudKitService = CloudKitServiceAll.currentModel
     public var categories = [CategoryDTO]() {
         didSet {
             getGames()
         }
     }
-    public var games = [GameDTO]() {
+    public var games = [GameDTO2]() {
         didSet {
             if games.count == categories.count {
                 self.delegate?.didLoadData()
@@ -41,7 +41,7 @@ class RegisterGameViewModel: ViewModelType {
         for category in categories {
             cloudKitService.getGamesByCategory(category: category.categoryId) { game in
                 let categoryRef = category
-                let gameDTO = GameDTO(record: game, category: categoryRef)
+                let gameDTO = GameDTO2(record: game, category: categoryRef)
                 self.games.append(gameDTO)
             }
         }

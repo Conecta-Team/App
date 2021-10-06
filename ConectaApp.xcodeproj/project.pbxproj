@@ -15,7 +15,7 @@
 		8816D0FF26F6544600AB6C4E /* ShareTechMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */; };
 		8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10026F654BB00AB6C4E /* FontConfiguration.swift */; };
 		8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */; };
-		8841C18926F21E080051BEFF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18826F21E080051BEFF /* UserDTO.swift */; };
+		8841C18926F21E080051BEFF /* UserDTO2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18826F21E080051BEFF /* UserDTO2.swift */; };
 		8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18A26F21EE20051BEFF /* PurposeDTO.swift */; };
 		8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */; };
 		8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */; };
@@ -31,10 +31,10 @@
 		886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0B0326F8025600A4E7D7 /* RegisterTitleSectionCell.swift */; };
 		887D518126F8C8ED00DC8BEC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */; };
 		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
-		A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B326F0DDF900309605 /* CloudKitService.swift */; };
-		A21425B626F0E54500309605 /* GameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B526F0E54500309605 /* GameDTO.swift */; };
+		A21425B426F0DDF900309605 /* CloudKitServiceAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B326F0DDF900309605 /* CloudKitServiceAll.swift */; };
+		A21425B626F0E54500309605 /* GameDTO2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B526F0E54500309605 /* GameDTO2.swift */; };
 		A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B726F0E58300309605 /* CategoryDTO.swift */; };
-		A21425BA26F0EDA600309605 /* CloudKitErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B926F0EDA600309605 /* CloudKitErrors.swift */; };
+		A21425BA26F0EDA600309605 /* CloudKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B926F0EDA600309605 /* CloudKitError.swift */; };
 		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
 		A21A221726EF67260052384A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221626EF67260052384A /* SceneDelegate.swift */; };
 		A21A221926EF67260052384A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221826EF67260052384A /* ViewController.swift */; };
@@ -57,6 +57,13 @@
 		A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */; };
 		A226799D26F6881A00E5B0FF /* TitleSectionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */; };
 		A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */; };
+		A2E0FEDC270DCBA500E7ABC2 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEDB270DCBA500E7ABC2 /* CloudKitService.swift */; };
+		A2E0FEDE270DCC6100E7ABC2 /* UserCKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEDD270DCC6100E7ABC2 /* UserCKService.swift */; };
+		A2E0FEE0270DCD0200E7ABC2 /* FilterCKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEDF270DCD0200E7ABC2 /* FilterCKService.swift */; };
+		A2E0FEE2270DCD4000E7ABC2 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE1270DCD4000E7ABC2 /* Games.swift */; };
+		A2E0FEE4270DCF4800E7ABC2 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE3270DCF4800E7ABC2 /* Categories.swift */; };
+		A2E0FEE6270DCF5300E7ABC2 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE5270DCF5300E7ABC2 /* Goals.swift */; };
+		A2E0FEE8270DD0F200E7ABC2 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +93,7 @@
 		8816D10026F654BB00AB6C4E /* FontConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfiguration.swift; sourceTree = "<group>"; };
 		8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfiguration.swift; sourceTree = "<group>"; };
 		8835AAE326F6A3400006398E /* ConectaApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ConectaApp.entitlements; sourceTree = "<group>"; };
-		8841C18826F21E080051BEFF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		8841C18826F21E080051BEFF /* UserDTO2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO2.swift; sourceTree = "<group>"; };
 		8841C18A26F21EE20051BEFF /* PurposeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeDTO.swift; sourceTree = "<group>"; };
 		8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInfosDTO.swift; sourceTree = "<group>"; };
 		8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewModel.swift; sourceTree = "<group>"; };
@@ -102,10 +109,10 @@
 		886B0B0326F8025600A4E7D7 /* RegisterTitleSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTitleSectionCell.swift; sourceTree = "<group>"; };
 		887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		A21425B326F0DDF900309605 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
-		A21425B526F0E54500309605 /* GameDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDTO.swift; sourceTree = "<group>"; };
+		A21425B326F0DDF900309605 /* CloudKitServiceAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitServiceAll.swift; sourceTree = "<group>"; };
+		A21425B526F0E54500309605 /* GameDTO2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDTO2.swift; sourceTree = "<group>"; };
 		A21425B726F0E58300309605 /* CategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDTO.swift; sourceTree = "<group>"; };
-		A21425B926F0EDA600309605 /* CloudKitErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitErrors.swift; sourceTree = "<group>"; };
+		A21425B926F0EDA600309605 /* CloudKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitError.swift; sourceTree = "<group>"; };
 		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21A221426EF67260052384A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A21A221626EF67260052384A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +141,13 @@
 		A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfosTableViewCell.swift; sourceTree = "<group>"; };
 		A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSectionUser.swift; sourceTree = "<group>"; };
 		A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfosButton.swift; sourceTree = "<group>"; };
+		A2E0FEDB270DCBA500E7ABC2 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		A2E0FEDD270DCC6100E7ABC2 /* UserCKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCKService.swift; sourceTree = "<group>"; };
+		A2E0FEDF270DCD0200E7ABC2 /* FilterCKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCKService.swift; sourceTree = "<group>"; };
+		A2E0FEE1270DCD4000E7ABC2 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
+		A2E0FEE3270DCF4800E7ABC2 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		A2E0FEE5270DCF5300E7ABC2 /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
+		A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,11 +257,12 @@
 		A21A224726EF6C300052384A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A21425B526F0E54500309605 /* GameDTO.swift */,
+				A21425B526F0E54500309605 /* GameDTO2.swift */,
 				A21425B726F0E58300309605 /* CategoryDTO.swift */,
-				8841C18826F21E080051BEFF /* UserDTO.swift */,
+				8841C18826F21E080051BEFF /* UserDTO2.swift */,
 				8841C18A26F21EE20051BEFF /* PurposeDTO.swift */,
 				8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */,
+				A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,9 +345,12 @@
 		A21A225826EF6CC20052384A /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				A21425B926F0EDA600309605 /* CloudKitErrors.swift */,
+				A21425B926F0EDA600309605 /* CloudKitError.swift */,
 				A226799426F66BBD00E5B0FF /* ColorsManager.swift */,
 				A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */,
+				A2E0FEE1270DCD4000E7ABC2 /* Games.swift */,
+				A2E0FEE3270DCF4800E7ABC2 /* Categories.swift */,
+				A2E0FEE5270DCF5300E7ABC2 /* Goals.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -340,7 +358,8 @@
 		A21A225B26EF6CD50052384A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A21425B326F0DDF900309605 /* CloudKitService.swift */,
+				A2E0FEDA270DCA0E00E7ABC2 /* CloudKitService */,
+				A21425B326F0DDF900309605 /* CloudKitServiceAll.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -351,6 +370,16 @@
 				A226799026F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift */,
 			);
 			path = Resusable;
+			sourceTree = "<group>";
+		};
+		A2E0FEDA270DCA0E00E7ABC2 /* CloudKitService */ = {
+			isa = PBXGroup;
+			children = (
+				A2E0FEDB270DCBA500E7ABC2 /* CloudKitService.swift */,
+				A2E0FEDD270DCC6100E7ABC2 /* UserCKService.swift */,
+				A2E0FEDF270DCD0200E7ABC2 /* FilterCKService.swift */,
+			);
+			path = CloudKitService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,8 +542,10 @@
 				A21A224526EF67A80052384A /* View.swift in Sources */,
 				886B0AF626F7B9F100A4E7D7 /* RegisterNameViewController.swift in Sources */,
 				886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */,
+				A2E0FEE8270DD0F200E7ABC2 /* UserDTO.swift in Sources */,
 				886B0B0026F7E69600A4E7D7 /* RegisterSocialInfoView.swift in Sources */,
 				684C8D9F26F0C24900603526 /* Coordinator.swift in Sources */,
+				A2E0FEE0270DCD0200E7ABC2 /* FilterCKService.swift in Sources */,
 				8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */,
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
 				A226798D26F5393700E5B0FF /* MatchViewModel.swift in Sources */,
@@ -528,24 +559,29 @@
 				886B0AF826F7BA2200A4E7D7 /* RegisterGameViewController.swift in Sources */,
 				684C8D9B26EF769200603526 /* LoginView.swift in Sources */,
 				8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */,
-				A21425BA26F0EDA600309605 /* CloudKitErrors.swift in Sources */,
+				A21425BA26F0EDA600309605 /* CloudKitError.swift in Sources */,
 				8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */,
 				8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */,
 				886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */,
 				886B0AFC26F7DC6700A4E7D7 /* RegisterNameView.swift in Sources */,
 				887D518126F8C8ED00DC8BEC /* LoginViewModel.swift in Sources */,
 				A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */,
-				A21425B426F0DDF900309605 /* CloudKitService.swift in Sources */,
-				8841C18926F21E080051BEFF /* UserDTO.swift in Sources */,
+				A21425B426F0DDF900309605 /* CloudKitServiceAll.swift in Sources */,
+				8841C18926F21E080051BEFF /* UserDTO2.swift in Sources */,
 				A226799726F6806500E5B0FF /* NickNameTableViewCell.swift in Sources */,
+				A2E0FEE2270DCD4000E7ABC2 /* Games.swift in Sources */,
 				A226799D26F6881A00E5B0FF /* TitleSectionUser.swift in Sources */,
+				A2E0FEE4270DCF4800E7ABC2 /* Categories.swift in Sources */,
 				A226798F26F5395300E5B0FF /* ViewModelProtocols.swift in Sources */,
 				A21A221726EF67260052384A /* SceneDelegate.swift in Sources */,
 				A226798B26F538D500E5B0FF /* MatchView.swift in Sources */,
+				A2E0FEDE270DCC6100E7ABC2 /* UserCKService.swift in Sources */,
 				A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */,
+				A2E0FEDC270DCBA500E7ABC2 /* CloudKitService.swift in Sources */,
 				A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */,
 				A226799926F680B600E5B0FF /* UserGamesTableViewCell.swift in Sources */,
-				A21425B626F0E54500309605 /* GameDTO.swift in Sources */,
+				A2E0FEE6270DCF5300E7ABC2 /* Goals.swift in Sources */,
+				A21425B626F0E54500309605 /* GameDTO2.swift in Sources */,
 				8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */,
 				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
 			);
@@ -717,7 +753,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BYHH9YALN2;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

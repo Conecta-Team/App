@@ -12,11 +12,11 @@ class RegisterManagerViewModel: ViewModelType {
     var delegate: ViewModelDelegate?
     
     private var nickName: String?
-    private var game: GameDTO?
+    private var game: GameDTO2?
     private var discord: String?
     private var steam: String?
     private var instagram: String?
-    let cloudKitService = CloudKitService.currentModel
+    let cloudKitService = CloudKitServiceAll.currentModel
     //TODO: Mock de purpose
     let purposeID = CKRecord.ID(recordName: "36EC6625-E032-7219-03C1-E64114CDDA37")
 
@@ -31,7 +31,7 @@ class RegisterManagerViewModel: ViewModelType {
         return false
     }
     
-    func setGame(game: GameDTO?) -> Bool {
+    func setGame(game: GameDTO2?) -> Bool {
         if let game = game {
             self.game = game
             return true
