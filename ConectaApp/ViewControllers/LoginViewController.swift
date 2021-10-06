@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         self.view = mainView
         self.viewModel.delegate = self
         mainView.buttonLogin.addTarget(self, action: #selector(login(_:)), for: .touchUpInside)
-        self.view.backgroundColor = .backgroundGray
+        self.view.backgroundColor = UIColor(red: 0.10, green: 0.00, blue: 0.22, alpha: 1.00)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
