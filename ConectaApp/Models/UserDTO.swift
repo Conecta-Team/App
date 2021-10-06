@@ -1,55 +1,28 @@
 //
-//  UserDTO.swift
+//  GameDTO.swift
 //  ConectaApp
 //
-//  Created by Helaine Pontes on 15/09/21.
+//  Created by José João Silva Nunes Alves on 06/10/21.
 //
 
 import CloudKit
 
-struct UserDTO {
-    
-    let userId: CKRecord.ID
+class UserDTO {
+    let id: CKRecord.ID
     let name: String
-    let profileColor: String?
-    let profileImage: String?
-    let purpose: PurposeDTO
-    let socialInfos: SocialInfosDTO
-    // TODO: retirar mock de cor e trocar socialInfoID
-    let mainColor: ColorManager = ColorManager(rawValue: Int.random(in: 0...2)) ?? .purple
-    var socialInfoID: CKRecord.ID? = nil
-    var gameID: CKRecord.ID? = nil
-    
-    init(record: CKRecord, purpose: PurposeDTO, socialInfos: SocialInfosDTO) {
-        self.userId = record.recordID
-        self.name = record["name"] as! String
-        self.profileColor = record["profileColor"]
-        self.profileImage = record["profileImage"]
-        self.purpose = purpose
-        self.socialInfos = socialInfos
-    }
-}
+    let games: [Int]
+    let goal: Int
+    let instagram: String
 
-extension UserDTO {
-    static func createMock() -> [UserDTO] {
-        var mock = [UserDTO]()
-        for index in 0...10 {
-            let recordSocialMock = CKRecord(recordType: "MockInfo")
-            recordSocialMock["instagram"] = "insta\(index)"
-            recordSocialMock["steam"] = "steam\(index)"
-            recordSocialMock["discord"] = "discord\(index)"
-            let socialInfoMock = SocialInfosDTO(record: recordSocialMock)
-            
-            let recordPurposeMock = CKRecord(recordType: "MockPurpose")
-            recordPurposeMock["name"] = "fun"
-            let purposeMock = PurposeDTO(record: recordPurposeMock)
-            
-            let recorduserMock = CKRecord(recordType: "MockUser")
-            recorduserMock["name"] = "user\(index)"
-            let userMock = UserDTO(record: recorduserMock, purpose: purposeMock, socialInfos: socialInfoMock)
-            
-            mock.append(userMock)
+    init?(record: CKRecord) {
+        self.id = record.recordID
+        if let userName = record["name"] as? String, let goal = record["goal"] as? Int, let games = record["Games"] as? [Int], let insta = record["Instagram"] as? String {
+            self.name = userName
+            self.games = games
+            self.goal = goal
+            self.instagram = insta
+        } else {
+            return nil
         }
-        return mock
     }
 }

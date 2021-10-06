@@ -13,7 +13,7 @@ class RegisterGameTableViewCell: UITableViewCell {
     let buttonUnselectedImage = UIImage(named: "shapeButtonUnselected")
     let buttonSelectedImage = UIImage(named: "shapeButtonSelected")
     var gameSelected = false
-    var game: GameDTO? = nil
+    var game: GameDTO2? = nil
     
     internal lazy var gameButton: UIButton = {
         let button = UIButton()
@@ -57,7 +57,7 @@ class RegisterGameTableViewCell: UITableViewCell {
         ])
     }
     
-    public func configure(game: GameDTO) {
+    public func configure(game: GameDTO2) {
         self.gameButton.setTitle(game.name, for: .normal)
         self.game = game
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class RegisterGameViewController: UIViewController {
     
-    var games = [GameDTO]()
+    var games = [GameDTO2]()
     let registerGameView = RegisterGameView()
     var gameSelected = String()
     let viewModel = RegisterGameViewModel()
@@ -25,7 +25,7 @@ class RegisterGameViewController: UIViewController {
         self.view.backgroundColor = .backgroundGray
     }
     
-    public func getGame() -> GameDTO? {
+    public func getGame() -> GameDTO2? {
         if viewModel.games.count > 0 {
             for index in 0..<viewModel.games.count {
                 let cell = self.registerGameView.gamesTableView.cellForRow(at: IndexPath(row: 0, section: index)) as! RegisterGameTableViewCell

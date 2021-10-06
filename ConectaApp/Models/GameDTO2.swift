@@ -7,7 +7,7 @@
 
 import CloudKit
 
-class GameDTO {
+class GameDTO2 {
     static let recordType = "Game"
 
     let gameId: CKRecord.ID

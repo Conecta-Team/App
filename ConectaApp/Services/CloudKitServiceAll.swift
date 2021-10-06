@@ -7,13 +7,13 @@
 
 import CloudKit
 
-class CloudKitService {
+class CloudKitServiceAll {
 
     let container: CKContainer
     let publicDatabase: CKDatabase
     let privateDatabse: CKDatabase
 
-    static var currentModel = CloudKitService()
+    static var currentModel = CloudKitServiceAll()
     
     init() {
         self.container = CKContainer(identifier: "iCloud.ConectaApp")

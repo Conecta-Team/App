@@ -10,7 +10,7 @@ import CloudKit
 
 class LoginViewModel: ViewModelType {
     weak var delegate: ViewModelDelegate?
-    let cloudKitService: CloudKitService = CloudKitService.currentModel
+    let cloudKitService: CloudKitServiceAll = CloudKitServiceAll.currentModel
 
     var hasUser: Bool = false {
         didSet {

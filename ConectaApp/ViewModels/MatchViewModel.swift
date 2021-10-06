@@ -10,7 +10,7 @@ import CloudKit
 
 class MatchViewModel: ViewModelType {
     
-    let cloudKitService: CloudKitService = CloudKitService.currentModel
+    let cloudKitService: CloudKitServiceAll = CloudKitServiceAll.currentModel
 
     weak var delegate: ViewModelDelegate?
     private var indexCurrentUser: Int = 0
@@ -22,7 +22,7 @@ class MatchViewModel: ViewModelType {
         }
     }
 //    var users: [UserDTO] = UserDTO.createMock()
-    var users: [UserDTO] = [UserDTO]() {
+    var users: [UserDTO2] = [UserDTO2]() {
         didSet {
             self.delegate?.didLoadData()
             self.getSocialInfos()
@@ -36,7 +36,7 @@ class MatchViewModel: ViewModelType {
         }
     }
 
-    var userGame: GameDTO? = nil {
+    var userGame: GameDTO2? = nil {
         didSet {
             self.delegate?.willLoadData()
         }
@@ -73,7 +73,7 @@ class MatchViewModel: ViewModelType {
     // TODO: futuramente trocar parar TODOS os games de um usuário
     public func getGameName() {
         self.cloudKitService.getGame(game: self.users[self.indexCurrentUser].gameID!) { game in
-            self.userGame = GameDTO(record: game.first!)
+            self.userGame = GameDTO2(record: game.first!)
         }
     }
 
@@ -122,7 +122,7 @@ class MatchViewModel: ViewModelType {
                         recordPurposeMock["name"] = "fun"
                         let purposeMock = PurposeDTO(record: recordPurposeMock)
     
-                        var userDTO = UserDTO(record: usersToMatch[userIndex], purpose: purposeMock, socialInfos: socialInfoMock)
+                        var userDTO = UserDTO2(record: usersToMatch[userIndex], purpose: purposeMock, socialInfos: socialInfoMock)
                         userDTO.socialInfoID = (usersToMatch[userIndex]["socialInfosReference"] as! CKRecord.Reference).recordID
                         userDTO.gameID = (userReferences[userIndex].1)
                         self.users.append(userDTO)
