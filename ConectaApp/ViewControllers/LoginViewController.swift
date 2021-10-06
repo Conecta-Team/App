@@ -75,12 +75,12 @@ extension LoginViewController: ViewModelDelegate {
     }
 
     func didLoadData() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             if self.viewModel.hasUser {
                 self.navigationController?.pushViewController(MatchViewController(), animated: true)
             } else {
                 self.navigationController?.pushViewController(RegisterManagerViewController(), animated: true)
             }
-        }
+        })
     }
 }
