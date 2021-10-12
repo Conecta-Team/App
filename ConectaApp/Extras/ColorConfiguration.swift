@@ -24,7 +24,7 @@ extension UIColor {
     static let shadowGreen = UIColor(red: 0.46, green: 0.94, blue: 1.00, alpha: 1.00)
     static let shadowPink = UIColor(red: 0.96, green: 0.00, blue: 0.37, alpha: 1.00)
     
-    static let actPink = UIColor(red: 0.80, green: 0.00, blue: 0.30, alpha: 1.00)
+    static let actPink = UIColor(red: 0.97, green: 0.00, blue: 0.36, alpha: 1.00)
     static let alertRed = UIColor(red: 1.00, green: 0.00, blue: 0.00, alpha: 1.00)
     
     //antigo
