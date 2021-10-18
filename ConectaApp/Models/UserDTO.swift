@@ -13,14 +13,18 @@ class UserDTO {
     let games: [Int]
     let goal: Int
     let instagram: String
+    let steam: String
+    let discord: String
 
     init?(record: CKRecord) {
         self.id = record.recordID
-        if let userName = record["name"] as? String, let goal = record["goal"] as? Int, let games = record["Games"] as? [Int], let insta = record["Instagram"] as? String {
+        if let userName = record["name"] as? String, let goal = record["goal"] as? Int, let games = record["games"] as? [Int] {
             self.name = userName
             self.games = games
             self.goal = goal
-            self.instagram = insta
+            self.instagram = record["instagram"] as? String ?? "-"
+            self.steam = record["steam"] as? String ?? "-"
+            self.discord = record["discord"] as? String ?? "-"
         } else {
             return nil
         }

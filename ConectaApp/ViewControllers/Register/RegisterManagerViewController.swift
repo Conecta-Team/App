@@ -116,7 +116,7 @@ class RegisterManagerViewController: UIPageViewController {
             registerNameViewController.setErrorMessage(ishidden: verification)
             return verification
         case 1:
-            let verification = viewModel.setGame(game: registerGameViewController.getGame())
+            let verification = viewModel.setGame(games: registerGameViewController.getSelectedGames())
             registerGameViewController.setErrorMessage(ishidden: verification)
             return verification
         case 2:
@@ -136,11 +136,20 @@ class RegisterManagerViewController: UIPageViewController {
             setViewControllers([pages[pageControl.currentPage]], direction: .forward, animated: true, completion: nil)
         } else if pageControl.currentPage == pages.count - 1 && validadeInfos() {
             self.buttonNext.isUserInteractionEnabled = false
-            self.viewModel.saveInfosUser { user in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                    self.navigationController?.pushViewController(MatchViewController(user: user), animated: true)
+            
+            self.viewModel.createUser { result in
+                switch result {
+                case .success(let users):
+                    print(users)
+                case .failure(let error):
+                    print(error)
                 }
             }
+//            self.viewModel.saveInfosUser { user in
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//                    self.navigationController?.pushViewController(MatchViewController(user: user), animated: true)
+//                }
+//            }
         }
     }
 

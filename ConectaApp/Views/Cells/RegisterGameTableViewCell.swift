@@ -13,8 +13,10 @@ class RegisterGameTableViewCell: UITableViewCell {
     let buttonUnselectedImage = UIImage(named: "shapeButtonUnselected")
     let buttonSelectedImage = UIImage(named: "shapeButtonSelected")
     var gameSelected = false
-    var game: GameDTO2? = nil
+    var game: Games = .freeFire
     
+    weak var delegate: SelectedGamesDelegate?
+
     internal lazy var gameButton: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(buttonUnselectedImage, for: .normal)
@@ -45,6 +47,8 @@ class RegisterGameTableViewCell: UITableViewCell {
         let color: UIColor = self.gameSelected ? .white : .darkBlue
         self.gameButton.setBackgroundImage(image, for: .normal)
         self.gameButton.setTitleColor(color, for: .normal)
+    
+        self.delegate?.handleTap(isSelected: self.gameSelected, game: self.game)
     }
     
     private func setupCell() {
@@ -57,7 +61,7 @@ class RegisterGameTableViewCell: UITableViewCell {
         ])
     }
     
-    public func configure(game: GameDTO2) {
+    public func configure(game: Games) {
         self.gameButton.setTitle(game.name, for: .normal)
         self.game = game
     }

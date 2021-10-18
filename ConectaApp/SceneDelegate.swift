@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         //CloudKitService.currentModel.deletePrivateUser()
-        self.window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+        self.window?.rootViewController = UINavigationController(rootViewController: RegisterManagerViewController())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
