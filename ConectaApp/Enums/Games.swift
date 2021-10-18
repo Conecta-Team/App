@@ -13,7 +13,7 @@ enum Games: Int, CaseIterable {
     case wow
     case sims
     case freeFire
-
+    
     var category: Category {
         switch self {
         case .leagueOfLegends:

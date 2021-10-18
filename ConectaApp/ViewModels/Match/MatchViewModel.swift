@@ -15,13 +15,22 @@ class MatchViewModel: ViewModelType {
     weak var delegate: ViewModelDelegate?
     private var indexCurrentUser: Int = 0
     var user: CKRecord?
+    
+    convenience init(user: CKRecord) {
+        self.init()
+        self.user = user
+    }
+    
+    init() {
+        
+    }
 
     private var userRecord: CKRecord? {
         didSet {
             self.getAllUsersToMatch()
         }
     }
-//    var users: [UserDTO] = UserDTO.createMock()
+
     var users: [UserDTO2] = [UserDTO2]() {
         didSet {
             self.delegate?.didLoadData()

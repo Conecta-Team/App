@@ -25,14 +25,9 @@ class RegisterGameViewController: UIViewController {
         self.view.backgroundColor = .backgroundGray
     }
     
-    public func getGame() -> GameDTO2? {
-        if viewModel.games.count > 0 {
-            for index in 0..<viewModel.games.count {
-                let cell = self.registerGameView.gamesTableView.cellForRow(at: IndexPath(row: 0, section: index)) as! RegisterGameTableViewCell
-                if cell.gameSelected {
-                    return cell.game
-                }
-            }
+    public func getSelectedGames() -> [Games]? {
+        if self.viewModel.selectedGames.count != 0 {
+            return self.viewModel.selectedGames
         }
         return nil
     }
@@ -48,19 +43,30 @@ extension RegisterGameViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.categories.count == 0 ? 0 : 1
+        let category = Category(rawValue: section)
+
+        if let category = category, let rowsInSection = self.viewModel.games[category]?.count {
+            return rowsInSection
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
-        cell.configure(game: viewModel.games[indexPath.section])
+
+        if let category = Category(rawValue: indexPath.section), let game = viewModel.games[category]?[indexPath.row] {
+            cell.configure(game: game)
+            cell.delegate = self.viewModel
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
                                                                 RegisterTitleSectionCell.reuseIdentifier) as! RegisterTitleSectionCell
-        view.configure(title: viewModel.games[section].category!.name)
+        if let category = Category(rawValue: section) {
+            view.configure(title: category.name)
+        }
         return view
     }
     
@@ -80,3 +86,4 @@ extension RegisterGameViewController: ViewModelDelegate {
         }
     }
 }
+

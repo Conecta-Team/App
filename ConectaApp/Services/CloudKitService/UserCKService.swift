@@ -9,7 +9,7 @@ import CloudKit
 
 class UserCKService: CloudKitService {
 
-    public func createUser(name: String, games: [Int], goal: Int, instagram: String, completion: @escaping (Result<(CKRecord, CKRecord), CloudKitError>) -> Void) {
+    public func createUser(name: String, games: [Int], goal: Int, instagram: String?, discord: String?, steam: String?, completion: @escaping (Result<(CKRecord, CKRecord), CloudKitError>) -> Void) {
 
         let publicUserRecord = CKRecord(recordType: "User")
         publicUserRecord["name"] = name

@@ -43,8 +43,6 @@
 		A21A222C26EF67280052384A /* ConectaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A222B26EF67280052384A /* ConectaAppTests.swift */; };
 		A21A223726EF67280052384A /* ConectaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A223626EF67280052384A /* ConectaAppUITests.swift */; };
 		A21A224526EF67A80052384A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A224426EF67A80052384A /* View.swift */; };
-		A21A224D26EF6C730052384A /* cells in Resources */ = {isa = PBXBuildFile; fileRef = A21A224C26EF6C730052384A /* cells */; };
-		A21A224F26EF6C880052384A /* viewmodels in Resources */ = {isa = PBXBuildFile; fileRef = A21A224E26EF6C880052384A /* viewmodels */; };
 		A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798826F538C400E5B0FF /* MatchViewController.swift */; };
 		A226798B26F538D500E5B0FF /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798A26F538D500E5B0FF /* MatchView.swift */; };
 		A226798D26F5393700E5B0FF /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798C26F5393700E5B0FF /* MatchViewModel.swift */; };
@@ -127,8 +125,6 @@
 		A21A223626EF67280052384A /* ConectaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectaAppUITests.swift; sourceTree = "<group>"; };
 		A21A223826EF67280052384A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A21A224426EF67A80052384A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		A21A224C26EF6C730052384A /* cells */ = {isa = PBXFileReference; lastKnownFileType = text; path = cells; sourceTree = "<group>"; };
-		A21A224E26EF6C880052384A /* viewmodels */ = {isa = PBXFileReference; lastKnownFileType = text; path = viewmodels; sourceTree = "<group>"; };
 		A226798826F538C400E5B0FF /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		A226798A26F538D500E5B0FF /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		A226798C26F5393700E5B0FF /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
@@ -224,6 +220,8 @@
 				A21A225826EF6CC20052384A /* Enums */,
 				A21A225526EF6CA80052384A /* Coordinators */,
 				A21A225226EF6C970052384A /* Protocols */,
+				A21A224A26EF6C4D0052384A /* Views */,
+				A2ABAADD26F7AC1F00274289 /* Resusable */,
 				A21A224926EF6C450052384A /* ViewControllers */,
 				A21A224826EF6C390052384A /* ViewModels */,
 				A21A224726EF6C300052384A /* Models */,
@@ -270,11 +268,9 @@
 		A21A224826EF6C390052384A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				A21A224E26EF6C880052384A /* viewmodels */,
-				A226798C26F5393700E5B0FF /* MatchViewModel.swift */,
-				887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */,
-				8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */,
-				8861524926F952B100E6E759 /* RegisterGameViewModel.swift */,
+				A2E0FEEE270DE37500E7ABC2 /* Match */,
+				A2E0FEED270DE36D00E7ABC2 /* Register */,
+				A2E0FEEC270DE36400E7ABC2 /* Login */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -282,16 +278,10 @@
 		A21A224926EF6C450052384A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A21A224A26EF6C4D0052384A /* Views */,
-				A21A224B26EF6C520052384A /* Cells */,
-				A2ABAADD26F7AC1F00274289 /* Resusable */,
+				A2E0FEF1270DE3DC00E7ABC2 /* Match */,
+				A2E0FEF0270DE3D700E7ABC2 /* Login */,
+				A2E0FEEF270DE3CF00E7ABC2 /* Register */,
 				A21A221826EF67260052384A /* ViewController.swift */,
-				A226798826F538C400E5B0FF /* MatchViewController.swift */,
-				684C8D9C26F0BFA300603526 /* LoginViewController.swift */,
-				886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */,
-				886B0AF526F7B9F100A4E7D7 /* RegisterNameViewController.swift */,
-				886B0AF726F7BA2200A4E7D7 /* RegisterGameViewController.swift */,
-				886B0AF926F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -299,12 +289,11 @@
 		A21A224A26EF6C4D0052384A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A2E0FEEB270DE33600E7ABC2 /* Match */,
+				A2E0FEEA270DE31B00E7ABC2 /* Register */,
+				A2E0FEE9270DE31400E7ABC2 /* Login */,
+				A21A224B26EF6C520052384A /* Cells */,
 				A21A224426EF67A80052384A /* View.swift */,
-				684C8D9A26EF769200603526 /* LoginView.swift */,
-				A226798A26F538D500E5B0FF /* MatchView.swift */,
-				886B0AFB26F7DC6700A4E7D7 /* RegisterNameView.swift */,
-				886B0AFD26F7E5C400A4E7D7 /* RegisterGameView.swift */,
-				886B0AFF26F7E69600A4E7D7 /* RegisterSocialInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,7 +301,6 @@
 		A21A224B26EF6C520052384A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A21A224C26EF6C730052384A /* cells */,
 				A226799226F5417A00E5B0FF /* ProfileCollectionViewCell.swift */,
 				A226799626F6806500E5B0FF /* NickNameTableViewCell.swift */,
 				A226799826F680B600E5B0FF /* UserGamesTableViewCell.swift */,
@@ -380,6 +368,84 @@
 				A2E0FEDF270DCD0200E7ABC2 /* FilterCKService.swift */,
 			);
 			path = CloudKitService;
+			sourceTree = "<group>";
+		};
+		A2E0FEE9270DE31400E7ABC2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				684C8D9A26EF769200603526 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A2E0FEEA270DE31B00E7ABC2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				886B0AFB26F7DC6700A4E7D7 /* RegisterNameView.swift */,
+				886B0AFD26F7E5C400A4E7D7 /* RegisterGameView.swift */,
+				886B0AFF26F7E69600A4E7D7 /* RegisterSocialInfoView.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A2E0FEEB270DE33600E7ABC2 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				A226798A26F538D500E5B0FF /* MatchView.swift */,
+			);
+			path = Match;
+			sourceTree = "<group>";
+		};
+		A2E0FEEC270DE36400E7ABC2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A2E0FEED270DE36D00E7ABC2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */,
+				8861524926F952B100E6E759 /* RegisterGameViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A2E0FEEE270DE37500E7ABC2 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				A226798C26F5393700E5B0FF /* MatchViewModel.swift */,
+			);
+			path = Match;
+			sourceTree = "<group>";
+		};
+		A2E0FEEF270DE3CF00E7ABC2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */,
+				886B0AF526F7B9F100A4E7D7 /* RegisterNameViewController.swift */,
+				886B0AF726F7BA2200A4E7D7 /* RegisterGameViewController.swift */,
+				886B0AF926F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A2E0FEF0270DE3D700E7ABC2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				684C8D9C26F0BFA300603526 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		A2E0FEF1270DE3DC00E7ABC2 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				A226798826F538C400E5B0FF /* MatchViewController.swift */,
+			);
+			path = Match;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,8 +552,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A21A224D26EF6C730052384A /* cells in Resources */,
-				A21A224F26EF6C880052384A /* viewmodels in Resources */,
 				8816D0FF26F6544600AB6C4E /* ShareTechMono-Regular.ttf in Resources */,
 				A21A222126EF67270052384A /* LaunchScreen.storyboard in Resources */,
 				A21A221E26EF67270052384A /* Assets.xcassets in Resources */,
@@ -759,7 +823,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = helaine.ConectaApp;
+				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -773,13 +837,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BYHH9YALN2;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = helaine.ConectaApp;
+				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
