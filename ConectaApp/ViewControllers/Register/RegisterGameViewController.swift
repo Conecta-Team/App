@@ -10,7 +10,6 @@ import UIKit
 
 class RegisterGameViewController: UIViewController {
     
-    var games = [GameDTO2]()
     let registerGameView = RegisterGameView()
     var gameSelected = String()
     let viewModel = RegisterGameViewModel()

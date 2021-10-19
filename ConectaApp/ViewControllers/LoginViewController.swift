@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
     
     @objc func login(_ sender: UIButton) {
         if FileManager.default.ubiquityIdentityToken != nil {
-            self.viewModel.getPrivateUser()
+            self.viewModel.getCurrentUser()
         } else {
             observerLoginAuth()
         }
@@ -60,7 +60,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     }
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        self.viewModel.getPrivateUser()
+        self.viewModel.getCurrentUser()
     }
 }
 
@@ -75,12 +75,13 @@ extension LoginViewController: ViewModelDelegate {
     }
 
     func didLoadData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            if self.viewModel.hasUser {
-                self.navigationController?.pushViewController(MatchViewController(), animated: true)
+        DispatchQueue.main.async {
+            if let user = self.viewModel.user {
+                let nextController = MatchViewController(user: user)
+                self.navigationController?.pushViewController(nextController, animated: true)
             } else {
                 self.navigationController?.pushViewController(RegisterManagerViewController(), animated: true)
             }
-        })
+        }
     }
 }

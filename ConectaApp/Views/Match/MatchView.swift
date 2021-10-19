@@ -9,12 +9,6 @@ import UIKit
 
 class MatchView: UIView {
 
-    var mainColor: ColorManager = .defaultColor {
-        didSet {
-            self.backgroundColor = self.mainColor.lightColor
-        }
-    }
-
     let collection: UICollectionView = {
         let layout = ZoomAndSnapFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -88,10 +82,5 @@ class MatchView: UIView {
             self.tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
-    }
-
-    public func configureViewColors(color: ColorManager) {
-        self.topViewColor.backgroundColor = color.darkColor
-        self.mainColor = color
     }
 }

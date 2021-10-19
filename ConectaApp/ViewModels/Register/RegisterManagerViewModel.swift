@@ -48,7 +48,7 @@ class RegisterManagerViewModel: ViewModelType {
         return false
     }
     
-    func createUser(completion: @escaping (Result<(CKRecord, CKRecord), CloudKitError>) -> Void) {
+    func createUser(completion: @escaping (Result<UserDTO, CloudKitError>) -> Void) {
         let gamesIds = self.games!.compactMap({ game in
             game.rawValue
         })
@@ -61,7 +61,12 @@ class RegisterManagerViewModel: ViewModelType {
                                       steam: self.steam) { result in
             switch result {
             case .success(let data):
-                completion(.success(data))
+                let userDTO = UserDTO(record: data.0)
+                if let user = userDTO {
+                    completion(.success(user))
+                } else {
+                    completion(.failure(.cantCreateUSer))
+                }
             case .failure(let error):
                 completion(.failure(error))
             }

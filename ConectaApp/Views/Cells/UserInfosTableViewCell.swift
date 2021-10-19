@@ -203,18 +203,9 @@ class UserInfosTableViewCell: UITableViewCell {
         ])
     }
 
-    public func configure(discordName: String? = nil, steamName: String? = nil, instagramName: String? = nil, color: ColorManager) {
-        self.backgroundColor = color.lightColor
-        self.discordLabel.textColor = color.fontColor
-        self.steamLabel.textColor = color.fontColor
-        self.instagramLabel.textColor = color.fontColor
-
-        self.discordLabel.text = "Discord: \(discordName ?? "-")"
-        self.steamLabel.text = "Steam: \(steamName ?? "-")"
-        self.instagramLabel.text = "Instagram: \(instagramName ?? "-")"
-
-        self.discordView.layer.borderColor = color.darkColor.cgColor
-        self.steamView.layer.borderColor = color.darkColor.cgColor
-        self.instagramView.layer.borderColor = color.darkColor.cgColor
+    public func configure(discordName: String, steamName: String, instagramName: String) {
+        self.discordLabel.text = "Discord: \(discordName)"
+        self.steamLabel.text = "Steam: \(steamName)"
+        self.instagramLabel.text = "Instagram: \(instagramName)"
     }
 }

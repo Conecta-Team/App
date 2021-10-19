@@ -10,23 +10,24 @@ import CloudKit
 
 class LoginViewModel: ViewModelType {
     weak var delegate: ViewModelDelegate?
-    let cloudKitService: CloudKitServiceAll = CloudKitServiceAll.currentModel
 
-    var hasUser: Bool = false {
-        didSet {
-            delegate?.didLoadData()
-        }
-    }
+    let userCKService: UserCKService = UserCKService()
+    var user: UserDTO? = nil
 
     func initialization() {}
+}
 
-    public func getPrivateUser() {
-        self.cloudKitService.getUserPublicReference { result in
-            if let resultArray = result, resultArray.first != nil {
-                self.hasUser = true
-            } else {
-                self.hasUser = false
+extension LoginViewModel {
+    
+    public func getCurrentUser() {
+        self.userCKService.getCurrentUser { result in
+            switch result {
+            case .success(let userRecord):
+                self.user = UserDTO(record: userRecord)
+            case .failure(_):
+                self.user = nil
             }
+            self.delegate?.didLoadData()
         }
     }
 }
