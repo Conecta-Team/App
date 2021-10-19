@@ -11,9 +11,10 @@ class MatchView: UIView {
 
     var mainColor: ColorManager = .defaultColor {
         didSet {
-            self.backgroundColor = self.mainColor.lightColor
+            self.backgroundColor = .backgroundBlack
         }
     }
+    let bgView = BackgroundRectView()
 
     let collection: UICollectionView = {
         let layout = ZoomAndSnapFlowLayout()
@@ -36,16 +37,22 @@ class MatchView: UIView {
         return tableView
     }()
 
-    let topViewColor: UIView = {
+    let backgroundViewColor: UIView = {
         let view = UIView()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .backgroundPurple
+        view.layer.borderWidth = 2
+        view.layer.borderColor = UIColor.borderPurple.cgColor
+        view.layer.shadowColor = UIColor.shadowPurple.cgColor
+        view.layer.shadowOffset = .zero
+        view.layer.shadowRadius = 20
+        view.layer.shadowOpacity = 1
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.topViewLayout()
+        self.backgroundLayout()
         self.collectionLayout()
         self.tableViewLayout()
     }
@@ -58,29 +65,36 @@ class MatchView: UIView {
             self.collection.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3),
             self.collection.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.collection.topAnchor.constraint(equalTo: self.topAnchor, constant: 40),
-            self.topViewColor.bottomAnchor.constraint(equalTo: self.collection.centerYAnchor, constant: -20)
+            self.bgView.topAnchor.constraint(equalTo: self.collection.bottomAnchor, constant: 4)
         ])
     }
 
-    private func topViewLayout() {
-        self.tableView.register(NickNameTableViewCell.self, forCellReuseIdentifier: NickNameTableViewCell.reuseIdentifier)
-        self.tableView.register(UserGamesTableViewCell.self, forCellReuseIdentifier: UserGamesTableViewCell.reuseIdentifier)
-        self.tableView.register(UserInfosTableViewCell.self, forCellReuseIdentifier: UserInfosTableViewCell.reuseIdentifier)
-        
-        tableView.register(TitleSectionUser.self,
-               forHeaderFooterViewReuseIdentifier: "sectionHeader")
-
-        self.addSubview(self.topViewColor)
-
+    private func backgroundLayout() {
+        addSubview(bgView)
         NSLayoutConstraint.activate([
-            self.topViewColor.topAnchor.constraint(equalTo: self.topAnchor),
-            self.topViewColor.leftAnchor.constraint(equalTo: self.leftAnchor),
-            self.topViewColor.rightAnchor.constraint(equalTo: self.rightAnchor)
+            bgView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            bgView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            bgView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+
+
         ])
+//        addSubview(backgroundViewColor)
+//        NSLayoutConstraint.activate([
+//            backgroundViewColor.leftAnchor.constraint(equalTo: self.leftAnchor),
+//            backgroundViewColor.rightAnchor.constraint(equalTo: self.rightAnchor),
+//            backgroundViewColor.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+//        ])
     }
 
     private func tableViewLayout() {
-        self.addSubview(self.tableView)
+        tableView.register(NickNameTableViewCell.self, forCellReuseIdentifier: NickNameTableViewCell.reuseIdentifier)
+        tableView.register(UserGamesTableViewCell.self, forCellReuseIdentifier: UserGamesTableViewCell.reuseIdentifier)
+        tableView.register(UserInfosTableViewCell.self, forCellReuseIdentifier: UserInfosTableViewCell.reuseIdentifier)
+        
+        tableView.register(TitleSectionUser.self,
+               forHeaderFooterViewReuseIdentifier: "sectionHeader")
+        
+        addSubview(self.tableView)
 
         NSLayoutConstraint.activate([
             self.tableView.topAnchor.constraint(equalTo: self.collection.bottomAnchor, constant: 24),
@@ -91,7 +105,7 @@ class MatchView: UIView {
     }
 
     public func configureViewColors(color: ColorManager) {
-        self.topViewColor.backgroundColor = color.darkColor
+//        self.topViewColor.backgroundColor = color.darkColor
         self.mainColor = color
     }
 }

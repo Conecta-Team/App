@@ -31,13 +31,14 @@ class MatchViewModel: ViewModelType {
         }
     }
 
-    var users: [UserDTO2] = [UserDTO2]() {
-        didSet {
-            self.delegate?.didLoadData()
-            self.getSocialInfos()
-            self.getGameName()
-        }
-    }
+//    var users: [UserDTO2] = [UserDTO2]() {
+//        didSet {
+//            self.delegate?.didLoadData()
+//            self.getSocialInfos()
+//            self.getGameName()
+//        }
+//    }
+    var users: [UserDTO2] = UserDTO2.createMock()
 
     var socialInfo: SocialInfosDTO? = nil {
         didSet {
@@ -52,11 +53,11 @@ class MatchViewModel: ViewModelType {
     }
 
     func initialization() {
-        if let user = user {
-            self.userRecord = user
-        } else {
-            self.getUserPublicId()
-        }
+//        if let user = user {
+//            self.userRecord = user
+//        } else {
+//            self.getUserPublicId()
+//        }
     }
     
     public func configureInitialData(user: CKRecord? = nil) {
@@ -81,15 +82,15 @@ class MatchViewModel: ViewModelType {
 
     // TODO: futuramente trocar parar TODOS os games de um usuário
     public func getGameName() {
-        self.cloudKitService.getGame(game: self.users[self.indexCurrentUser].gameID!) { game in
-            self.userGame = GameDTO2(record: game.first!)
-        }
+//        self.cloudKitService.getGame(game: self.users[self.indexCurrentUser].gameID!) { game in
+//            self.userGame = GameDTO2(record: game.first!)
+//        }
     }
 
     public func getSocialInfos() {
-        self.cloudKitService.getSocialInfos(socialInfoId: self.users[self.indexCurrentUser].socialInfoID!) { socialInfo in
-            self.socialInfo = SocialInfosDTO(record: socialInfo.first!)
-        }
+//        self.cloudKitService.getSocialInfos(socialInfoId: self.users[self.indexCurrentUser].socialInfoID!) { socialInfo in
+//            self.socialInfo = SocialInfosDTO(record: socialInfo.first!)
+//        }
     }
     
     private func getUserPublicId() {
