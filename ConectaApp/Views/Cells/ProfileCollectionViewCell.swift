@@ -10,8 +10,6 @@ import UIKit
 class ProfileCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "profileCollectionViewCell"
 
-    var cellColor: ColorManager = .defaultColor
-
     let shapeCell: UIImageView = {
         let image = UIImage(named: "ShapeSquare")
         let imageView = UIImageView(image: image)
@@ -58,19 +56,17 @@ class ProfileCollectionViewCell: UICollectionViewCell {
             shapeCell.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             shapeCell.heightAnchor.constraint(equalTo: self.heightAnchor),
             shapeCell.widthAnchor.constraint(equalTo: self.widthAnchor),
+
             imageProfile.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             imageProfile.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
         ])
     }
 
-    public func configureCell(cellColor: ColorManager, profileLetter: String) {
+    public func configureCell(profileLetter: String) {
         self.imageProfile.text = profileLetter
 
-//        self.shapeCell.tintColor = cellColor.darkColor
-//        self.cellColor = cellColor
-
-        self.shapeCell.layer.shadowColor = UIColor(red: 0.73, green: 0.64, blue: 0.97, alpha: 1.00).cgColor
+        self.shapeCell.layer.shadowColor = UIColor.white.cgColor
         self.shapeCell.layer.shadowOpacity = 1
         self.shapeCell.layer.shadowOffset = .zero
         self.shapeCell.layer.shadowRadius = 5

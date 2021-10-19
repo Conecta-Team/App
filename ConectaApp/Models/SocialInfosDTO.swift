@@ -6,20 +6,18 @@
 //
 
 import Foundation
-import CloudKit
 
-struct SocialInfosDTO {
-    let socialInfosId: CKRecord.ID
-    let discord: String?
-    let facebook: String?
-    let steam: String?
-    let intagram: String?
-
-    init(record: CKRecord) {
-        self.socialInfosId = record.recordID
-        self.discord = record["discord"]
-        self.facebook = record["facebook"]
-        self.steam = record["steam"]
-        self.intagram = record["instagram"]
-    }
-}
+//struct SocialInfosDTO {
+//    let discord: String
+//    let facebook: String
+//    let steam: String
+//    let intagram: String
+//
+//    init(user: UserDTO) {
+//        if let discord = 
+//        self.discord = record["discord"]
+//        self.facebook = record["facebook"]
+//        self.steam = record["steam"]
+//        self.intagram = record["instagram"]
+//    }
+//}

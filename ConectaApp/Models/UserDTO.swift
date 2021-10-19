@@ -18,11 +18,12 @@ class UserDTO {
 
     init?(record: CKRecord) {
         self.id = record.recordID
-        if let userName = record["name"] as? String, let goal = record["goal"] as? Int, let games = record["games"] as? [Int] {
+        //TODO: REVER NOMES DAS LAVELS EM PRODUCAO
+        if let userName = record["name"] as? String, let goal = record["goal"] as? Int, let games = record["Games"] as? [Int] {
             self.name = userName
             self.games = games
             self.goal = goal
-            self.instagram = record["instagram"] as? String ?? "-"
+            self.instagram = record["Instagram"] as? String ?? "-"
             self.steam = record["steam"] as? String ?? "-"
             self.discord = record["discord"] as? String ?? "-"
         } else {
