@@ -39,9 +39,7 @@ class NickNameTableViewCell: UITableViewCell {
         ])
     }
 
-    public func configure(nickName: String, color: ColorManager) {
-        self.backgroundColor = color.lightColor
-        self.nickName.textColor = color.fontColor
+    public func configure(nickName: String) {
         self.nickName.text = nickName.uppercased()
     }
 }

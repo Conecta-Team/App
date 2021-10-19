@@ -9,6 +9,8 @@ import UIKit
 
 class UserGamesTableViewCell: UITableViewCell {
     static let reuseIdentifier = "userGamesTableViewCell"
+    
+    var games: [Games] = [Games]()
 
     let shape: UIImageView = {
         let image = UIImage(named: "shapeGameInterest")?.withRenderingMode(.alwaysTemplate)
@@ -52,10 +54,12 @@ class UserGamesTableViewCell: UITableViewCell {
         ])
     }
 
-    public func configure(gameName: String, color: ColorManager) {
-        self.backgroundColor = color.lightColor
-        self.gameName.textColor = color.fontColor
-        self.gameName.text = gameName
-        self.shape.tintColor = color.darkColor
+    public func configure(games: [Games]) {
+        self.games = games
+
+        //TODO: ainda precisa ser uma collection aqui
+        if let game = self.games.first {
+            self.gameName.text = game.name
+        }
     }
 }

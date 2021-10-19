@@ -139,17 +139,16 @@ class RegisterManagerViewController: UIPageViewController {
             
             self.viewModel.createUser { result in
                 switch result {
-                case .success(let users):
-                    print(users)
+                case .success(let user):
+                    DispatchQueue.main.async {
+                        let nextController = MatchViewController(user: user)
+                        self.navigationController?.pushViewController(nextController, animated: true)
+                    }
                 case .failure(let error):
+                    //TODO: MENSAGEM DE ERRO AQUI
                     print(error)
                 }
             }
-//            self.viewModel.saveInfosUser { user in
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//                    self.navigationController?.pushViewController(MatchViewController(user: user), animated: true)
-//                }
-//            }
         }
     }
 

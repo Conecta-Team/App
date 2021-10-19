@@ -15,9 +15,6 @@
 		8816D0FF26F6544600AB6C4E /* ShareTechMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */; };
 		8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10026F654BB00AB6C4E /* FontConfiguration.swift */; };
 		8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */; };
-		8841C18926F21E080051BEFF /* UserDTO2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18826F21E080051BEFF /* UserDTO2.swift */; };
-		8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18A26F21EE20051BEFF /* PurposeDTO.swift */; };
-		8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */; };
 		8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */; };
 		8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524926F952B100E6E759 /* RegisterGameViewModel.swift */; };
 		886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */; };
@@ -31,9 +28,6 @@
 		886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0B0326F8025600A4E7D7 /* RegisterTitleSectionCell.swift */; };
 		887D518126F8C8ED00DC8BEC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */; };
 		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
-		A21425B426F0DDF900309605 /* CloudKitServiceAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B326F0DDF900309605 /* CloudKitServiceAll.swift */; };
-		A21425B626F0E54500309605 /* GameDTO2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B526F0E54500309605 /* GameDTO2.swift */; };
-		A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B726F0E58300309605 /* CategoryDTO.swift */; };
 		A21425BA26F0EDA600309605 /* CloudKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B926F0EDA600309605 /* CloudKitError.swift */; };
 		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
 		A21A221726EF67260052384A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221626EF67260052384A /* SceneDelegate.swift */; };
@@ -49,7 +43,6 @@
 		A226798F26F5395300E5B0FF /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226798E26F5395300E5B0FF /* ViewModelProtocols.swift */; };
 		A226799126F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799026F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift */; };
 		A226799326F5417A00E5B0FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799226F5417A00E5B0FF /* ProfileCollectionViewCell.swift */; };
-		A226799526F66BBD00E5B0FF /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799426F66BBD00E5B0FF /* ColorsManager.swift */; };
 		A226799726F6806500E5B0FF /* NickNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799626F6806500E5B0FF /* NickNameTableViewCell.swift */; };
 		A226799926F680B600E5B0FF /* UserGamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799826F680B600E5B0FF /* UserGamesTableViewCell.swift */; };
 		A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */; };
@@ -91,9 +84,6 @@
 		8816D10026F654BB00AB6C4E /* FontConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfiguration.swift; sourceTree = "<group>"; };
 		8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfiguration.swift; sourceTree = "<group>"; };
 		8835AAE326F6A3400006398E /* ConectaApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ConectaApp.entitlements; sourceTree = "<group>"; };
-		8841C18826F21E080051BEFF /* UserDTO2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO2.swift; sourceTree = "<group>"; };
-		8841C18A26F21EE20051BEFF /* PurposeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeDTO.swift; sourceTree = "<group>"; };
-		8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialInfosDTO.swift; sourceTree = "<group>"; };
 		8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewModel.swift; sourceTree = "<group>"; };
 		8861524926F952B100E6E759 /* RegisterGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameViewModel.swift; sourceTree = "<group>"; };
 		886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewController.swift; sourceTree = "<group>"; };
@@ -107,9 +97,6 @@
 		886B0B0326F8025600A4E7D7 /* RegisterTitleSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTitleSectionCell.swift; sourceTree = "<group>"; };
 		887D518026F8C8ED00DC8BEC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		A21425B326F0DDF900309605 /* CloudKitServiceAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitServiceAll.swift; sourceTree = "<group>"; };
-		A21425B526F0E54500309605 /* GameDTO2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDTO2.swift; sourceTree = "<group>"; };
-		A21425B726F0E58300309605 /* CategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDTO.swift; sourceTree = "<group>"; };
 		A21425B926F0EDA600309605 /* CloudKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitError.swift; sourceTree = "<group>"; };
 		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21A221426EF67260052384A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +118,6 @@
 		A226798E26F5395300E5B0FF /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
 		A226799026F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
 		A226799226F5417A00E5B0FF /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
-		A226799426F66BBD00E5B0FF /* ColorsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
 		A226799626F6806500E5B0FF /* NickNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameTableViewCell.swift; sourceTree = "<group>"; };
 		A226799826F680B600E5B0FF /* UserGamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGamesTableViewCell.swift; sourceTree = "<group>"; };
 		A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfosTableViewCell.swift; sourceTree = "<group>"; };
@@ -255,11 +241,6 @@
 		A21A224726EF6C300052384A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A21425B526F0E54500309605 /* GameDTO2.swift */,
-				A21425B726F0E58300309605 /* CategoryDTO.swift */,
-				8841C18826F21E080051BEFF /* UserDTO2.swift */,
-				8841C18A26F21EE20051BEFF /* PurposeDTO.swift */,
-				8841C18C26F21F0D0051BEFF /* SocialInfosDTO.swift */,
 				A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */,
 			);
 			path = Models;
@@ -334,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				A21425B926F0EDA600309605 /* CloudKitError.swift */,
-				A226799426F66BBD00E5B0FF /* ColorsManager.swift */,
 				A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */,
 				A2E0FEE1270DCD4000E7ABC2 /* Games.swift */,
 				A2E0FEE3270DCF4800E7ABC2 /* Categories.swift */,
@@ -347,7 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				A2E0FEDA270DCA0E00E7ABC2 /* CloudKitService */,
-				A21425B326F0DDF900309605 /* CloudKitServiceAll.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -614,7 +593,6 @@
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
 				A226798D26F5393700E5B0FF /* MatchViewModel.swift in Sources */,
 				A226799126F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift in Sources */,
-				A226799526F66BBD00E5B0FF /* ColorsManager.swift in Sources */,
 				A226799326F5417A00E5B0FF /* ProfileCollectionViewCell.swift in Sources */,
 				A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */,
 				886B0AFA26F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift in Sources */,
@@ -625,13 +603,9 @@
 				8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */,
 				A21425BA26F0EDA600309605 /* CloudKitError.swift in Sources */,
 				8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */,
-				8841C18B26F21EE20051BEFF /* PurposeDTO.swift in Sources */,
 				886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */,
 				886B0AFC26F7DC6700A4E7D7 /* RegisterNameView.swift in Sources */,
 				887D518126F8C8ED00DC8BEC /* LoginViewModel.swift in Sources */,
-				A21425B826F0E58300309605 /* CategoryDTO.swift in Sources */,
-				A21425B426F0DDF900309605 /* CloudKitServiceAll.swift in Sources */,
-				8841C18926F21E080051BEFF /* UserDTO2.swift in Sources */,
 				A226799726F6806500E5B0FF /* NickNameTableViewCell.swift in Sources */,
 				A2E0FEE2270DCD4000E7ABC2 /* Games.swift in Sources */,
 				A226799D26F6881A00E5B0FF /* TitleSectionUser.swift in Sources */,
@@ -645,8 +619,6 @@
 				A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */,
 				A226799926F680B600E5B0FF /* UserGamesTableViewCell.swift in Sources */,
 				A2E0FEE6270DCF5300E7ABC2 /* Goals.swift in Sources */,
-				A21425B626F0E54500309605 /* GameDTO2.swift in Sources */,
-				8841C18D26F21F0D0051BEFF /* SocialInfosDTO.swift in Sources */,
 				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
