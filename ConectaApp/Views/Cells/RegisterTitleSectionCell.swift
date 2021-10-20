@@ -15,7 +15,7 @@ class RegisterTitleSectionCell: UITableViewHeaderFooterView {
     let title: UILabel = {
         let label = UILabel()
         label.font = .appRegularFont(with: 24)
-        label.textColor = .textGreen2
+        label.textColor = .textBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -31,7 +31,7 @@ class RegisterTitleSectionCell: UITableViewHeaderFooterView {
     
     private func setupCell() {
         self.addSubview(self.title)
-        self.contentView.backgroundColor = .backgroundGray
+        self.contentView.backgroundColor = .gray
 
         NSLayoutConstraint.activate([
             self.title.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor),

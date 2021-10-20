@@ -13,7 +13,7 @@ class RegisterGameView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .appRegularFont(with: 32)
-        label.textColor = .textGreen2
+        label.textColor = .textBlue
         label.text = "Jogos de Interesse"
         return label
     }()
@@ -22,7 +22,7 @@ class RegisterGameView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .appRegularFont(with: 16)
-        label.textColor = .textLightGray
+        label.textColor = .textLightBlue
         label.text = "É através dele que você encontrará seu duo!"
         label.numberOfLines = 0
         return label
@@ -33,7 +33,7 @@ class RegisterGameView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
-        tableView.backgroundColor = .backgroundGray
+        tableView.backgroundColor = .gray
         tableView.register(RegisterGameTableViewCell.self, forCellReuseIdentifier: RegisterGameTableViewCell.reuseIdentifier)
         tableView.register(RegisterTitleSectionCell.self,
                            forHeaderFooterViewReuseIdentifier: RegisterTitleSectionCell.reuseIdentifier)

@@ -13,7 +13,7 @@ class RegisterSocialInfoView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .appRegularFont(with: 32)
-        label.textColor = .textBrown
+        label.textColor = .red
         label.text = "Contatos"
         return label
     }()
@@ -22,7 +22,7 @@ class RegisterSocialInfoView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .appRegularFont(with: 16)
-        label.textColor = .textLightGray
+        label.textColor = .red
         label.text = "Adicione meios de conversar com você!"
         label.numberOfLines = 0 
         return label
@@ -31,14 +31,14 @@ class RegisterSocialInfoView: UIView {
     internal lazy var discordView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightOrange
+        view.backgroundColor = .red
         return view
     }()
     
     internal lazy var discordLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .textDarkGray
+        label.textColor = .red
         label.attributedText = NSMutableAttributedString(string: "Discord: ", attributes: [
             NSAttributedString.Key.strokeWidth: -2,
             NSAttributedString.Key.font: UIFont.appRegularFont(with: 16)])
@@ -48,8 +48,8 @@ class RegisterSocialInfoView: UIView {
     internal lazy var discordTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .lightOrange
-        textField.textColor = .textDarkGray
+        textField.backgroundColor = .red
+        textField.textColor = .red
         textField.font = .appRegularFont(with: 16)
         return textField
     }()
@@ -57,14 +57,14 @@ class RegisterSocialInfoView: UIView {
     internal lazy var steamView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightOrange
+        view.backgroundColor = .red
         return view
     }()
     
     internal lazy var steamLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .textDarkGray
+        label.textColor = .red
         label.attributedText = NSMutableAttributedString(string: "Steam: ", attributes: [
             NSAttributedString.Key.strokeWidth: -2,
             NSAttributedString.Key.font: UIFont.appRegularFont(with: 16)])
@@ -74,23 +74,23 @@ class RegisterSocialInfoView: UIView {
     internal lazy var steamTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .lightOrange
+        textField.backgroundColor = .red
         textField.font = .appRegularFont(with: 16)
-        textField.textColor = .textDarkGray
+        textField.textColor = .red
         return textField
     }()
 
     internal lazy var instagramView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightOrange
+        view.backgroundColor = .red
         return view
     }()
     
     internal lazy var instagramLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .textDarkGray
+        label.textColor = .red
         label.attributedText = NSMutableAttributedString(string: "Instagram: ", attributes: [
             NSAttributedString.Key.strokeWidth: -2,
             NSAttributedString.Key.font: UIFont.appRegularFont(with: 16)])
@@ -100,9 +100,9 @@ class RegisterSocialInfoView: UIView {
     internal lazy var instagramTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .lightOrange
+        textField.backgroundColor = .red
         textField.font = .appRegularFont(with: 16)
-        textField.textColor = .textDarkGray
+        textField.textColor = .red
         return textField
     }()
     

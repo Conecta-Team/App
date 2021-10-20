@@ -9,19 +9,28 @@ import UIKit
 
 class RegisterNameView: UIView {
     
-    internal lazy var backgroundImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "backgroundPurple")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
+    internal lazy var borderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .backgroundPurple
+        view.layer.borderColor = UIColor.borderPurple.cgColor
+        view.layer.borderWidth = 2
+        view.layer.shadowColor = UIColor.borderPurple.cgColor
+        view.layer.shadowRadius = 8
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = .zero
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
-
+    
     internal lazy var nameTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .appRegularFont(with: 32)
         label.textColor = .textBlue
+        label.layer.shadowColor = UIColor.textBlue.cgColor
+        label.layer.shadowRadius = 8
+        label.layer.shadowOpacity = 1
+        label.layer.shadowOffset = .zero
         label.text = "Nickname"
         return label
     }()
@@ -30,7 +39,7 @@ class RegisterNameView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .appRegularFont(with: 16)
-        label.textColor = .textLightGray
+        label.textColor = .textLightBlue
         label.text = "Como gostaria de ser chamada?"
         label.numberOfLines = 0
         return label
@@ -39,9 +48,16 @@ class RegisterNameView: UIView {
     internal lazy var nameTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .lightPurple
+        textField.layer.borderColor = UIColor.borderGreen.cgColor
+        textField.layer.borderWidth = 1
+        textField.layer.shadowColor = UIColor.textBlue.cgColor
+        textField.layer.shadowRadius = 8
+        textField.layer.shadowOpacity = 1
+        textField.layer.shadowOffset = .zero
         textField.font = .appRegularFont(with: 16)
-        textField.textColor = .textDarkGray
+        textField.textColor = .textLightBlue
+        textField.placeholder = " Digite seu nickname"
+        
         return textField
     }()
     
@@ -49,20 +65,20 @@ class RegisterNameView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .appRegularFont(with: 12)
-        label.textColor = .red
+        label.textColor = .alertRed
         label.text = "Esse campo não pode estar vazio!"
         label.numberOfLines = 0
         label.isHidden = true
         return label
     }()
     
-
     override func layoutSubviews() {
         super.layoutSubviews()
         setupView()
     }
     
     func setupView() {
+        addSubview(borderView)
         addSubview(nameTitle)
         addSubview(nameSubtitle)
         addSubview(nameTextField)
@@ -75,29 +91,37 @@ class RegisterNameView: UIView {
     }
     
     func setConstraints() {
+        
         NSLayoutConstraint.activate([
-            nameTitle.topAnchor.constraint(equalTo: topAnchor, constant: 120),
-            nameTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            nameTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
+            borderView.topAnchor.constraint(equalTo: topAnchor, constant: 80),
+            borderView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            borderView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            borderView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30)
         ])
-
+        
+        NSLayoutConstraint.activate([
+            nameTitle.topAnchor.constraint(equalTo: borderView.topAnchor, constant: 56),
+            nameTitle.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
+            nameTitle.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
+        ])
+        
         NSLayoutConstraint.activate([
             nameSubtitle.topAnchor.constraint(equalTo: nameTitle.bottomAnchor, constant: 16),
-            nameSubtitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            nameSubtitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
+            nameSubtitle.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
+            nameSubtitle.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
         ])
         
         NSLayoutConstraint.activate([
             nameTextField.topAnchor.constraint(equalTo: nameSubtitle.bottomAnchor, constant: 16),
-            nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            nameTextField.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
+            nameTextField.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8),
             nameTextField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)
         ])
         
         NSLayoutConstraint.activate([
             errorMessageLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 8),
-            errorMessageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            errorMessageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
+            errorMessageLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
+            errorMessageLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
         ])
     }
 }
