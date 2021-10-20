@@ -96,7 +96,7 @@ class RegisterNameView: UIView {
             borderView.topAnchor.constraint(equalTo: topAnchor, constant: 80),
             borderView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             borderView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            borderView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30)
+            borderView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
         ])
         
         NSLayoutConstraint.activate([

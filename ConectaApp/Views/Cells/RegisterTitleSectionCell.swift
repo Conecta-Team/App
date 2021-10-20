@@ -31,7 +31,7 @@ class RegisterTitleSectionCell: UITableViewHeaderFooterView {
     
     private func setupCell() {
         self.addSubview(self.title)
-        self.contentView.backgroundColor = .gray
+        self.contentView.backgroundColor = .backgroundPurple
 
         NSLayoutConstraint.activate([
             self.title.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor),

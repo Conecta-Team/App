@@ -53,7 +53,7 @@ class RegisterGameTableViewCell: UITableViewCell {
     
     private func setupCell() {
         self.addSubview(self.gameButton)
-        self.backgroundColor = .gray
+        self.backgroundColor = .backgroundPurple
         self.contentView.isUserInteractionEnabled = false
         NSLayoutConstraint.activate([
             gameButton.centerYAnchor.constraint(equalTo: centerYAnchor),

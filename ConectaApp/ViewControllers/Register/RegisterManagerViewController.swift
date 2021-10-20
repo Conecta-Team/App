@@ -92,15 +92,15 @@ class RegisterManagerViewController: UIPageViewController {
         ])
 
         NSLayoutConstraint.activate([
-            buttonBack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            buttonBack.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -24),
-            buttonBack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+            buttonBack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 56),
+            //buttonBack.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -24),
+            buttonBack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64)
         ])
 
         NSLayoutConstraint.activate([
-            buttonNext.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 24),
-            buttonNext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            buttonNext.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+            //buttonNext.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 24),
+            buttonNext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -56),
+            buttonNext.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64)
         ])
     }
 
@@ -128,12 +128,16 @@ class RegisterManagerViewController: UIPageViewController {
         switch index {
         case 0:
             pageControlImageView.image = UIImage(named: "firstPageControl")
+            buttonNext.setImage(UIImage(named: "buttonNext"), for: .normal)
         case 1:
             pageControlImageView.image = UIImage(named: "secondPageControl")
+            buttonNext.setImage(UIImage(named: "buttonNext"), for: .normal)
         case 2:
             pageControlImageView.image = UIImage(named: "lastPageControl")
+            buttonNext.setImage(UIImage(named: "checkButton"), for: .normal)
         default:
             pageControlImageView.image = UIImage(named: "firstPageControl")
+            buttonNext.setImage(UIImage(named: "buttonNext"), for: .normal)
         }
     }
 
