@@ -45,18 +45,12 @@ class RegisterManagerViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        viewModel.initialization()
-        self.navigationItem.setHidesBackButton(true, animated: false)
         setup()
         style()
         layout()
     }
 
     func setup() {
-        pageControl.isUserInteractionEnabled = false
-
         pages.append(registerNameViewController)
         pages.append(registerGameViewController)
         pages.append(registerSocialInfoViewController)
@@ -65,6 +59,14 @@ class RegisterManagerViewController: UIPageViewController {
     }
 
     func style() {
+        // viewStyle
+        self.view.backgroundColor = .backgroundBlack
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        viewModel.initialization()
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
+        // pageControlStyle
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.preferredIndicatorImage = UIImage(named: "pageControlUnselected")
         pageControl.currentPageIndicatorTintColor = .darkPurple
@@ -98,17 +100,6 @@ class RegisterManagerViewController: UIPageViewController {
 
     }
 
-    func changeColor() {
-        switch pageControl.currentPage {
-        case 1:
-            pageControl.currentPageIndicatorTintColor = .darkBlue
-        case 2:
-            pageControl.currentPageIndicatorTintColor = .darkOrange
-        default:
-            pageControl.currentPageIndicatorTintColor = .darkPurple
-        }
-    }
-
     func validadeInfos() -> Bool {
         switch pageControl.currentPage {
         case 0:
@@ -132,22 +123,16 @@ class RegisterManagerViewController: UIPageViewController {
     @objc func nextTapped(_ sender: UIButton) {
         if pageControl.currentPage < pages.count - 1 && validadeInfos() {
             pageControl.currentPage += 1
-            changeColor()
             setViewControllers([pages[pageControl.currentPage]], direction: .forward, animated: true, completion: nil)
         } else if pageControl.currentPage == pages.count - 1 && validadeInfos() {
             self.buttonNext.isUserInteractionEnabled = false
             
-            self.viewModel.createUser { result in
-                switch result {
-                case .success(let users):
-                    print(users)
-                case .failure(let error):
-                    print(error)
-                }
-            }
-//            self.viewModel.saveInfosUser { user in
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//                    self.navigationController?.pushViewController(MatchViewController(user: user), animated: true)
+//            self.viewModel.createUser { result in
+//                switch result {
+//                case .success(let users):
+//                    print(users)
+//                case .failure(let error):
+//                    print(error)
 //                }
 //            }
         }
@@ -156,7 +141,6 @@ class RegisterManagerViewController: UIPageViewController {
     @objc func backTapped(_ sender: UIButton) {
         if pageControl.currentPage != 0 {
             pageControl.currentPage -= 1
-            changeColor()
             setViewControllers([pages[pageControl.currentPage]], direction: .reverse, animated: true, completion: nil)
         }
     }

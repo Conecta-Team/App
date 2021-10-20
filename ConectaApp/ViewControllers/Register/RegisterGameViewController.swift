@@ -22,7 +22,6 @@ class RegisterGameViewController: UIViewController {
         registerGameView.gamesTableView.delegate = self
         registerGameView.gamesTableView.dataSource = self
         self.view = registerGameView
-        self.view.backgroundColor = .backgroundGray
     }
     
     public func getSelectedGames() -> [Games]? {

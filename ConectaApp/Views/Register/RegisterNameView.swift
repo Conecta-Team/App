@@ -21,7 +21,7 @@ class RegisterNameView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .appRegularFont(with: 32)
-        label.textColor = .textPurple
+        label.textColor = .textBlue
         label.text = "Nickname"
         return label
     }()
