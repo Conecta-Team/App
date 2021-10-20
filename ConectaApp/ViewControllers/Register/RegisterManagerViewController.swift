@@ -127,14 +127,18 @@ class RegisterManagerViewController: UIPageViewController {
         } else if pageControl.currentPage == pages.count - 1 && validadeInfos() {
             self.buttonNext.isUserInteractionEnabled = false
             
-//            self.viewModel.createUser { result in
-//                switch result {
-//                case .success(let users):
-//                    print(users)
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            }
+            self.viewModel.createUser { result in
+                switch result {
+                case .success(let user):
+                    DispatchQueue.main.async {
+                        let nextController = MatchViewController(user: user)
+                        self.navigationController?.pushViewController(nextController, animated: true)
+                    }
+                case .failure(let error):
+                    //TODO: MENSAGEM DE ERRO AQUI
+                    print(error)
+                }
+            }
         }
     }
 

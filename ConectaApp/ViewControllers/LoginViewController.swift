@@ -28,15 +28,16 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.view = mainView
         self.viewModel.delegate = self
+
         mainView.buttonLogin.addTarget(self, action: #selector(login(_:)), for: .touchUpInside)
-        self.view.backgroundColor = UIColor(red: 0.10, green: 0.00, blue: 0.22, alpha: 1.00)
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     @objc func login(_ sender: UIButton) {
         if FileManager.default.ubiquityIdentityToken != nil {
-            self.viewModel.getPrivateUser()
+            self.viewModel.getCurrentUser()
         } else {
             observerLoginAuth()
         }
@@ -60,7 +61,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     }
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        self.viewModel.getPrivateUser()
+        self.viewModel.getCurrentUser()
     }
 }
 
@@ -75,12 +76,13 @@ extension LoginViewController: ViewModelDelegate {
     }
 
     func didLoadData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            if self.viewModel.hasUser {
-                self.navigationController?.pushViewController(MatchViewController(), animated: true)
+        DispatchQueue.main.async {
+            if let user = self.viewModel.user {
+                let nextController = MatchViewController(user: user)
+                self.navigationController?.pushViewController(nextController, animated: true)
             } else {
                 self.navigationController?.pushViewController(RegisterManagerViewController(), animated: true)
             }
-        })
+        }
     }
 }

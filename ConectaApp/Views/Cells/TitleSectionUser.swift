@@ -35,9 +35,4 @@ class TitleSectionUser: UITableViewHeaderFooterView {
             self.title.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
-
-    public func configure(color: ColorManager) {
-        self.contentView.backgroundColor = color.lightColor
-        self.title.textColor = color.fontColor
-    }
 }
