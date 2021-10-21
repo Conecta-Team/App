@@ -34,6 +34,14 @@ class RegisterManagerViewController: UIPageViewController {
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         return button
     }()
+    
+    internal lazy var pageControlImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "firstPageControl")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
 
     override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
         super.init(transitionStyle: .scroll, navigationOrientation: navigationOrientation, options: options)
@@ -45,68 +53,53 @@ class RegisterManagerViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        viewModel.initialization()
-        self.navigationItem.setHidesBackButton(true, animated: false)
         setup()
-        style()
-        layout()
     }
 
     func setup() {
-        pageControl.isUserInteractionEnabled = false
-
         pages.append(registerNameViewController)
         pages.append(registerGameViewController)
         pages.append(registerSocialInfoViewController)
 
         setViewControllers([pages[initialPage]], direction: .forward, animated: false, completion: nil)
+        style()
     }
 
     func style() {
+        // viewStyle
+        self.view.backgroundColor = .backgroundBlack
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        viewModel.initialization()
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
+        // pageControlStyle
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.preferredIndicatorImage = UIImage(named: "pageControlUnselected")
-        pageControl.currentPageIndicatorTintColor = .darkPurple
-        pageControl.pageIndicatorTintColor = .lightGray
         pageControl.numberOfPages = pages.count
         pageControl.currentPage = initialPage
+        
+        layout()
     }
 
     func layout() {
-        view.addSubview(pageControl)
+        view.addSubview(pageControlImageView)
         view.addSubview(buttonNext)
         view.addSubview(buttonBack)
-
+        
         NSLayoutConstraint.activate([
-            pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
-            pageControl.heightAnchor.constraint(equalToConstant: 20),
-            pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+            pageControlImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1),
+            pageControlImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         ])
 
         NSLayoutConstraint.activate([
-            buttonBack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            buttonBack.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -24),
-            buttonBack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+            buttonBack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 56),
+            buttonBack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
 
         NSLayoutConstraint.activate([
-            buttonNext.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 24),
-            buttonNext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            buttonNext.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+            buttonNext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -56),
+            buttonNext.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
-
-    }
-
-    func changeColor() {
-        switch pageControl.currentPage {
-        case 1:
-            pageControl.currentPageIndicatorTintColor = .darkBlue
-        case 2:
-            pageControl.currentPageIndicatorTintColor = .darkOrange
-        default:
-            pageControl.currentPageIndicatorTintColor = .darkPurple
-        }
     }
 
     func validadeInfos() -> Bool {
@@ -128,34 +121,52 @@ class RegisterManagerViewController: UIPageViewController {
             return false
         }
     }
+    
+    func changeImageView(index: Int) {
+        switch index {
+        case 0:
+            pageControlImageView.image = UIImage(named: "firstPageControl")
+            buttonNext.setImage(UIImage(named: "buttonNext"), for: .normal)
+        case 1:
+            pageControlImageView.image = UIImage(named: "secondPageControl")
+            buttonNext.setImage(UIImage(named: "buttonNext"), for: .normal)
+        case 2:
+            pageControlImageView.image = UIImage(named: "lastPageControl")
+            buttonNext.setImage(UIImage(named: "checkButton"), for: .normal)
+        default:
+            pageControlImageView.image = UIImage(named: "firstPageControl")
+            buttonNext.setImage(UIImage(named: "buttonNext"), for: .normal)
+        }
+    }
 
     @objc func nextTapped(_ sender: UIButton) {
+        
         if pageControl.currentPage < pages.count - 1 && validadeInfos() {
+            changeImageView(index: pageControl.currentPage + 1)
             pageControl.currentPage += 1
-            changeColor()
             setViewControllers([pages[pageControl.currentPage]], direction: .forward, animated: true, completion: nil)
         } else if pageControl.currentPage == pages.count - 1 && validadeInfos() {
             self.buttonNext.isUserInteractionEnabled = false
             
-            self.viewModel.createUser { result in
-                switch result {
-                case .success(let user):
-                    DispatchQueue.main.async {
-                        let nextController = MatchViewController(user: user)
-                        self.navigationController?.pushViewController(nextController, animated: true)
-                    }
-                case .failure(let error):
-                    //TODO: MENSAGEM DE ERRO AQUI
-                    print(error)
-                }
-            }
+//            self.viewModel.createUser { result in
+//                switch result {
+//                case .success(let user):
+//                    DispatchQueue.main.async {
+//                        let nextController = MatchViewController(user: user)
+//                        self.navigationController?.pushViewController(nextController, animated: true)
+//                    }
+//                case .failure(let error):
+//                    // TODO: MENSAGEM DE ERRO AQUI
+//                    print(error)
+//                }
+//            }
         }
     }
 
     @objc func backTapped(_ sender: UIButton) {
+        changeImageView(index: pageControl.currentPage - 1)
         if pageControl.currentPage != 0 {
             pageControl.currentPage -= 1
-            changeColor()
             setViewControllers([pages[pageControl.currentPage]], direction: .reverse, animated: true, completion: nil)
         }
     }

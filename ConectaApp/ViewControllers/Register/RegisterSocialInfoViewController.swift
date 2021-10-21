@@ -15,7 +15,6 @@ class RegisterSocialInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = registerSocialInfo
-        self.view.backgroundColor = .backgroundGray
     }
     
     public func getSocialInfos() -> (discord: String?, steam: String?, instagram: String?) {
