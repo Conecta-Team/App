@@ -25,16 +25,21 @@ class RegisterGameView: UIView {
     internal lazy var gameTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .appRegularFont(with: 32)
+        label.attributedText = NSMutableAttributedString(string: "Jogos de interesse", attributes: [
+            NSAttributedString.Key.strokeWidth: -2,
+            NSAttributedString.Key.font: UIFont.appRegularFont(with: 32)])
         label.textColor = .textBlue
-        label.text = "Jogos de Interesse"
+        label.layer.shadowColor = UIColor.textBlue.cgColor
+        label.layer.shadowRadius = 8
+        label.layer.shadowOpacity = 1
+        label.layer.shadowOffset = .zero
         return label
     }()
     
     internal lazy var gameSubtitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .appRegularFont(with: 16)
+        label.font = .appRegularFont(with: 18)
         label.textColor = .textLightBlue
         label.text = "É através dele que você encontrará seu duo!"
         label.numberOfLines = 0
@@ -56,9 +61,9 @@ class RegisterGameView: UIView {
     internal lazy var errorMessageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .appRegularFont(with: 12)
+        label.font = .appRegularFont(with: 14)
         label.textColor = .red
-        label.text = "Você precisa escoolher pelo menos um jogo!"
+        label.text = "Você precisa escolher pelo menos um jogo!"
         label.numberOfLines = 0
         label.isHidden = true
         return label
@@ -82,10 +87,10 @@ class RegisterGameView: UIView {
     func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            borderView.topAnchor.constraint(equalTo: topAnchor, constant: 80),
+            borderView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             borderView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             borderView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            borderView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
+            borderView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
         
         NSLayoutConstraint.activate([
@@ -101,16 +106,16 @@ class RegisterGameView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            errorMessageLabel.topAnchor.constraint(equalTo: gameSubtitle.bottomAnchor, constant: 8),
-            errorMessageLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            errorMessageLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
-        ])
-        
-        NSLayoutConstraint.activate([
-            gamesTableView.topAnchor.constraint(equalTo: errorMessageLabel.bottomAnchor, constant: 8),
+            gamesTableView.topAnchor.constraint(equalTo: gameSubtitle.bottomAnchor, constant: 16),
             gamesTableView.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
             gamesTableView.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8),
             gamesTableView.bottomAnchor.constraint(equalTo: borderView.bottomAnchor, constant: -100)
+        ])
+        
+        NSLayoutConstraint.activate([
+            errorMessageLabel.topAnchor.constraint(equalTo: gamesTableView.bottomAnchor, constant: 8),
+            errorMessageLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
+            errorMessageLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
         ])
     }
 }

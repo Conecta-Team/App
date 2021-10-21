@@ -25,20 +25,21 @@ class RegisterNameView: UIView {
     internal lazy var nameTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .appRegularFont(with: 32)
+        label.attributedText = NSMutableAttributedString(string: "Nickname", attributes: [
+            NSAttributedString.Key.strokeWidth: -2,
+            NSAttributedString.Key.font: UIFont.appRegularFont(with: 32)])
         label.textColor = .textBlue
         label.layer.shadowColor = UIColor.textBlue.cgColor
         label.layer.shadowRadius = 8
         label.layer.shadowOpacity = 1
         label.layer.shadowOffset = .zero
-        label.text = "Nickname"
         return label
     }()
     
     internal lazy var nameSubtitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .appRegularFont(with: 16)
+        label.font = .appRegularFont(with: 18)
         label.textColor = .textLightBlue
         label.text = "Como gostaria de ser chamada?"
         label.numberOfLines = 0
@@ -54,7 +55,7 @@ class RegisterNameView: UIView {
         textField.layer.shadowRadius = 8
         textField.layer.shadowOpacity = 1
         textField.layer.shadowOffset = .zero
-        textField.font = .appRegularFont(with: 16)
+        textField.font = .appRegularFont(with: 18)
         textField.textColor = .textLightBlue
         textField.placeholder = " Digite seu nickname"
         
@@ -64,7 +65,7 @@ class RegisterNameView: UIView {
     internal lazy var errorMessageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .appRegularFont(with: 12)
+        label.font = .appRegularFont(with: 14)
         label.textColor = .alertRed
         label.text = "Esse campo não pode estar vazio!"
         label.numberOfLines = 0
@@ -93,10 +94,10 @@ class RegisterNameView: UIView {
     func setConstraints() {
         
         NSLayoutConstraint.activate([
-            borderView.topAnchor.constraint(equalTo: topAnchor, constant: 80),
+            borderView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             borderView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             borderView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            borderView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
+            borderView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
         
         NSLayoutConstraint.activate([

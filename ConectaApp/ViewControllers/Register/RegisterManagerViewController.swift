@@ -87,20 +87,18 @@ class RegisterManagerViewController: UIPageViewController {
         view.addSubview(buttonBack)
         
         NSLayoutConstraint.activate([
-            pageControlImageView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 81),
+            pageControlImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1),
             pageControlImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         ])
 
         NSLayoutConstraint.activate([
             buttonBack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 56),
-            //buttonBack.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -24),
-            buttonBack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64)
+            buttonBack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
 
         NSLayoutConstraint.activate([
-            //buttonNext.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 24),
             buttonNext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -56),
-            buttonNext.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64)
+            buttonNext.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
     }
 
