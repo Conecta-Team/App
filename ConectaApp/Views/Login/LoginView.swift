@@ -12,8 +12,9 @@ class LoginView: UIView {
 
     let titleApp: UILabel = {
         let label = UILabel()
-        label.text = "CONECTA"
-        label.font = .appRegularFont(with: 50)
+        label.attributedText = NSMutableAttributedString(string: "CONECTA", attributes: [
+            NSAttributedString.Key.strokeWidth: -2,
+            NSAttributedString.Key.font: UIFont.appRegularFont(with: 50)])
         label.textColor = .textBlue
         label.layer.shadowColor = UIColor.textBlue.cgColor
         label.layer.shadowRadius = 8
@@ -26,8 +27,10 @@ class LoginView: UIView {
     let subtitleApp: UILabel = {
         let label = UILabel()
         label.text = "Encontre garotas para jogar junto."
-        label.font = .appRegularFont(with: 16)
+        label.font = .appRegularFont(with: 24)
         label.textColor = .white
+        label.textAlignment = .center
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -76,11 +79,12 @@ extension LoginView {
 
         NSLayoutConstraint.activate([
             self.subtitleApp.topAnchor.constraint(equalTo: titleApp.bottomAnchor, constant: 16),
-            self.subtitleApp.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            self.subtitleApp.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            self.subtitleApp.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
         ])
 
         NSLayoutConstraint.activate([
-            self.buttonLogin.topAnchor.constraint(greaterThanOrEqualTo: subtitleApp.bottomAnchor, constant: 100),
+            //self.buttonLogin.topAnchor.constraint(greaterThanOrEqualTo: subtitleApp.bottomAnchor, constant: 100),
             self.buttonLogin.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 77),
             self.buttonLogin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -77),
             self.buttonLogin.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -64),
