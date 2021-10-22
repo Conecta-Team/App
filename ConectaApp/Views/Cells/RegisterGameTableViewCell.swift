@@ -21,7 +21,7 @@ class RegisterGameTableViewCell: UITableViewCell {
         let button = UIButton()
         button.setBackgroundImage(buttonUnselectedImage, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(.darkBlue, for: .normal)
+        button.setTitleColor(.textBlue, for: .normal)
         button.titleLabel?.font = .appRegularFont(with: 20)
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
@@ -44,7 +44,7 @@ class RegisterGameTableViewCell: UITableViewCell {
     @objc func handleTap(_ sender: UIButton) {
         gameSelected.toggle()
         let image = self.gameSelected ? buttonSelectedImage : buttonUnselectedImage
-        let color: UIColor = self.gameSelected ? .white : .darkBlue
+        let color: UIColor = self.gameSelected ? .white : .textBlue
         self.gameButton.setBackgroundImage(image, for: .normal)
         self.gameButton.setTitleColor(color, for: .normal)
     
@@ -53,7 +53,7 @@ class RegisterGameTableViewCell: UITableViewCell {
     
     private func setupCell() {
         self.addSubview(self.gameButton)
-        self.backgroundColor = .backgroundGray
+        self.backgroundColor = .backgroundPurple
         self.contentView.isUserInteractionEnabled = false
         NSLayoutConstraint.activate([
             gameButton.centerYAnchor.constraint(equalTo: centerYAnchor),

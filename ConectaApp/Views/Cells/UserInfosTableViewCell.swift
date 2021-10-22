@@ -36,7 +36,7 @@ class UserInfosTableViewCell: UITableViewCell {
         let configurationWeightIcon = UIImage.SymbolConfiguration(weight: .regular)
         let configurations = configurationSizeIcon.applying(configurationWeightIcon)
         let configurationNameIcon =  UIImage(systemName: "doc.on.doc", withConfiguration: configurations)
-        let icon = configurationNameIcon?.withTintColor(UIColor.actionPink, renderingMode: .alwaysOriginal)
+        let icon = configurationNameIcon?.withTintColor(UIColor.actPink, renderingMode: .alwaysOriginal)
         button.setImage(icon, for: .normal)
         button.tag = UserInfosButton.discord.rawValue
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +65,7 @@ class UserInfosTableViewCell: UITableViewCell {
         let configurationWeightIcon = UIImage.SymbolConfiguration(weight: .regular)
         let configurations = configurationSizeIcon.applying(configurationWeightIcon)
         let configurationNameIcon =  UIImage(systemName: "doc.on.doc", withConfiguration: configurations)
-        let icon = configurationNameIcon?.withTintColor(UIColor.actionPink, renderingMode: .alwaysOriginal)
+        let icon = configurationNameIcon?.withTintColor(UIColor.actPink, renderingMode: .alwaysOriginal)
         button.setImage(icon, for: .normal)
         button.tag = UserInfosButton.steam.rawValue
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -94,7 +94,7 @@ class UserInfosTableViewCell: UITableViewCell {
         let configurationWeightIcon = UIImage.SymbolConfiguration(weight: .regular)
         let configurations = configurationSizeIcon.applying(configurationWeightIcon)
         let configurationNameIcon =  UIImage(systemName: "doc.on.doc", withConfiguration: configurations)
-        let icon = configurationNameIcon?.withTintColor(UIColor.actionPink, renderingMode: .alwaysOriginal)
+        let icon = configurationNameIcon?.withTintColor(UIColor.actPink, renderingMode: .alwaysOriginal)
         button.setImage(icon, for: .normal)
         button.tag = UserInfosButton.instagram.rawValue
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -135,11 +135,11 @@ class UserInfosTableViewCell: UITableViewCell {
 
     private func animateButtonIcon(button: UIButton) {
         UIView.animate(withDuration: 6) {
-            let icon = self.changeIcon(name: "checkmark", color: .actionPink)
+            let icon = self.changeIcon(name: "checkmark", color: .actPink)
             button.setImage(icon, for: .normal)
             button.alpha = 0
         } completion: { _ in
-            let icon = self.changeIcon(name: "doc.on.doc", color: .actionPink)
+            let icon = self.changeIcon(name: "doc.on.doc", color: .actPink)
             button.setImage(icon, for: .normal)
             button.alpha = 1
         }
