@@ -112,6 +112,7 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
         switch section {
         case 0:
             view.title.text = "Nickname"
+            
         case 1:
             view.title.text = "Jogos de interesse"
         default:
@@ -121,6 +122,9 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 || section == 3 {
+            return 0
+        }
         return 50
     }
     

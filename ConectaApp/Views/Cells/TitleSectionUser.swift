@@ -13,8 +13,11 @@ class TitleSectionUser: UITableViewHeaderFooterView {
 
     let title: UILabel = {
         let label = UILabel()
-        label.font = .appRegularFont(with: 24)
-        label.text = "Nickname"
+//        label.font = .appRegularFont(with: 24)
+        label.attributedText = NSMutableAttributedString(string: "Nickname", attributes: [
+                    NSAttributedString.Key.strokeWidth: -2,
+                    NSAttributedString.Key.font: UIFont.appRegularFont(with: 24)])
+        label.textColor = UIColor.textLightBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

@@ -31,8 +31,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let backgroundTopView = BackgroundRectView()
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setup()
@@ -44,21 +42,18 @@ class ProfileCollectionViewCell: UICollectionViewCell {
 
     private func setup() {
         self.backgroundColor = .clear
-//        self.backgroundTopView.layer.bounds.size.width = shapeCell.layer.bounds.size.width + 10
-//        self.backgroundTopView.layer.bounds.size.height = shapeCell.layer.bounds.size.height + 10
-//
-//        addSubview(backgroundTopView)
+        
         addSubview(shapeCell)
         addSubview(imageProfile)
 
         NSLayoutConstraint.activate([
             shapeCell.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             shapeCell.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            shapeCell.heightAnchor.constraint(equalTo: self.heightAnchor),
-            shapeCell.widthAnchor.constraint(equalTo: self.widthAnchor),
-
+            shapeCell.heightAnchor.constraint(equalTo: self.heightAnchor, constant: -20),
+            shapeCell.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20),
+            
             imageProfile.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            imageProfile.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            imageProfile.centerXAnchor.constraint(equalTo: self.centerXAnchor)
             
         ])
     }

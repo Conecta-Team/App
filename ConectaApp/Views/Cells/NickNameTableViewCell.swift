@@ -12,8 +12,15 @@ class NickNameTableViewCell: UITableViewCell {
 
     let nickName: UILabel = {
         let label = UILabel()
-        label.font = .appRegularFont(with: 32)
+        label.attributedText = NSMutableAttributedString(string: "Nickname", attributes: [
+                    NSAttributedString.Key.strokeWidth: -2,
+                    NSAttributedString.Key.font: UIFont.appRegularFont(with: 32)])
         label.text = ""
+        label.textColor = .textBlue
+        label.layer.shadowColor = UIColor.shadowGreen.cgColor
+        label.layer.shadowOffset = .zero
+        label.layer.shadowRadius = 2
+        label.layer.shadowOpacity = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -40,6 +47,7 @@ class NickNameTableViewCell: UITableViewCell {
     }
 
     public func configure(nickName: String) {
+        self.backgroundColor = .clear
         self.nickName.text = nickName.uppercased()
     }
 }
