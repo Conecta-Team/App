@@ -13,19 +13,22 @@ class RegisterGameViewController: UIViewController {
     let registerGameView = RegisterGameView()
     var gameSelected = String()
     let viewModel = RegisterGameViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.initialization()
         viewModel.delegate = self
+
         registerGameView.gamesTableView.delegate = self
         registerGameView.gamesTableView.dataSource = self
+
         self.view = registerGameView
     }
     
     public func getSelectedGames() -> [Games]? {
-        if self.viewModel.selectedGames.count != 0 {
-            return self.viewModel.selectedGames
+        let games = self.viewModel.getSelectedGames()
+        if games.count != 0 {
+            return games
         }
         return nil
     }
@@ -35,6 +38,7 @@ class RegisterGameViewController: UIViewController {
     }
 }
 
+// TODO: Falta preparar o autolayout das celulas da tableview.
 extension RegisterGameViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         viewModel.games.count
@@ -52,9 +56,9 @@ extension RegisterGameViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
 
-        if let category = Category(rawValue: indexPath.section), let game = viewModel.games[category]?[indexPath.row] {
-            cell.configure(game: game)
+        if let category = Category(rawValue: indexPath.section), let games = viewModel.games[category] {
             cell.delegate = self.viewModel
+            cell.configureCell(indexPath: indexPath, games: games)
         }
         return cell
     }
@@ -67,11 +71,6 @@ extension RegisterGameViewController: UITableViewDelegate, UITableViewDataSource
         }
         return view
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-
 }
 
 extension RegisterGameViewController: ViewModelDelegate {
@@ -84,4 +83,3 @@ extension RegisterGameViewController: ViewModelDelegate {
         }
     }
 }
-
