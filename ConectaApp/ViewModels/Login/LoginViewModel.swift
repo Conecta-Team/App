@@ -12,7 +12,7 @@ class LoginViewModel: ViewModelType {
     weak var delegate: ViewModelDelegate?
 
     let userCKService: UserCKService = UserCKService()
-    var user: UserDTO? = nil
+    var user: UserDTO?
 
     func initialization() {}
 }

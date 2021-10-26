@@ -57,7 +57,7 @@ class UserGamesTableViewCell: UITableViewCell {
     public func configure(games: [Games]) {
         self.games = games
 
-        //TODO: ainda precisa ser uma collection aqui
+        // TODO: ainda precisa ser uma collection aqui
         if let game = self.games.first {
             self.gameName.text = game.name
         }

@@ -12,8 +12,9 @@ import CloudKit
 class MatchViewController: UIViewController {
 
     let mainView = MatchView()
+    let loadingView: LoadingView = LoadingView()
     let viewModel: MatchViewModel
-    
+
     init(user: UserDTO? = nil) {
         self.viewModel = (user != nil) ? MatchViewModel(user: user!) : MatchViewModel()
         super.init(nibName: nil, bundle: nil)
@@ -36,7 +37,7 @@ class MatchViewController: UIViewController {
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
 
-        self.view = mainView
+        self.view = loadingView
     }
 }
 
@@ -138,13 +139,12 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MatchViewController: ViewModelDelegate {
     func willLoadData() {
-        DispatchQueue.main.async {
-            self.mainView.tableView.reloadData()
-        }
+        self.view = loadingView
     }
     
     func didLoadData() {
         DispatchQueue.main.async {
+            self.view = self.mainView
             self.mainView.collection.reloadData()
             self.mainView.tableView.reloadData()
         }

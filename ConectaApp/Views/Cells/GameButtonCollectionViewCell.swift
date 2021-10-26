@@ -9,13 +9,15 @@ import UIKit
 
 class GameButtonCollectionViewCell: UICollectionViewCell {
     static let reusableIdentifier = "gameButtonCollectionViewCell"
-
+    
+    var selectGame: ((Bool) -> Void)?
+    
     let button: UIButton = {
         let button = UIButton()
 
         button.contentEdgeInsets = UIEdgeInsets(top: 2, left: 14, bottom: 2, right: 14)
         button.setTitleColor(.textLightBlue, for: .normal)
-        button.titleLabel?.font = .appRegularFont(with: 12)
+        button.titleLabel?.font = .appRegularFont(with: 16)
     
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -39,6 +41,7 @@ class GameButtonCollectionViewCell: UICollectionViewCell {
     
     @objc private func handleTap() {
         self.isSelectedGame.toggle()
+        self.selectGame?(self.isSelectedGame)
     }
     
     private func handleVisualButton() {
@@ -62,8 +65,8 @@ class GameButtonCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    public func configureButton(gameName name: String, isSelected: Bool, editable: Bool) {
-        self.button.setTitle(name, for: .normal)
+    public func configureButton(game: Games, isSelected: Bool, editable: Bool) {
+        self.button.setTitle(game.name, for: .normal)
         self.isSelectedGame = isSelected
         self.isUserInteractionEnabled = editable
     }

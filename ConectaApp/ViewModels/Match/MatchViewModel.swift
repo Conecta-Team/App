@@ -36,6 +36,7 @@ class MatchViewModel: ViewModelType {
     }
 
     func initialization() {
+        self.delegate?.willLoadData()
         if self.user == nil {
             self.getCurrentUser()
         }

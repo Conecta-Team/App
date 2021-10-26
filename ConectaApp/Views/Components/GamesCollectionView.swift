@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GamesColeectionView: UIView {
+class GamesCollectionView: UIView {
     var isEditable: Bool = true
 
     let collection: UICollectionView = {
@@ -40,10 +40,10 @@ class GamesColeectionView: UIView {
         self.addSubview(self.collection)
 
         NSLayoutConstraint.activate([
-            self.collection.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 20),
-            self.collection.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -20),
-            self.collection.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3),
-            self.collection.topAnchor.constraint(equalTo: self.topAnchor, constant: 40),
+            self.collection.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.collection.rightAnchor.constraint(equalTo: self.rightAnchor),
+            self.collection.heightAnchor.constraint(equalTo: self.heightAnchor),
+            self.collection.topAnchor.constraint(equalTo: self.topAnchor)
         ])
     }
 }

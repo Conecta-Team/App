@@ -48,8 +48,9 @@
 		A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */; };
 		A226799D26F6881A00E5B0FF /* TitleSectionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */; };
 		A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */; };
-		A242CEE52722E03A00602602 /* GamesColeectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242CEE42722E03A00602602 /* GamesColeectionView.swift */; };
+		A242CEE52722E03A00602602 /* GamesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242CEE42722E03A00602602 /* GamesCollectionView.swift */; };
 		A242CEE72722E0A900602602 /* TokenCollViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242CEE62722E0A900602602 /* TokenCollViewFlowLayout.swift */; };
+		A2AF500B2727944D0003A290 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF500A2727944D0003A290 /* LoadingView.swift */; };
 		A2E0FEDC270DCBA500E7ABC2 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEDB270DCBA500E7ABC2 /* CloudKitService.swift */; };
 		A2E0FEDE270DCC6100E7ABC2 /* UserCKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEDD270DCC6100E7ABC2 /* UserCKService.swift */; };
 		A2E0FEE0270DCD0200E7ABC2 /* FilterCKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEDF270DCD0200E7ABC2 /* FilterCKService.swift */; };
@@ -126,8 +127,9 @@
 		A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfosTableViewCell.swift; sourceTree = "<group>"; };
 		A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSectionUser.swift; sourceTree = "<group>"; };
 		A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfosButton.swift; sourceTree = "<group>"; };
-		A242CEE42722E03A00602602 /* GamesColeectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesColeectionView.swift; sourceTree = "<group>"; };
+		A242CEE42722E03A00602602 /* GamesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesCollectionView.swift; sourceTree = "<group>"; };
 		A242CEE62722E0A900602602 /* TokenCollViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCollViewFlowLayout.swift; sourceTree = "<group>"; };
+		A2AF500A2727944D0003A290 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A2E0FEDB270DCBA500E7ABC2 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		A2E0FEDD270DCC6100E7ABC2 /* UserCKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCKService.swift; sourceTree = "<group>"; };
 		A2E0FEDF270DCD0200E7ABC2 /* FilterCKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCKService.swift; sourceTree = "<group>"; };
@@ -342,7 +344,8 @@
 		A242CEE32722E00900602602 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A242CEE42722E03A00602602 /* GamesColeectionView.swift */,
+				A242CEE42722E03A00602602 /* GamesCollectionView.swift */,
+				A2AF500A2727944D0003A290 /* LoadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -638,8 +641,9 @@
 				A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */,
 				A226799926F680B600E5B0FF /* UserGamesTableViewCell.swift in Sources */,
 				A2E0FEE6270DCF5300E7ABC2 /* Goals.swift in Sources */,
-				A242CEE52722E03A00602602 /* GamesColeectionView.swift in Sources */,
+				A242CEE52722E03A00602602 /* GamesCollectionView.swift in Sources */,
 				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
+				A2AF500B2727944D0003A290 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

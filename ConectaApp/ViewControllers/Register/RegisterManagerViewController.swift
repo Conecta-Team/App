@@ -43,7 +43,7 @@ class RegisterManagerViewController: UIPageViewController {
         return imageView
     }()
 
-    override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
+    override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey: Any]? = nil) {
         super.init(transitionStyle: .scroll, navigationOrientation: navigationOrientation, options: options)
     }
     
@@ -148,18 +148,18 @@ class RegisterManagerViewController: UIPageViewController {
         } else if pageControl.currentPage == pages.count - 1 && validadeInfos() {
             self.buttonNext.isUserInteractionEnabled = false
             
-//            self.viewModel.createUser { result in
-//                switch result {
-//                case .success(let user):
-//                    DispatchQueue.main.async {
-//                        let nextController = MatchViewController(user: user)
-//                        self.navigationController?.pushViewController(nextController, animated: true)
-//                    }
-//                case .failure(let error):
-//                    // TODO: MENSAGEM DE ERRO AQUI
-//                    print(error)
-//                }
-//            }
+            self.viewModel.createUser { result in
+                switch result {
+                case .success(let user):
+                    DispatchQueue.main.async {
+                        let nextController = MatchViewController(user: user)
+                        self.navigationController?.pushViewController(nextController, animated: true)
+                    }
+                case .failure(let error):
+                    // TODO: MENSAGEM DE ERRO AQUI
+                    print(error)
+                }
+            }
         }
     }
 

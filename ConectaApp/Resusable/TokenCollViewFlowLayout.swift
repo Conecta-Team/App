@@ -16,7 +16,7 @@ class TokenCollViewFlowLayout: UICollectionViewFlowLayout {
     var leftMargin: CGFloat = self.sectionInset.left
     
     for attributes in attributesForElementsInRect! {
-      if (attributes.frame.origin.x == self.sectionInset.left) {
+      if attributes.frame.origin.x == self.sectionInset.left {
         leftMargin = self.sectionInset.left
       } else {
         var newLeftAlignedFrame = attributes.frame
