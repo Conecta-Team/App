@@ -14,6 +14,10 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         let image = UIImage(named: "ShapeSquare")
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.shadowColor = UIColor.white.cgColor
+        imageView.layer.shadowOpacity = 1
+        imageView.layer.shadowOffset = .zero
+        imageView.layer.shadowRadius = 5
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -30,7 +34,14 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+//    let blurView: UIView = {
+//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = view.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        return blurEffectView
+//
+//    }()
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setup()
@@ -39,7 +50,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+   
     private func setup() {
         self.backgroundColor = .clear
         
@@ -61,9 +72,5 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     public func configureCell(profileLetter: String) {
         self.imageProfile.text = profileLetter
 
-        self.shapeCell.layer.shadowColor = UIColor.white.cgColor
-        self.shapeCell.layer.shadowOpacity = 1
-        self.shapeCell.layer.shadowOffset = .zero
-        self.shapeCell.layer.shadowRadius = 5
     }
 }

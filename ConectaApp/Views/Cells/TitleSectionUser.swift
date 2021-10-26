@@ -13,7 +13,6 @@ class TitleSectionUser: UITableViewHeaderFooterView {
 
     let title: UILabel = {
         let label = UILabel()
-//        label.font = .appRegularFont(with: 24)
         label.attributedText = NSMutableAttributedString(string: "Nickname", attributes: [
                     NSAttributedString.Key.strokeWidth: -2,
                     NSAttributedString.Key.font: UIFont.appRegularFont(with: 24)])
@@ -34,8 +33,8 @@ class TitleSectionUser: UITableViewHeaderFooterView {
     private func setup() {
         self.addSubview(self.title)
         NSLayoutConstraint.activate([
-            self.title.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16),
-            self.title.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            title.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 16),
+            title.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 }

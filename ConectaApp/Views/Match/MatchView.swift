@@ -8,25 +8,23 @@
 import UIKit
 
 class MatchView: UIView {
-    let bgView = BackgroundRectView()
-    let bgTopView = BackgroundRectView()
-    
-    let bgRect: UIView = {
+    let bgView: UIView = {
         let view = UIView()
-        view.backgroundColor = .backgroundPurple
-        view.layer.bounds.size.height = 5
-//        view.layer.bounds.size.width = 5
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     let collection: UICollectionView = {
         let layout = ZoomAndSnapFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.backgroundColor = .clear
         collection.showsHorizontalScrollIndicator = false
         collection.showsVerticalScrollIndicator = false
-        collection.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: ProfileCollectionViewCell.reuseIdentifier)
+        collection.decelerationRate = .fast
+        collection.register(ProfileCollectionViewCell.self,
+                            forCellWithReuseIdentifier: ProfileCollectionViewCell.reuseIdentifier)
         collection.translatesAutoresizingMaskIntoConstraints = false
+        
         return collection
     }()
 
@@ -62,27 +60,53 @@ class MatchView: UIView {
         self.tableViewLayout()
 //        self.reportButtonLayout()
     }
+    
+     func addMultipleLayers() {
+         let sizeCollection = collection.contentSize.width
+         var collectionHeight = collection.contentSize.height
+         var heightTop = 0
+         if collectionHeight >= 260 {
+             collectionHeight = collection.contentSize.height - 30
+             heightTop = 10
+         }
+         let viewSize = self.bounds.size.width
+        print(viewSize, sizeCollection)
+        let path1 = UIBezierPath()
+        
+         path1.move(to: CGPoint(x: 0, y: collectionHeight))
+         path1.addLine(to: CGPoint(x: viewSize/2 - sizeCollection/2 + 10, y: collectionHeight))
+         path1.addLine(to: CGPoint(x: Int(viewSize/2 - sizeCollection/2) + 10, y: heightTop))
+         path1.addLine(to: CGPoint(x: Int(viewSize/2 + sizeCollection/2) - 8, y: heightTop))
+         path1.addLine(to: CGPoint(x: viewSize/2 + sizeCollection/2 - 8, y: collectionHeight))
+         path1.addLine(to: CGPoint(x: viewSize + 3, y: collectionHeight))
 
+         path1.addLine(to: CGPoint(x: viewSize + 3, y: self.bounds.size.height))
+         path1.addLine(to: CGPoint(x: 0, y: self.bounds.size.height))
+         path1.addLine(to: CGPoint(x: 0, y: collectionHeight))
+        
+        let shapeLayer1 = CAShapeLayer()
+        shapeLayer1.path = path1.cgPath
+        shapeLayer1.strokeColor = UIColor.borderPurple.cgColor
+        shapeLayer1.fillColor = UIColor.backgroundPurple.cgColor
+        shapeLayer1 .shadowColor = UIColor.shadowPurple.cgColor
+        shapeLayer1.shadowRadius = 20
+        shapeLayer1.shadowOffset = .zero
+        shapeLayer1.shadowOpacity = 1
+        shapeLayer1.lineWidth = 2
+        
+        self.bgView.layer.addSublayer(shapeLayer1)
+
+    }
+    
     private func collectionLayout() {
-        addSubview(bgTopView)
         addSubview(collection)
-        addSubview(bgRect)
-
-        bgTopView.layer.bounds.size.width = collection.contentSize.width - 8
         NSLayoutConstraint.activate([
             collection.widthAnchor.constraint(equalTo: self.widthAnchor),
             collection.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3),
             collection.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            collection.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            bgView.topAnchor.constraint(equalTo: self.collection.bottomAnchor, constant: -10),
-            bgTopView.centerXAnchor.constraint(equalTo: collection.centerXAnchor),
-            bgTopView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            bgTopView.heightAnchor.constraint(equalTo: collection.heightAnchor, constant: 10),
-            bgRect.topAnchor.constraint(equalTo: bgView.topAnchor, constant: 4),
-            bgRect.bottomAnchor.constraint(equalTo: bottomAnchor),
-            bgRect.leftAnchor.constraint(equalTo: self.leftAnchor),
-            bgRect.rightAnchor.constraint(equalTo: self.rightAnchor),
-            
+            collection.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            bgView.topAnchor.constraint(equalTo: self.collection.topAnchor)
+
         ])
     }
 
@@ -90,12 +114,10 @@ class MatchView: UIView {
         addSubview(bgView)
         
         NSLayoutConstraint.activate([
-            bgView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: -2),
-            bgView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 2),
-            bgView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 2),
+            bgView.leftAnchor.constraint(equalTo: leftAnchor, constant: -2),
+            bgView.rightAnchor.constraint(equalTo: rightAnchor, constant: 2),
+            bgView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 2)
             
-//            bgRect.widthAnchor.constraint(equalTo: widthAnchor),
-//
         ])
     }
 
@@ -110,11 +132,11 @@ class MatchView: UIView {
         addSubview(self.tableView)
 
         NSLayoutConstraint.activate([
-            self.tableView.topAnchor.constraint(equalTo: self.collection.bottomAnchor, constant: 24),
-            self.tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            self.tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            // TODO ajeitar em relação ao denunciar
-            self.tableView.bottomAnchor.constraint(equalTo:self.safeAreaLayoutGuide.bottomAnchor, constant: -40)
+            tableView.topAnchor.constraint(equalTo: collection.bottomAnchor, constant: 24),
+            tableView.leftAnchor.constraint(equalTo: leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
+                                                   constant: -40)
         ])
     }
     
@@ -122,7 +144,6 @@ class MatchView: UIView {
         addSubview(reportButton)
         NSLayoutConstraint.activate([
             reportButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            // TODO ajeitar em relação a table view
             reportButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20)
 //            reportButton.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])

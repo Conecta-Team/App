@@ -55,7 +55,6 @@
 		A2E0FEE4270DCF4800E7ABC2 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE3270DCF4800E7ABC2 /* Categories.swift */; };
 		A2E0FEE6270DCF5300E7ABC2 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE5270DCF5300E7ABC2 /* Goals.swift */; };
 		A2E0FEE8270DD0F200E7ABC2 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */; };
-		D7DA6688271F0560005611D5 /* BackgroundRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DA6687271F0560005611D5 /* BackgroundRectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +130,6 @@
 		A2E0FEE3270DCF4800E7ABC2 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		A2E0FEE5270DCF5300E7ABC2 /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
 		A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
-		D7DA6687271F0560005611D5 /* BackgroundRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,7 +289,6 @@
 				A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */,
 				886B0B0126F7F78900A4E7D7 /* RegisterGameTableViewCell.swift */,
 				886B0B0326F8025600A4E7D7 /* RegisterTitleSectionCell.swift */,
-				D7DA6687271F0560005611D5 /* BackgroundRectView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -589,7 +586,6 @@
 				886B0AF626F7B9F100A4E7D7 /* RegisterNameViewController.swift in Sources */,
 				886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */,
 				A2E0FEE8270DD0F200E7ABC2 /* UserDTO.swift in Sources */,
-				D7DA6688271F0560005611D5 /* BackgroundRectView.swift in Sources */,
 				886B0B0026F7E69600A4E7D7 /* RegisterSocialInfoView.swift in Sources */,
 				684C8D9F26F0C24900603526 /* Coordinator.swift in Sources */,
 				A2E0FEE0270DCD0200E7ABC2 /* FilterCKService.swift in Sources */,
