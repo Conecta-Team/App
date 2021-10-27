@@ -268,7 +268,6 @@
 				A21A225226EF6C970052384A /* Protocols */,
 				A2ABAADD26F7AC1F00274289 /* Resusable */,
 				A21A224926EF6C450052384A /* ViewControllers */,
-				A21A224B26EF6C520052384A /* Cells */,
 				A21A224A26EF6C4D0052384A /* Views */,
 				A21A224826EF6C390052384A /* ViewModels */,
 				A21A224726EF6C300052384A /* Models */,
@@ -332,6 +331,7 @@
 		A21A224A26EF6C4D0052384A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A21A224B26EF6C520052384A /* Cells */,
 				88EF3FC02721A9F400819DCA /* Profile */,
 				A2E0FEEB270DE33600E7ABC2 /* Match */,
 				A2E0FEEA270DE31B00E7ABC2 /* Register */,
@@ -348,7 +348,8 @@
 				88EF3FC9272302BE00819DCA /* Match */,
 				88EF3FC82723021900819DCA /* Profile */,
 			);
-			path = Cells;
+			name = Cells;
+			path = ../Cells;
 			sourceTree = "<group>";
 		};
 		A21A225226EF6C970052384A /* Protocols */ = {
