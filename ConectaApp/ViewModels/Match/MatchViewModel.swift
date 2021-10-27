@@ -72,7 +72,7 @@ class MatchViewModel: ViewModelType {
         
     }
 
-    public func getUserSocialInfos() -> (String, String, String) {
+    public func getUserSocialInfos() -> ( String, String, String ) {
         if let user = self.usersToMatch?[self.indexCurrentUser] {
             return (user.discord, user.steam, user.instagram)
         }
