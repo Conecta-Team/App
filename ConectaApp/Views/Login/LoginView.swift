@@ -84,7 +84,6 @@ extension LoginView {
         ])
 
         NSLayoutConstraint.activate([
-            //self.buttonLogin.topAnchor.constraint(greaterThanOrEqualTo: subtitleApp.bottomAnchor, constant: 100),
             self.buttonLogin.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 77),
             self.buttonLogin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -77),
             self.buttonLogin.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -64),

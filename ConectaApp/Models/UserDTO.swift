@@ -8,7 +8,7 @@
 import CloudKit
 
 class UserDTO {
-    let id: CKRecord.ID
+    let userId: CKRecord.ID
     let name: String
     let games: [Int]
     let goal: Int
@@ -17,8 +17,8 @@ class UserDTO {
     let discord: String
 
     init?(record: CKRecord) {
-        self.id = record.recordID
-        //TODO: REVER NOMES DAS LAVELS EM PRODUCAO
+        self.userId = record.recordID
+        // TODO: REVER NOMES DAS LAVELS EM PRODUCAO
         if let userName = record["name"] as? String, let goal = record["goal"] as? Int, let games = record["Games"] as? [Int] {
             self.name = userName
             self.games = games

@@ -19,8 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        //CloudKitService.currentModel.deletePrivateUser()
-        self.window?.rootViewController = UINavigationController(rootViewController: ProfileViewController())
+        self.window?.rootViewController = UINavigationController(rootViewController: MatchViewController())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

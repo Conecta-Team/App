@@ -52,6 +52,7 @@ class RegisterGameView: UIView {
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
         tableView.backgroundColor = .backgroundPurple
+        
         tableView.register(RegisterGameTableViewCell.self, forCellReuseIdentifier: RegisterGameTableViewCell.reuseIdentifier)
         tableView.register(RegisterTitleSectionCell.self,
                            forHeaderFooterViewReuseIdentifier: RegisterTitleSectionCell.reuseIdentifier)

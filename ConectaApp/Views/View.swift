@@ -11,6 +11,5 @@ class View: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.backgroundColor = .gray
     }
 }
