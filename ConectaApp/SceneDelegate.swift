@@ -19,7 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        //CloudKitService.currentModel.deletePrivateUser()
         self.window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
     }
 

@@ -12,8 +12,8 @@ import CloudKit
 class MatchViewController: UIViewController {
 
     let mainView = MatchView()
+    let loadingView: LoadingView = LoadingView()
     let viewModel: MatchViewModel
-    var isLoading: Bool = false
 
     init(user: UserDTO? = nil) {
         self.viewModel = (user != nil) ? MatchViewModel(user: user!) : MatchViewModel()
@@ -26,6 +26,7 @@ class MatchViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.mainView.addMultipleLayers()
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -167,12 +168,13 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
 extension MatchViewController: ViewModelDelegate {
     func willLoadData() {
         DispatchQueue.main.async {
-            self.mainView.tableView.reloadData()
+            self.view = self.loadingView
         }
     }
     
     func didLoadData() {
         DispatchQueue.main.async {
+            self.view = self.mainView
             self.mainView.collection.reloadData()
             self.mainView.tableView.reloadData()
         }

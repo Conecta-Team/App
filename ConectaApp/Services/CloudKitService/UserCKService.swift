@@ -41,7 +41,7 @@ class UserCKService: CloudKitService {
                 }
             }
         } else {
-            operation.modifyRecordsCompletionBlock = { saved, deleted, error in
+            operation.modifyRecordsCompletionBlock = { _, _, error in
                 if error != nil {
                     completion(.failure(.cantCreateUSer))
                 }
@@ -54,7 +54,7 @@ class UserCKService: CloudKitService {
         self.publicDatabase.add(operation)
     }
 
-    private func createUserPrivate(publicID: CKRecord.ID, completion: @escaping (CKRecord)->Void) {
+    private func createUserPrivate(publicID: CKRecord.ID, completion: @escaping (CKRecord) -> Void) {
         let privateUser = CKRecord(recordType: "UserPrivate")
         privateUser["userPublicReference"] = publicID.recordName
 

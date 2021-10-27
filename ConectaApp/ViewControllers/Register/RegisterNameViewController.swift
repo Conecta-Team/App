@@ -15,7 +15,6 @@ class RegisterNameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = registerNameView
-        self.view.backgroundColor = .backgroundGray
     }
     
     public func getName() -> String? {

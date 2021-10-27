@@ -118,11 +118,11 @@ class UserInfosTableViewCell: UITableViewCell {
 
     private func animateButtonIcon(button: UIButton) {
         UIView.animate(withDuration: 6) {
-            let icon = self.changeIcon(name: "checkmark", color: .actionPink)
+            let icon = self.changeIcon(name: "checkmark", color: .actPink)
             button.setImage(icon, for: .normal)
             button.alpha = 0
         } completion: { _ in
-            let icon = self.changeIcon(name: "doc.on.doc", color: .actionPink)
+            let icon = self.changeIcon(name: "doc.on.doc", color: .actPink)
             button.setImage(icon, for: .normal)
             button.alpha = 1
         }
