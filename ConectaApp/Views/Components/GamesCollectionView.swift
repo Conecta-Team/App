@@ -42,8 +42,9 @@ class GamesCollectionView: UIView {
         NSLayoutConstraint.activate([
             self.collection.leftAnchor.constraint(equalTo: self.leftAnchor),
             self.collection.rightAnchor.constraint(equalTo: self.rightAnchor),
-            self.collection.heightAnchor.constraint(equalTo: self.heightAnchor),
-            self.collection.topAnchor.constraint(equalTo: self.topAnchor)
+            // self.collection.heightAnchor.constraint(greaterThanOrEqualToConstant: 200),
+            self.collection.topAnchor.constraint(equalTo: self.topAnchor),
+            self.collection.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }

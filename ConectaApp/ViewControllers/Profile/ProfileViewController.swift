@@ -10,12 +10,39 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     let profileView = ProfileView()
-
+    var user: UserDTO!
+    
+//    init(userDTO: UserDTO) {
+//        self.user = userDTO
+//        super.init(nibName: nil, bundle: nil)
+//    }
+    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = profileView
         profileView.tableView.dataSource = self
         profileView.tableView.delegate = self
+        profileView.tableView.estimatedRowHeight = 100
+    }
+    
+    let games: [(Games, Bool)] = {
+            var array = [(Games, Bool)]()
+            for index in 0...4 {
+                array.append((Games(rawValue: index)!, true))
+            }
+            return array
+        }()
+    
+    var cellHeight: CGFloat = 0 {
+        didSet {
+            if cellHeight != 0 {
+                self.profileView.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -33,15 +60,22 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: NicknameTableViewCell.reuseIdentifier, for: indexPath) as! NicknameTableViewCell
+            cell.nameLabel.text = "Helaine"
             return cell
-//        case 2:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: UserInfosTableViewCell.reuseIdentifier, for: indexPath) as! UserInfosTableViewCell
-//            cell.configure(discordName: "Oii", steamName: "Oii", instagramName: "jdjsc")
-//            cell.backgroundColor = .clear
-//            cell.copyButtonDiscord.isHidden = true
-//            cell.copyButtonSteam.isHidden = true
-//            cell.copyButtonInstagram.isHidden = true
-//            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
+            cell.configureCell(indexPath: indexPath, games: games)
+            cell.backgroundColor = .clear
+            cell.isUserInteractionEnabled = false
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: UserInfosTableViewCell.reuseIdentifier, for: indexPath) as! UserInfosTableViewCell
+            cell.configure(discordName: "öiio", steamName: "ouioo", instagramName: "oijio")
+            cell.backgroundColor = .clear
+            cell.copyButtonDiscord.isHidden = true
+            cell.copyButtonSteam.isHidden = true
+            cell.copyButtonInstagram.isHidden = true
+            return cell
         case 3:
            let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.reuseIdentifier, for: indexPath) as! AccountTableViewCell
             return cell
@@ -82,4 +116,13 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableView.automaticDimension
         }
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        switch indexPath.section {
+//        case 1:
+//            return 100
+//        default:
+//            return UITableView.automaticDimension
+//        }
+//    }
 }

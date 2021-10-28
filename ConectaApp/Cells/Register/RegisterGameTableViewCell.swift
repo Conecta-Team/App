@@ -47,13 +47,14 @@ class RegisterGameTableViewCell: UITableViewCell {
     }
     
     private func setupCell() {
-        self.addSubview(gamesCollectionView)
+        self.contentView.addSubview(gamesCollectionView)
 
         NSLayoutConstraint.activate([
-            gamesCollectionView.topAnchor.constraint(equalTo: self.topAnchor),
-            gamesCollectionView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            gamesCollectionView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            gamesCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            gamesCollectionView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8),
+            gamesCollectionView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 12),
+            gamesCollectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -12),
+            gamesCollectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: 50),
+            gamesCollectionView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
         ])
     }
 }
@@ -69,6 +70,9 @@ extension RegisterGameTableViewCell: UICollectionViewDelegateFlowLayout, UIColle
             cell.configureButton(game: self.games[indexPath.row].0, isSelected: self.games[indexPath.row].1, editable: self.gamesCollectionView.isEditable)
             cell.selectGame = { status in
                 self.delegate?.handleTap(isSelected: status, indexPath: self.indexPath)
+            }
+            if indexPath.row == self.games.count - 1 {
+                self.superview?.layoutSubviews()
             }
             return cell
         }
