@@ -54,7 +54,7 @@ class UserInfosTableViewCell: UITableViewCell {
     
     var instagramLabel = UILabel()
     
-    private func setupLabel() -> UILabel{
+    private func setupLabel() -> UILabel {
         let label = UILabel()
         label.font = .appRegularFont(with: 16)
         label.text = ""
@@ -165,7 +165,7 @@ class UserInfosTableViewCell: UITableViewCell {
         setupConstraints()
     }
     
-    private func setupConstraints(){
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             discordView.topAnchor.constraint(equalTo: self.topAnchor),
             discordView.heightAnchor.constraint(equalTo: self.discordLabel.heightAnchor, constant: 24),
