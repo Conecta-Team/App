@@ -44,6 +44,12 @@ class RegisterGameTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.collection.delegate = self
         self.collection.dataSource = self
+        collectionHeight = collection.heightAnchor.constraint(equalToConstant: 50)
+
+        self.collection.intrinsicContentSizeDidChange = { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.collectionHeight.constant = strongSelf.collection.collectionViewLayout.collectionViewContentSize.height * 1.05
+        }
         self.setupCell()
     }
     
@@ -53,7 +59,6 @@ class RegisterGameTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        collectionHeight.constant = collection.collectionViewLayout.collectionViewContentSize.height * 0.8
     }
     
     public func configureCell(indexPath: IndexPath, games: [(Games, Bool)]) {
@@ -64,8 +69,7 @@ class RegisterGameTableViewCell: UITableViewCell {
     
     private func setupCell() {
         self.contentView.addSubview(collection)
-        
-        collectionHeight = collection.heightAnchor.constraint(equalToConstant: 50)
+
         collectionHeight.priority = .defaultHigh
 
         NSLayoutConstraint.activate([

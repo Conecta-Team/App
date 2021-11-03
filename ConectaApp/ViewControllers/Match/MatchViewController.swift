@@ -154,7 +154,7 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             view.title.text = "Contatos"
         }
-        view.is
+
         return view
     }
 
