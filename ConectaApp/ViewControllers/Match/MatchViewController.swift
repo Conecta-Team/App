@@ -43,7 +43,13 @@ class MatchViewController: UIViewController {
 
         self.view = mainView
     }
-    
+    let games: [(Games, Bool)] = {
+            var array = [(Games, Bool)]()
+            for index in 0...4 {
+                array.append((Games(rawValue: index)!, true))
+            }
+            return array
+        }()
 }
 
 extension MatchViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -115,11 +121,17 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(nickName: userName)
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: UserGamesTableViewCell.reuseIdentifier,
-                for: indexPath) as! UserGamesTableViewCell
-            let games = self.viewModel.getUserGames()
-            cell.configure(games: games)
+//            let cell = tableView.dequeueReusableCell(
+//                withIdentifier: UserGamesTableViewCell.reuseIdentifier,
+//                for: indexPath) as! UserGamesTableViewCell
+//            let games = self.viewModel.getUserGames()
+//            cell.configure(games: games)
+//            return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
+            cell.configureCell(indexPath: indexPath, games: games)
+            cell.backgroundColor = .clear
+            cell.isUserInteractionEnabled = false
+            cell.layoutIfNeeded()
             return cell
         default:
             let cell = tableView.dequeueReusableCell(
@@ -136,13 +148,13 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
            "sectionHeader") as! TitleSectionUser
         switch section {
         case 0:
-            view.title.text = "Nickname"
-            
+            view.title.text = ""
         case 1:
             view.title.text = "Jogos de interesse"
         default:
             view.title.text = "Contatos"
         }
+        view.is
         return view
     }
 
@@ -150,19 +162,20 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 || section == 3 {
             return 0
         }
-        return 50
+        return UITableView.automaticDimension
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return 50
-        case 1:
-            return 80
-        default:
-            return 144
-        }
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        switch indexPath.section {
+//        case 0:
+//            return 50
+//        case 1:
+//            return 80
+//        default:
+//            return 144
+//        }
+////       return UITableView.automaticDimension
+//    }
 }
 
 extension MatchViewController: ViewModelDelegate {
