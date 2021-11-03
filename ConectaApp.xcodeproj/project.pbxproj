@@ -15,6 +15,7 @@
 		8816D0FF26F6544600AB6C4E /* ShareTechMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */; };
 		8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10026F654BB00AB6C4E /* FontConfiguration.swift */; };
 		8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */; };
+		881BFA5E272C36AD00D00171 /* CustomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881BFA5D272C36AD00D00171 /* CustomCollection.swift */; };
 		8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */; };
 		8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524926F952B100E6E759 /* RegisterGameViewModel.swift */; };
 		886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */; };
@@ -93,6 +94,7 @@
 		8816D0FE26F6544600AB6C4E /* ShareTechMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShareTechMono-Regular.ttf"; sourceTree = "<group>"; };
 		8816D10026F654BB00AB6C4E /* FontConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfiguration.swift; sourceTree = "<group>"; };
 		8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfiguration.swift; sourceTree = "<group>"; };
+		881BFA5D272C36AD00D00171 /* CustomCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollection.swift; sourceTree = "<group>"; };
 		8835AAE326F6A3400006398E /* ConectaApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ConectaApp.entitlements; sourceTree = "<group>"; };
 		8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewModel.swift; sourceTree = "<group>"; };
 		8861524926F952B100E6E759 /* RegisterGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameViewModel.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			children = (
 				A226799026F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift */,
 				A242CEE62722E0A900602602 /* TokenCollViewFlowLayout.swift */,
+				881BFA5D272C36AD00D00171 /* CustomCollection.swift */,
 			);
 			path = Resusable;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				A226798D26F5393700E5B0FF /* MatchViewModel.swift in Sources */,
 				A226799126F53A5100E5B0FF /* ZoomAndSnapFlowLayout.swift in Sources */,
 				A226799326F5417A00E5B0FF /* ProfileCollectionViewCell.swift in Sources */,
+				881BFA5E272C36AD00D00171 /* CustomCollection.swift in Sources */,
 				A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */,
 				886B0AFA26F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift in Sources */,
 				88EF3FD1272836A600819DCA /* ButtonsTableViewCell.swift in Sources */,

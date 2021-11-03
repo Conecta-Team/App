@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum EditButtonType {
+    case nickname
+    case games
+    case userInfo
+}
+
 class ProfileViewController: UIViewController {
     
     let profileView = ProfileView()
@@ -60,13 +66,20 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: NicknameTableViewCell.reuseIdentifier, for: indexPath) as! NicknameTableViewCell
-            cell.nameLabel.text = "Helaine"
+            cell.nameLabel.text = "helaine"
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
+//            let gamesArray: [(Games, Bool)] = user.games.compactMap { gameInt in
+//                if let games = Games(rawValue: gameInt) {
+//                    return (games, true)
+//                }
+//                return nil
+//            }
             cell.configureCell(indexPath: indexPath, games: games)
             cell.backgroundColor = .clear
             cell.isUserInteractionEnabled = false
+            cell.layoutIfNeeded()
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: UserInfosTableViewCell.reuseIdentifier, for: indexPath) as! UserInfosTableViewCell
@@ -116,13 +129,4 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableView.automaticDimension
         }
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch indexPath.section {
-//        case 1:
-//            return 100
-//        default:
-//            return UITableView.automaticDimension
-//        }
-//    }
 }
