@@ -12,4 +12,5 @@ enum CloudKitError: Error {
     case cantCreateUSer
     case cantGetUser
     case cantGetUsersToMatch
+    case cantEditUser
 }
