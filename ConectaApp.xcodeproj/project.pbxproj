@@ -57,6 +57,7 @@
 		A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */; };
 		A242CEE52722E03A00602602 /* GamesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242CEE42722E03A00602602 /* GamesCollectionView.swift */; };
 		A242CEE72722E0A900602602 /* TokenCollViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242CEE62722E0A900602602 /* TokenCollViewFlowLayout.swift */; };
+		A253B99D272B472400E665B2 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A253B99C272B472400E665B2 /* EmptyStateView.swift */; };
 		A2AF500B2727944D0003A290 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF500A2727944D0003A290 /* LoadingView.swift */; };
 		A2E0FEDC270DCBA500E7ABC2 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEDB270DCBA500E7ABC2 /* CloudKitService.swift */; };
 		A2E0FEDE270DCC6100E7ABC2 /* UserCKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEDD270DCC6100E7ABC2 /* UserCKService.swift */; };
@@ -142,6 +143,7 @@
 		A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfosButton.swift; sourceTree = "<group>"; };
 		A242CEE42722E03A00602602 /* GamesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesCollectionView.swift; sourceTree = "<group>"; };
 		A242CEE62722E0A900602602 /* TokenCollViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCollViewFlowLayout.swift; sourceTree = "<group>"; };
+		A253B99C272B472400E665B2 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		A2AF500A2727944D0003A290 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A2E0FEDB270DCBA500E7ABC2 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		A2E0FEDD270DCC6100E7ABC2 /* UserCKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCKService.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			children = (
 				A242CEE42722E03A00602602 /* GamesCollectionView.swift */,
 				A2AF500A2727944D0003A290 /* LoadingView.swift */,
+				A253B99C272B472400E665B2 /* EmptyStateView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				A21A224526EF67A80052384A /* View.swift in Sources */,
 				886B0AF626F7B9F100A4E7D7 /* RegisterNameViewController.swift in Sources */,
 				88EF3FC52721AAB100819DCA /* ProfileViewController.swift in Sources */,
+				A253B99D272B472400E665B2 /* EmptyStateView.swift in Sources */,
 				886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */,
 				88EF3FCC272824EC00819DCA /* SectionHeaderView.swift in Sources */,
 				A2E0FEE8270DD0F200E7ABC2 /* UserDTO.swift in Sources */,

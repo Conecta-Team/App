@@ -14,7 +14,12 @@ class MatchViewController: UIViewController {
     let mainView = MatchView()
     let loadingView: LoadingView = LoadingView()
     let viewModel: MatchViewModel
-
+    let emptyView: EmptyStateView = {
+        let emptyView = EmptyStateView()
+        emptyView.setupMessage(text: "Lamentamos mas não encontramos ninguém por enquanto =(")
+        return emptyView
+    }()
+    
     init(user: UserDTO? = nil) {
         self.viewModel = (user != nil) ? MatchViewModel(user: user!) : MatchViewModel()
         super.init(nibName: nil, bundle: nil)
@@ -23,13 +28,18 @@ class MatchViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.mainView.addMultipleLayers()
         
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view = mainView
+    
         self.viewModel.delegate = self
         self.viewModel.initialization()
         
@@ -40,10 +50,17 @@ class MatchViewController: UIViewController {
 
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
-
-        self.view = mainView
     }
     
+    public func manageViews() {
+        if let usersToMatch = self.viewModel.usersToMatch, usersToMatch.count == 0 {
+            self.view = emptyView
+        } else {
+            self.view = mainView
+            self.mainView.collection.reloadData()
+            self.mainView.tableView.reloadData()
+        }
+    }
 }
 
 extension MatchViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -167,9 +184,7 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MatchViewController: ViewModelDelegate {
     func willLoadData() {
-        DispatchQueue.main.async {
-            self.view = self.loadingView
-        }
+        self.view = self.loadingView
     }
     
     func didLoadData() {
