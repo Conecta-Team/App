@@ -21,7 +21,7 @@ class UserCKService: CloudKitService {
         publicUserRecord["steam"] = steam
         
         let userGamesRecords: [CKRecord]
-        let userReference = CKRecord.Reference(recordID: publicUserRecord.recordID, action: .none)
+        let userReference = CKRecord.Reference(recordID: publicUserRecord.recordID, action: .deleteSelf)
         userGamesRecords = games.compactMap({ game in
             let userGameRecord = CKRecord(recordType: "UserGames")
             userGameRecord["userReference"] = userReference
@@ -111,6 +111,32 @@ class UserCKService: CloudKitService {
 }
 
 extension UserCKService {
+    public func deleteUser(user: UserDTO, completion: @escaping (Result<CKRecord, CloudKitError>) -> Void) {
+        self.publicDatabase.delete(withRecordID: user.userId) {_, error in
+            if error == nil {
+                let predicate = NSPredicate(format: "userPublicReference == %@", user.userId.recordName)
+                let query = CKQuery(recordType: "UserReference", predicate: predicate)
+        
+                self.privateDatabase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { result, error in
+
+                    if error == nil, let result = result?.first {
+                        self.privateDatabase.delete(withRecordID: result.recordID) { _, error in
+                            if error == nil {
+                                completion(.success(result))
+                            } else {
+                                completion(.failure(.cantDeleteUser))
+                            }
+                        }
+                    } else {
+                        completion(.failure(.cantDeleteUser))
+                    }
+                }
+            } else {
+                completion(.failure(.cantDeleteUser))
+            }
+        }
+    }
+
     public func editUser(user: UserDTO, completion: @escaping (Result<CKRecord, CloudKitError>) -> Void) {
         self.publicDatabase.fetch(withRecordID: user.userId) { userRecord, error in
             if let userRecord = userRecord, error == nil {
