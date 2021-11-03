@@ -43,13 +43,8 @@ class MatchViewController: UIViewController {
 
         self.view = mainView
     }
-    let games: [(Games, Bool)] = {
-            var array = [(Games, Bool)]()
-            for index in 0...4 {
-                array.append((Games(rawValue: index)!, true))
-            }
-            return array
-        }()
+
+    
 }
 
 extension MatchViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -121,14 +116,25 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(nickName: userName)
             return cell
         case 1:
-//            let cell = tableView.dequeueReusableCell(
-//                withIdentifier: UserGamesTableViewCell.reuseIdentifier,
-//                for: indexPath) as! UserGamesTableViewCell
-//            let games = self.viewModel.getUserGames()
-//            cell.configure(games: games)
-//            return cell
+            let userGames = self.viewModel.getUserGames()
+            var games: [(Games, Bool)] = []
+            if let myGames = self.viewModel.user?.games.compactMap({ game in
+                Games(rawValue: game)
+            }) {
+                for userGame in userGames {
+                    for myGame in myGames {
+                        if myGame == userGame {
+                            games.insert((userGame, true), at: 0)
+                        } else {
+                            games.append((userGame, false))
+                        }
+                    }
+                } 
+            }
             let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
+          
             cell.configureCell(indexPath: indexPath, games: games)
+            
             cell.backgroundColor = .clear
             cell.isUserInteractionEnabled = false
             cell.layoutIfNeeded()
@@ -154,7 +160,6 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             view.title.text = "Contatos"
         }
-        view.is
         return view
     }
 
