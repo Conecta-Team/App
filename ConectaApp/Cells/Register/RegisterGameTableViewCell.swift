@@ -44,6 +44,12 @@ class RegisterGameTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.collection.delegate = self
         self.collection.dataSource = self
+        collectionHeight = collection.heightAnchor.constraint(equalToConstant: 50)
+
+        self.collection.intrinsicContentSizeDidChange = { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.collectionHeight.constant = strongSelf.collection.collectionViewLayout.collectionViewContentSize.height * 1.05
+        }
         self.setupCell()
     }
     
@@ -53,19 +59,18 @@ class RegisterGameTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        collectionHeight.constant = collection.collectionViewLayout.collectionViewContentSize.height * 0.8
     }
     
     public func configureCell(indexPath: IndexPath, games: [(Games, Bool)]) {
         self.contentView.isUserInteractionEnabled = false
         self.games = games
         self.indexPath = indexPath
+        self.collection.reloadData()
     }
     
     private func setupCell() {
         self.contentView.addSubview(collection)
-        
-        collectionHeight = collection.heightAnchor.constraint(equalToConstant: 50)
+
         collectionHeight.priority = .defaultHigh
 
         NSLayoutConstraint.activate([
@@ -87,6 +92,7 @@ extension RegisterGameTableViewCell: UICollectionViewDelegateFlowLayout, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameButtonCollectionViewCell.reusableIdentifier, for: indexPath) as? GameButtonCollectionViewCell
         if let cell = cell {
             cell.configureButton(game: self.games[indexPath.row].0, isSelected: self.games[indexPath.row].1, editable: true)
+            
             cell.selectGame = { status in
                 self.delegate?.handleTap(isSelected: status, indexPath: self.indexPath)
             }

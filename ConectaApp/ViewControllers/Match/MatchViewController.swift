@@ -121,15 +121,21 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
             if let myGames = self.viewModel.user?.games.compactMap({ game in
                 Games(rawValue: game)
             }) {
-                for userGame in userGames {
-                    for myGame in myGames {
-                        if myGame == userGame {
-                            games.insert((userGame, true), at: 0)
-                        } else {
-                            games.append((userGame, false))
-                        }
-                    }
-                } 
+                games = userGames.compactMap({ game in
+                    (game, myGames.contains(game))
+                })
+                games.sorted { game1, game2 in
+                    game1.1 && !game2.1
+                }
+//                for userGame in userGames {
+//                    for myGame in myGames {
+//                        if myGame == userGame {
+//                            games.insert((userGame, true), at: 0)
+//                        } else {
+//                            games.append((userGame, false))
+//                        }
+//                    }
+//                }
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
           
