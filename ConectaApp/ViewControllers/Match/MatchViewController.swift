@@ -187,7 +187,9 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MatchViewController: ViewModelDelegate {
     func willLoadData() {
-        self.view = self.loadingView
+        DispatchQueue.main.async {
+            self.view = self.loadingView
+        }
     }
     
     func didLoadData() {
