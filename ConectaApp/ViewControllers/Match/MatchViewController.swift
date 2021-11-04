@@ -127,15 +127,6 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
                 games.sorted { game1, game2 in
                     game1.1 && !game2.1
                 }
-//                for userGame in userGames {
-//                    for myGame in myGames {
-//                        if myGame == userGame {
-//                            games.insert((userGame, true), at: 0)
-//                        } else {
-//                            games.append((userGame, false))
-//                        }
-//                    }
-//                }
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
           
@@ -157,7 +148,7 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
-           "sectionHeader") as! TitleSectionUser
+                                                                TitleSectionUser.reuseIdentifier) as! TitleSectionUser
         switch section {
         case 0:
             view.title.text = ""
@@ -175,18 +166,6 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableView.automaticDimension
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch indexPath.section {
-//        case 0:
-//            return 50
-//        case 1:
-//            return 80
-//        default:
-//            return 144
-//        }
-////       return UITableView.automaticDimension
-//    }
 }
 
 extension MatchViewController: ViewModelDelegate {

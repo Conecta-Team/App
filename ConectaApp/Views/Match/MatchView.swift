@@ -128,7 +128,7 @@ class MatchView: UIView {
         tableView.register(UserInfosTableViewCell.self, forCellReuseIdentifier: UserInfosTableViewCell.reuseIdentifier)
         
         tableView.register(TitleSectionUser.self,
-               forHeaderFooterViewReuseIdentifier: "sectionHeader")
+                           forHeaderFooterViewReuseIdentifier: TitleSectionUser.reuseIdentifier)
         
         addSubview(self.tableView)
 

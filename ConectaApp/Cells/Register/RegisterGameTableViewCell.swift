@@ -62,7 +62,6 @@ class RegisterGameTableViewCell: UITableViewCell {
     }
     
     public func configureCell(indexPath: IndexPath, games: [(Games, Bool)]) {
-        self.contentView.isUserInteractionEnabled = false
         self.games = games
         self.indexPath = indexPath
         self.collection.reloadData()
