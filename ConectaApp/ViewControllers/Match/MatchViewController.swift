@@ -51,6 +51,7 @@ class MatchViewController: UIViewController {
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
     }
+
     
     public func manageViews() {
         if let usersToMatch = self.viewModel.usersToMatch, usersToMatch.count == 0 {
@@ -132,11 +133,25 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(nickName: userName)
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: UserGamesTableViewCell.reuseIdentifier,
-                for: indexPath) as! UserGamesTableViewCell
-            let games = self.viewModel.getUserGames()
-            cell.configure(games: games)
+            let userGames = self.viewModel.getUserGames()
+            var games: [(Games, Bool)] = []
+            if let myGames = self.viewModel.user?.games.compactMap({ game in
+                Games(rawValue: game)
+            }) {
+                games = userGames.compactMap({ game in
+                    (game, myGames.contains(game))
+                })
+                games.sorted { game1, game2 in
+                    game1.1 && !game2.1
+                }
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
+          
+            cell.configureCell(indexPath: indexPath, games: games)
+            
+            cell.backgroundColor = .clear
+            cell.isUserInteractionEnabled = false
+            cell.layoutIfNeeded()
             return cell
         default:
             let cell = tableView.dequeueReusableCell(
@@ -150,11 +165,10 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
-           "sectionHeader") as! TitleSectionUser
+                                                                TitleSectionUser.reuseIdentifier) as! TitleSectionUser
         switch section {
         case 0:
-            view.title.text = "Nickname"
-            
+            view.title.text = ""
         case 1:
             view.title.text = "Jogos de interesse"
         default:
@@ -167,18 +181,7 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 || section == 3 {
             return 0
         }
-        return 50
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return 50
-        case 1:
-            return 80
-        default:
-            return 144
-        }
+        return UITableView.automaticDimension
     }
 }
 

@@ -9,18 +9,18 @@ import UIKit
 
 class UserInfosTableViewCell: UITableViewCell {
     static let reuseIdentifier = "userInfosTableViewCell"
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     var discordView = UIView()
-
+    
     var discordLabel = UILabel()
-
+    
     let copyButtonDiscord: UIButton = {
         let button = UIButton()
-
+        
         let configurationSizeIcon = UIImage.SymbolConfiguration(pointSize: CGFloat(24))
         let configurationWeightIcon = UIImage.SymbolConfiguration(weight: .regular)
         let configurations = configurationSizeIcon.applying(configurationWeightIcon)
@@ -31,14 +31,14 @@ class UserInfosTableViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
+    
     var steamView = UIView()
-
+    
     var steamLabel = UILabel()
-
+    
     let copyButtonSteam: UIButton = {
         let button = UIButton()
-
+        
         let configurationSizeIcon = UIImage.SymbolConfiguration(pointSize: CGFloat(24))
         let configurationWeightIcon = UIImage.SymbolConfiguration(weight: .regular)
         let configurations = configurationSizeIcon.applying(configurationWeightIcon)
@@ -62,12 +62,17 @@ class UserInfosTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
-   private func setupView() -> UIView {
-            let view = UIView()
-            view.layer.borderWidth = 2
-            view.layer.borderColor = UIColor.borderGreen.cgColor
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
+    private func setupView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .backgroundPurple
+        view.layer.borderColor = UIColor.borderGreen.cgColor
+        view.layer.borderWidth = 2
+        view.layer.shadowColor = UIColor.borderGreen.cgColor
+        view.layer.shadowRadius = 2
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = .zero
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }
 
     let copyButtonInstagram: UIButton = {
@@ -166,8 +171,9 @@ class UserInfosTableViewCell: UITableViewCell {
     }
     
     private func setupConstraints() {
+        // TODO: organizar
         NSLayoutConstraint.activate([
-            discordView.topAnchor.constraint(equalTo: self.topAnchor),
+            discordView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             discordView.heightAnchor.constraint(equalTo: self.discordLabel.heightAnchor, constant: 24),
             discordView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
             discordView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
@@ -192,7 +198,8 @@ class UserInfosTableViewCell: UITableViewCell {
             instagramLabel.centerYAnchor.constraint(equalTo: instagramView.centerYAnchor),
             instagramLabel.leftAnchor.constraint(equalTo: instagramView.leftAnchor, constant: 16),
             copyButtonInstagram.centerYAnchor.constraint(equalTo: instagramView.centerYAnchor),
-            copyButtonInstagram.rightAnchor.constraint(equalTo: instagramView.rightAnchor, constant: -8)
+            copyButtonInstagram.rightAnchor.constraint(equalTo: instagramView.rightAnchor, constant: -8),
+            instagramView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 8)
         ])
     }
     public func configure(discordName: String, steamName: String, instagramName: String) {

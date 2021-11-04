@@ -27,6 +27,7 @@ class ProfileView: UIView {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.register(NicknameTableViewCell.self, forCellReuseIdentifier: NicknameTableViewCell.reuseIdentifier)
+        tableView.register(RegisterGameTableViewCell.self, forCellReuseIdentifier: RegisterGameTableViewCell.reuseIdentifier)
         tableView.register(UserInfosTableViewCell.self, forCellReuseIdentifier: UserInfosTableViewCell.reuseIdentifier)
         tableView.register(AccountTableViewCell.self, forCellReuseIdentifier: AccountTableViewCell.reuseIdentifier)
         tableView.register(ButtonsTableViewCell.self, forCellReuseIdentifier: ButtonsTableViewCell.reuseIdentifier)

@@ -17,7 +17,7 @@ class AccountTableViewCell: UITableViewCell {
         view.layer.borderColor = UIColor.borderGreen.cgColor
         view.layer.borderWidth = 2
         view.layer.shadowColor = UIColor.borderGreen.cgColor
-        view.layer.shadowRadius = 4
+        view.layer.shadowRadius = 2
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = .zero
         view.translatesAutoresizingMaskIntoConstraints = false

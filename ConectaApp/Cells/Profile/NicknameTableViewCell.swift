@@ -10,12 +10,6 @@ import UIKit
 class NicknameTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "nicknameTableViewCell"
-    
-    internal lazy var bgView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
 
     internal lazy var imageProfile: UIImageView = {
         let image = UIImage(named: "shapeCell")?.withRenderingMode(.alwaysTemplate)
@@ -59,6 +53,14 @@ class NicknameTableViewCell: UITableViewCell {
         return label
     }()
     
+    internal lazy var editButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        let image = UIImage(systemName: "square.and.pencil")?.withTintColor(.actPink, renderingMode: .alwaysOriginal)
+        button.setBackgroundImage(image, for: .normal)
+        return button
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
@@ -70,11 +72,12 @@ class NicknameTableViewCell: UITableViewCell {
     
     func setupView() {
         self.backgroundColor = .clear
-        addSubview(bgView)
+
         addSubview(imageProfile)
         imageProfile.addSubview(letterProfileLabel)
         addSubview(nicknameLabel)
         addSubview(nameLabel)
+        addSubview(editButton)
         
         setConstraints()
     }
@@ -83,7 +86,7 @@ class NicknameTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             imageProfile.widthAnchor.constraint(equalTo: imageProfile.widthAnchor),
             imageProfile.heightAnchor.constraint(equalTo: imageProfile.widthAnchor),
-            imageProfile.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            imageProfile.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             imageProfile.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             imageProfile.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
@@ -103,6 +106,11 @@ class NicknameTableViewCell: UITableViewCell {
             nameLabel.topAnchor.constraint(equalTo: nicknameLabel.bottomAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: imageProfile.trailingAnchor, constant: 16),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            editButton.topAnchor.constraint(equalTo: nicknameLabel.topAnchor),
+            editButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
     }
 }

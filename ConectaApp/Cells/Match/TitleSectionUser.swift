@@ -24,6 +24,7 @@ class TitleSectionUser: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         self.setup()
+        self.contentView.backgroundColor = .backgroundPurple
     }
 
     required init?(coder: NSCoder) {

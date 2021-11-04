@@ -60,6 +60,8 @@ extension RegisterGameViewController: UITableViewDelegate, UITableViewDataSource
             cell.delegate = self.viewModel
             cell.configureCell(indexPath: indexPath, games: games)
         }
+        cell.backgroundColor = .clear
+        cell.layoutIfNeeded()
         return cell
     }
     

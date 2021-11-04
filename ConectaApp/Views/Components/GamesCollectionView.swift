@@ -9,13 +9,13 @@ import UIKit
 
 class GamesCollectionView: UIView {
     var isEditable: Bool = true
-
+    
     let collection: UICollectionView = {
         let layout = TokenCollViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 14
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collection = CustomCollection(frame: .zero, collectionViewLayout: layout)
         collection.backgroundColor = .backgroundPurple
         collection.showsHorizontalScrollIndicator = false
         collection.showsVerticalScrollIndicator = false
@@ -38,12 +38,12 @@ class GamesCollectionView: UIView {
 
     private func collectionLayout() {
         self.addSubview(self.collection)
-
+        
         NSLayoutConstraint.activate([
             self.collection.leftAnchor.constraint(equalTo: self.leftAnchor),
             self.collection.rightAnchor.constraint(equalTo: self.rightAnchor),
-            self.collection.heightAnchor.constraint(equalTo: self.heightAnchor),
-            self.collection.topAnchor.constraint(equalTo: self.topAnchor)
+            self.collection.topAnchor.constraint(equalTo: self.topAnchor),
+            self.collection.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
