@@ -15,6 +15,8 @@ class UserDTO {
     var instagram: String
     var steam: String
     var discord: String
+    var blocked: Bool
+    var usersBlocked: [CKRecord.Reference]
 
     init?(record: CKRecord) {
         self.userId = record.recordID
@@ -25,6 +27,10 @@ class UserDTO {
             self.instagram = record["instagram"] as? String ?? "-"
             self.steam = record["steam"] as? String ?? "-"
             self.discord = record["discord"] as? String ?? "-"
+            self.blocked = (record["blocked"] ?? 0) == 0 ? false : true
+
+            let usersBlocked = record["usersBlocked"] as? [CKRecord.Reference]
+            self.usersBlocked = usersBlocked ?? [CKRecord.Reference]()
         } else {
             return nil
         }

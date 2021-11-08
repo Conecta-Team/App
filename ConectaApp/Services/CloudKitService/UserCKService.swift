@@ -19,6 +19,7 @@ class UserCKService: CloudKitService {
         publicUserRecord["instagram"] = instagram
         publicUserRecord["discord"] = discord
         publicUserRecord["steam"] = steam
+        publicUserRecord["blocked"] = 0
         
         let userGamesRecords: [CKRecord]
         let userReference = CKRecord.Reference(recordID: publicUserRecord.recordID, action: .deleteSelf)
