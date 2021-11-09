@@ -48,14 +48,17 @@ class RegisterGameView: UIView {
     
     internal lazy var gamesTableView: UITableView = {
         let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .none
         tableView.allowsSelection = false
-        tableView.backgroundColor = .backgroundPurple
+        tableView.backgroundColor = .clear
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         
         tableView.register(RegisterGameTableViewCell.self, forCellReuseIdentifier: RegisterGameTableViewCell.reuseIdentifier)
         tableView.register(RegisterTitleSectionCell.self,
                            forHeaderFooterViewReuseIdentifier: RegisterTitleSectionCell.reuseIdentifier)
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     

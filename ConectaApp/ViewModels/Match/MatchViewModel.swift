@@ -17,7 +17,7 @@ class MatchViewModel: ViewModelType {
 
     private var indexCurrentUser: Int = 0
 
-    private var user: UserDTO? {
+    public var user: UserDTO? {
         didSet {
             self.getAllUsersToMatch()
         }

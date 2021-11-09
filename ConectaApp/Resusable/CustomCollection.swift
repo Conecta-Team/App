@@ -8,14 +8,17 @@
 import UIKit
 
 class CustomCollection: UICollectionView {
+    
+    var intrinsicContentSizeDidChange: (() -> Void)?
 
     override var intrinsicContentSize: CGSize {
-        self.collectionViewLayout.collectionViewContentSize
+        return self.collectionViewLayout.collectionViewContentSize
       }
 
       override func reloadData() {
         super.reloadData()
         self.invalidateIntrinsicContentSize()
+        self.layoutIfNeeded()
+        self.intrinsicContentSizeDidChange?()
       }
-
 }
