@@ -16,6 +16,7 @@
 		8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10026F654BB00AB6C4E /* FontConfiguration.swift */; };
 		8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */; };
 		881BFA5E272C36AD00D00171 /* CustomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881BFA5D272C36AD00D00171 /* CustomCollection.swift */; };
+		882A5B1E273952150028397C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882A5B1D273952150028397C /* ProfileViewModel.swift */; };
 		8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */; };
 		8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524926F952B100E6E759 /* RegisterGameViewModel.swift */; };
 		886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */; };
@@ -95,6 +96,7 @@
 		8816D10026F654BB00AB6C4E /* FontConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfiguration.swift; sourceTree = "<group>"; };
 		8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfiguration.swift; sourceTree = "<group>"; };
 		881BFA5D272C36AD00D00171 /* CustomCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollection.swift; sourceTree = "<group>"; };
+		882A5B1D273952150028397C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8835AAE326F6A3400006398E /* ConectaApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ConectaApp.entitlements; sourceTree = "<group>"; };
 		8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewModel.swift; sourceTree = "<group>"; };
 		8861524926F952B100E6E759 /* RegisterGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameViewModel.swift; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 				8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */,
 			);
 			path = Extras;
+			sourceTree = "<group>";
+		};
+		882A5B1C273951F70028397C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				882A5B1D273952150028397C /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		889DADFC27298378002EDAB0 /* Components */ = {
@@ -328,6 +338,7 @@
 		A21A224826EF6C390052384A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				882A5B1C273951F70028397C /* Profile */,
 				A2E0FEEE270DE37500E7ABC2 /* Match */,
 				A2E0FEED270DE36D00E7ABC2 /* Register */,
 				A2E0FEEC270DE36400E7ABC2 /* Login */,
@@ -695,6 +706,7 @@
 				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
 				886B0B0226F7F78900A4E7D7 /* RegisterGameTableViewCell.swift in Sources */,
 				886B0AF826F7BA2200A4E7D7 /* RegisterGameViewController.swift in Sources */,
+				882A5B1E273952150028397C /* ProfileViewModel.swift in Sources */,
 				684C8D9B26EF769200603526 /* LoginView.swift in Sources */,
 				8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */,
 				A21425BA26F0EDA600309605 /* CloudKitError.swift in Sources */,
@@ -889,13 +901,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYHH9YALN2;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = helaine.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -909,13 +924,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYHH9YALN2;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = helaine.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

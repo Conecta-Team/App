@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum EditButtonType {
+enum EditButtonType: Int {
     case nickname
     case games
     case userInfo
@@ -16,13 +16,15 @@ enum EditButtonType {
 class ProfileViewController: UIViewController {
     
     let profileView = ProfileView()
+    let profileViewModel = ProfileViewModel()
     var user: UserDTO!
+    var navController = UINavigationController()
     
 //    init(userDTO: UserDTO) {
 //        self.user = userDTO
 //        super.init(nibName: nil, bundle: nil)
 //    }
-    
+//    
 //    required init?(coder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
 //    }
@@ -67,6 +69,9 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: NicknameTableViewCell.reuseIdentifier, for: indexPath) as! NicknameTableViewCell
             cell.nameLabel.text = "helaine"
+            // cell.nameLabel.text = user.name
+            cell.isUserInteractionEnabled = false
+            cell.editButton.addTarget(self, action: #selector(editNickname), for: .touchUpInside)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
@@ -80,20 +85,25 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             cell.backgroundColor = .clear
             cell.isUserInteractionEnabled = false
             cell.layoutIfNeeded()
+            cell.isUserInteractionEnabled = false
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: UserInfosTableViewCell.reuseIdentifier, for: indexPath) as! UserInfosTableViewCell
             cell.configure(discordName: "öiio", steamName: "ouioo", instagramName: "oijio")
+            // cell.configure(discordName: user.discord, steamName: user.steam, instagramName: user.instagram)
             cell.backgroundColor = .clear
             cell.copyButtonDiscord.isHidden = true
             cell.copyButtonSteam.isHidden = true
             cell.copyButtonInstagram.isHidden = true
+            cell.isUserInteractionEnabled = false
             return cell
         case 3:
            let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.reuseIdentifier, for: indexPath) as! AccountTableViewCell
+            cell.isUserInteractionEnabled = false
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: ButtonsTableViewCell.reuseIdentifier, for: indexPath) as! ButtonsTableViewCell
+            cell.isUserInteractionEnabled = false
             return cell
         default:
             return UITableViewCell()
@@ -108,8 +118,12 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         switch section {
         case 1:
             view.title.text = "Jogos de Interesse"
+            view.editButton.addTarget(self, action: #selector(editGames), for: .touchUpInside)
+
         case 2:
             view.title.text = "Contatos"
+            view.editButton.addTarget(self, action: #selector(editSocialInfo), for: .touchUpInside)
+
         case 3:
             view.title.text = "Conta"
             view.editButton.isHidden = true
@@ -128,5 +142,22 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             return UITableView.automaticDimension
         }
+    }
+}
+
+extension ProfileViewController {
+    
+    @objc func editNickname(_ sender: UIButton) {
+//        navController.viewControllers = RegisterNameViewController()
+//        self.navController.present(RegisterNameViewController(), animated: true, completion: nil)
+    }
+    
+    @objc func editSocialInfo(_ sender: UIButton) {
+        let controller = RegisterSocialInfoViewController(isEditScreen: true)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func editGames(_ sender: UIButton) {
+        self.navigationController?.present(RegisterGameViewController(), animated: true, completion: nil)
     }
 }

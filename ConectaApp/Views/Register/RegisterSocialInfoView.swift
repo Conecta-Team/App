@@ -9,6 +9,17 @@ import UIKit
 
 class RegisterSocialInfoView: UIView {
     
+    var isEditScreen = false
+    
+    init(isEditScreen: Bool = false) {
+        self.isEditScreen = isEditScreen
+        super.init(frame: CGRect.zero)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     internal lazy var borderView: UIView = {
         let view = UIView()
         view.backgroundColor = .backgroundPurple
@@ -128,6 +139,26 @@ class RegisterSocialInfoView: UIView {
         label.isHidden = true
         return label
     }()
+    
+    internal lazy var saveButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "logoutButton"), for: .normal)
+        button.setTitle("Salvar", for: .normal)
+        button.titleLabel?.font = .appRegularFont(with: 20)
+        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 12, bottom: 5, right: 12)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    internal lazy var cancelButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "buttonGray"), for: .normal)
+        button.setTitle("Cancelar", for: .normal)
+        button.titleLabel?.font = .appRegularFont(with: 20)
+        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -148,6 +179,11 @@ class RegisterSocialInfoView: UIView {
         addSubview(instagramLabel)
         addSubview(instagramTextField)
         addSubview(errorMessageLabel)
+        
+        if isEditScreen {
+            addSubview(saveButton)
+            addSubview(cancelButton)
+        }
         setupContraints()
     }
     
@@ -215,5 +251,21 @@ class RegisterSocialInfoView: UIView {
             errorMessageLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
             errorMessageLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
         ])
+        
+        if isEditScreen {
+            NSLayoutConstraint.activate([
+                saveButton.widthAnchor.constraint(equalTo: saveButton.widthAnchor),
+                saveButton.heightAnchor.constraint(equalTo: saveButton.heightAnchor),
+                saveButton.bottomAnchor.constraint(equalTo: borderView.bottomAnchor, constant: -32),
+                saveButton.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -32)
+            ])
+            
+            NSLayoutConstraint.activate([
+                cancelButton.widthAnchor.constraint(equalTo: cancelButton.widthAnchor),
+                cancelButton.heightAnchor.constraint(equalTo: cancelButton.heightAnchor),
+                cancelButton.bottomAnchor.constraint(equalTo: borderView.bottomAnchor, constant: -32),
+                cancelButton.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 32)
+            ])
+        }
     }
 }
