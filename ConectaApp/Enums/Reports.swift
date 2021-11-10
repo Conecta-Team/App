@@ -10,4 +10,5 @@ import Foundation
 enum Reports: Int {
     case fakeProfile
     case toxicPerson
+    case blockProfile
 }
