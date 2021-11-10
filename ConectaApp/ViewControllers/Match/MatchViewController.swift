@@ -48,11 +48,10 @@ class MatchViewController: UIViewController {
 
     @objc func goProfile() {
         let profile = ProfileViewController()
-        
         navigationController?.pushViewController(profile, animated: true)
     }
     @objc func goReport() {
-        let report = ProfileViewController()
+        let report = ReportDetailsViewController()
         navigationController?.pushViewController(report, animated: true)
     }
     public func manageViews() {

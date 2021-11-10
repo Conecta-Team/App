@@ -69,6 +69,8 @@
 		A2E0FEE8270DD0F200E7ABC2 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */; };
 		A2ED621F27356D930080BEA5 /* ReportCKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED621E27356D930080BEA5 /* ReportCKService.swift */; };
 		A2ED622127356E570080BEA5 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED622027356E570080BEA5 /* Reports.swift */; };
+		D7B70F38273C0B0500FEE8D2 /* ReportDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */; };
+		D7B70F3A273C0D5B00FEE8D2 /* ReportDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */; };
 		D7C64828273A97310086E964 /* ReportButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +161,8 @@
 		A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		A2ED621E27356D930080BEA5 /* ReportCKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCKService.swift; sourceTree = "<group>"; };
 		A2ED622027356E570080BEA5 /* Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
+		D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsView.swift; sourceTree = "<group>"; };
+		D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewController.swift; sourceTree = "<group>"; };
 		D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -352,6 +356,7 @@
 				A2E0FEF0270DE3D700E7ABC2 /* Login */,
 				A2E0FEEF270DE3CF00E7ABC2 /* Register */,
 				A21A221826EF67260052384A /* ViewController.swift */,
+				D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				A2E0FEE9270DE31400E7ABC2 /* Login */,
 				A242CEE32722E00900602602 /* Components */,
 				A21A224426EF67A80052384A /* View.swift */,
+				D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 				886B0AFE26F7E5C400A4E7D7 /* RegisterGameView.swift in Sources */,
 				A21A224526EF67A80052384A /* View.swift in Sources */,
 				886B0AF626F7B9F100A4E7D7 /* RegisterNameViewController.swift in Sources */,
+				D7B70F3A273C0D5B00FEE8D2 /* ReportDetailsViewController.swift in Sources */,
 				88EF3FC52721AAB100819DCA /* ProfileViewController.swift in Sources */,
 				A253B99D272B472400E665B2 /* EmptyStateView.swift in Sources */,
 				886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */,
@@ -716,6 +723,7 @@
 				886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */,
 				886B0AFC26F7DC6700A4E7D7 /* RegisterNameView.swift in Sources */,
 				887D518126F8C8ED00DC8BEC /* LoginViewModel.swift in Sources */,
+				D7B70F38273C0B0500FEE8D2 /* ReportDetailsView.swift in Sources */,
 				A226799726F6806500E5B0FF /* NickNameTableViewCell.swift in Sources */,
 				A2E0FEE2270DCD4000E7ABC2 /* Games.swift in Sources */,
 				A226799D26F6881A00E5B0FF /* TitleSectionUser.swift in Sources */,
