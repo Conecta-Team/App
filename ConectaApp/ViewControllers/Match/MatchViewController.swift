@@ -29,22 +29,16 @@ class MatchViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.mainView.addMultipleLayers()
-        
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view = mainView
-    
+//        self.mainView.addMultipleLayers()
         self.viewModel.delegate = self
         self.viewModel.initialization()
         
         self.navigationItem.setHidesBackButton(true, animated: false)
-    
+        
+        mainView.profileButton.addTarget(self, action: #selector(goProfile), for: .touchUpInside)
         mainView.collection.dataSource = self
         mainView.collection.delegate = self
 
@@ -52,7 +46,15 @@ class MatchViewController: UIViewController {
         mainView.tableView.delegate = self
     }
 
-    
+    @objc func goProfile() {
+        let profile = ProfileViewController()
+        
+        navigationController?.pushViewController(profile, animated: true)
+    }
+    @objc func goReport() {
+        let report = ProfileViewController()
+        navigationController?.pushViewController(report, animated: true)
+    }
     public func manageViews() {
         if let usersToMatch = self.viewModel.usersToMatch, usersToMatch.count == 0 {
             self.view = emptyView
@@ -120,9 +122,9 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        self.viewModel.usersToMatch?.count == 0 ? 0 : 3
+        self.viewModel.usersToMatch?.count == 0 ? 0 : 4
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -141,7 +143,7 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
                 games = userGames.compactMap({ game in
                     (game, myGames.contains(game))
                 })
-                games.sorted { game1, game2 in
+               games = games.sorted { game1, game2 in
                     game1.1 && !game2.1
                 }
             }
@@ -153,12 +155,16 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
             cell.isUserInteractionEnabled = false
             cell.layoutIfNeeded()
             return cell
-        default:
+        case 2:
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: UserInfosTableViewCell.reuseIdentifier,
                 for: indexPath) as! UserInfosTableViewCell
             let (discord, steam, instagram) = self.viewModel.getUserSocialInfos()
             cell.configure(discordName: discord, steamName: steam, instagramName: instagram)
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ReportButtonTableViewCell.reuseIdentifier, for: indexPath) as! ReportButtonTableViewCell
+            cell.reportButton.addTarget(self, action: #selector(goReport), for: .touchUpInside)
             return cell
         }
     }
@@ -187,7 +193,9 @@ extension MatchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MatchViewController: ViewModelDelegate {
     func willLoadData() {
-        self.view = self.loadingView
+        DispatchQueue.main.async {
+            self.view = self.loadingView
+        }
     }
     
     func didLoadData() {
