@@ -67,6 +67,8 @@
 		A2E0FEE4270DCF4800E7ABC2 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE3270DCF4800E7ABC2 /* Categories.swift */; };
 		A2E0FEE6270DCF5300E7ABC2 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE5270DCF5300E7ABC2 /* Goals.swift */; };
 		A2E0FEE8270DD0F200E7ABC2 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */; };
+		A2ED621F27356D930080BEA5 /* ReportCKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED621E27356D930080BEA5 /* ReportCKService.swift */; };
+		A2ED622127356E570080BEA5 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED622027356E570080BEA5 /* Reports.swift */; };
 		D7C64828273A97310086E964 /* ReportButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -155,6 +157,8 @@
 		A2E0FEE3270DCF4800E7ABC2 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		A2E0FEE5270DCF5300E7ABC2 /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
 		A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		A2ED621E27356D930080BEA5 /* ReportCKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCKService.swift; sourceTree = "<group>"; };
+		A2ED622027356E570080BEA5 /* Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
 		D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -402,6 +406,7 @@
 				A2E0FEE1270DCD4000E7ABC2 /* Games.swift */,
 				A2E0FEE3270DCF4800E7ABC2 /* Categories.swift */,
 				A2E0FEE5270DCF5300E7ABC2 /* Goals.swift */,
+				A2ED622027356E570080BEA5 /* Reports.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				A2E0FEDB270DCBA500E7ABC2 /* CloudKitService.swift */,
 				A2E0FEDD270DCC6100E7ABC2 /* UserCKService.swift */,
 				A2E0FEDF270DCD0200E7ABC2 /* FilterCKService.swift */,
+				A2ED621E27356D930080BEA5 /* ReportCKService.swift */,
 			);
 			path = CloudKitService;
 			sourceTree = "<group>";
@@ -689,6 +695,7 @@
 				684C8D9F26F0C24900603526 /* Coordinator.swift in Sources */,
 				A2E0FEE0270DCD0200E7ABC2 /* FilterCKService.swift in Sources */,
 				8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */,
+				A2ED621F27356D930080BEA5 /* ReportCKService.swift in Sources */,
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
 				88EF3FCE2728309000819DCA /* AccountTableViewCell.swift in Sources */,
 				88EF3FC22721AA0C00819DCA /* ProfileView.swift in Sources */,
@@ -724,6 +731,7 @@
 				D7C64828273A97310086E964 /* ReportButtonTableViewCell.swift in Sources */,
 				A226799926F680B600E5B0FF /* UserGamesTableViewCell.swift in Sources */,
 				889DADFB272981B8002EDAB0 /* GameButtonCollectionViewCell.swift in Sources */,
+				A2ED622127356E570080BEA5 /* Reports.swift in Sources */,
 				A2E0FEE6270DCF5300E7ABC2 /* Goals.swift in Sources */,
 				A242CEE52722E03A00602602 /* GamesCollectionView.swift in Sources */,
 				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
@@ -897,6 +905,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -917,6 +926,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

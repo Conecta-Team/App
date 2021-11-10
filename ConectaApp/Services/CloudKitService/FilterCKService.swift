@@ -17,8 +17,9 @@ class FilterCKService: CloudKitService {
 
     public func getAllUsersToMatch(currentUser: UserDTO, completion: @escaping (Result<[CKRecord], CloudKitError>) -> Void) {
         let userReference = CKRecord.Reference(recordID: currentUser.userId, action: .none)
+        let excludedUsers = currentUser.usersBlocked + [userReference]
 
-        let userGamesPredicate = NSPredicate(format: "game IN %@ AND NOT(userReference == %@)", currentUser.games, userReference)
+        let userGamesPredicate = NSPredicate(format: "game IN %@ AND NOT(userReference IN %@)", currentUser.games, excludedUsers)
         let userGamesQuery = CKQuery(recordType: "UserGames", predicate: userGamesPredicate)
 
         let userGamesQueryOperation = CKQueryOperation(query: userGamesQuery)
