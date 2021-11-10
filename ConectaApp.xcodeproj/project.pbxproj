@@ -69,6 +69,7 @@
 		A2E0FEE8270DD0F200E7ABC2 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */; };
 		A2ED621F27356D930080BEA5 /* ReportCKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED621E27356D930080BEA5 /* ReportCKService.swift */; };
 		A2ED622127356E570080BEA5 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED622027356E570080BEA5 /* Reports.swift */; };
+		D7C64828273A97310086E964 /* ReportButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		A2ED621E27356D930080BEA5 /* ReportCKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCKService.swift; sourceTree = "<group>"; };
 		A2ED622027356E570080BEA5 /* Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
+		D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 				A226799826F680B600E5B0FF /* UserGamesTableViewCell.swift */,
 				A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */,
 				A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */,
+				D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */,
 			);
 			path = Match;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */,
 				A2E0FEDC270DCBA500E7ABC2 /* CloudKitService.swift in Sources */,
 				A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */,
+				D7C64828273A97310086E964 /* ReportButtonTableViewCell.swift in Sources */,
 				A226799926F680B600E5B0FF /* UserGamesTableViewCell.swift in Sources */,
 				889DADFB272981B8002EDAB0 /* GameButtonCollectionViewCell.swift in Sources */,
 				A2ED622127356E570080BEA5 /* Reports.swift in Sources */,
@@ -902,13 +906,13 @@
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = BYHH9YALN2;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = helaine.ConectaApp;
+				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -923,13 +927,13 @@
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = BYHH9YALN2;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = helaine.ConectaApp;
+				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
