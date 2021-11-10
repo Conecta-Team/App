@@ -72,6 +72,7 @@ class NicknameTableViewCell: UITableViewCell {
     
     func setupView() {
         self.backgroundColor = .clear
+        self.contentView.isUserInteractionEnabled = false
 
         addSubview(imageProfile)
         imageProfile.addSubview(letterProfileLabel)

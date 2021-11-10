@@ -7,21 +7,14 @@
 
 import UIKit
 
-enum EditButtonType: Int {
-    case nickname
-    case games
-    case userInfo
-}
-
 class ProfileViewController: UIViewController {
     
     let profileView = ProfileView()
     let profileViewModel = ProfileViewModel()
-    var user: UserDTO!
     var navController = UINavigationController()
     
 //    init(userDTO: UserDTO) {
-//        self.user = userDTO
+//        self.profileViewModel.userDTO = userDTO
 //        super.init(nibName: nil, bundle: nil)
 //    }
 //    
@@ -70,7 +63,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: NicknameTableViewCell.reuseIdentifier, for: indexPath) as! NicknameTableViewCell
             cell.nameLabel.text = "helaine"
             // cell.nameLabel.text = user.name
-            cell.isUserInteractionEnabled = false
             cell.editButton.addTarget(self, action: #selector(editNickname), for: .touchUpInside)
             return cell
         case 1:
@@ -148,12 +140,13 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 extension ProfileViewController {
     
     @objc func editNickname(_ sender: UIButton) {
-//        navController.viewControllers = RegisterNameViewController()
-//        self.navController.present(RegisterNameViewController(), animated: true, completion: nil)
+        let controller = RegisterNameViewController(isEditScreen: true)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func editSocialInfo(_ sender: UIButton) {
         let controller = RegisterSocialInfoViewController(isEditScreen: true)
+        controller.delegate = self.profileViewModel
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

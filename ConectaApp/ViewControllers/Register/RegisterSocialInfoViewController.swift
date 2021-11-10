@@ -11,9 +11,16 @@ import UIKit
 class RegisterSocialInfoViewController: UIViewController {
     
     let registerSocialInfo: RegisterSocialInfoView
+    weak var delegate: GetSocialInfoToSaveDelegate?
     
     init(isEditScreen: Bool = false) {
         self.registerSocialInfo = RegisterSocialInfoView(isEditScreen: isEditScreen)
+        if isEditScreen {
+            let socialInfo = delegate?.getOldSocialInfo()
+            registerSocialInfo.discordTextField.text = socialInfo?.discord
+            registerSocialInfo.steamTextField.text = socialInfo?.steam
+            registerSocialInfo.instagramTextField.text = socialInfo?.instagram
+        }
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -41,6 +48,14 @@ class RegisterSocialInfoViewController: UIViewController {
     }
     
     @objc func saveAction() {
-        
+        let socialInfo = getSocialInfos()
+        delegate?.editSocialInfos(discord: socialInfo.discord, steam: socialInfo.steam, instagram: socialInfo.instagram) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
+}
+
+protocol GetSocialInfoToSaveDelegate: AnyObject {
+    func getOldSocialInfo() -> (discord: String?, steam: String?, instagram: String?)
+    func editSocialInfos(discord: String?, steam: String?, instagram: String?, completion: @escaping () -> Void)
 }
