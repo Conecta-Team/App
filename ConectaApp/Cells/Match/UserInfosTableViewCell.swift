@@ -147,54 +147,67 @@ class UserInfosTableViewCell: UITableViewCell {
         contentView.backgroundColor = .clear
         contentView.isUserInteractionEnabled = false
 
+        setupDiscord()
+        setupSteam()
+        setupInstagram()
+    }
+    private func setupDiscord(){
         copyButtonDiscord.addTarget(self, action: #selector(handleTouch), for: .touchUpInside)
-        copyButtonSteam.addTarget(self, action: #selector(handleTouch), for: .touchUpInside)
-        copyButtonInstagram.addTarget(self, action: #selector(handleTouch), for: .touchUpInside)
         
         discordView = setupView()
-        steamView = setupView()
-        instagramView = setupView()
         discordLabel = setupLabel()
+        
+        addSubview(discordView)
+        addSubview(discordLabel)
+        addSubview(copyButtonDiscord)
+        NSLayoutConstraint.activate([
+            discordView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            discordView.heightAnchor.constraint(equalTo: discordLabel.heightAnchor, constant: 24),
+            discordView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
+            discordView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
+            discordLabel.centerYAnchor.constraint(equalTo: discordView.centerYAnchor),
+            discordLabel.leftAnchor.constraint(equalTo: discordView.leftAnchor, constant: 16),
+            copyButtonDiscord.centerYAnchor.constraint(equalTo: discordView.centerYAnchor),
+            copyButtonDiscord.rightAnchor.constraint(equalTo: discordView.rightAnchor, constant: -8)
+        
+        ])
+    }
+    private func setupSteam(){
+        copyButtonSteam.addTarget(self, action: #selector(handleTouch), for: .touchUpInside)
+       
+        steamView = setupView()
         steamLabel = setupLabel()
+        addSubview(steamView)
+        addSubview(steamLabel)
+        addSubview(copyButtonSteam)
+        NSLayoutConstraint.activate([
+            steamView.topAnchor.constraint(equalTo: discordView.bottomAnchor, constant: 8),
+            steamView.heightAnchor.constraint(equalTo: discordView.heightAnchor),
+            steamView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
+            steamView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
+            steamLabel.centerYAnchor.constraint(equalTo: steamView.centerYAnchor),
+            steamLabel.leftAnchor.constraint(equalTo: steamView.leftAnchor, constant: 16),
+            copyButtonSteam.centerYAnchor.constraint(equalTo: steamView.centerYAnchor),
+            copyButtonSteam.rightAnchor.constraint(equalTo: steamView.rightAnchor, constant: -8)
+
+        ])
+
+    }
+    private func setupInstagram() {
+        copyButtonInstagram.addTarget(self, action: #selector(handleTouch), for: .touchUpInside)
+        
+        instagramView = setupView()
         instagramLabel = setupLabel()
         
-        addSubview(self.discordView)
-        addSubview(self.discordLabel)
-        addSubview(self.steamView)
-        addSubview(self.steamLabel)
         addSubview(instagramView)
-        addSubview(self.instagramLabel)
-        addSubview(self.copyButtonDiscord)
-        addSubview(self.copyButtonSteam)
-        addSubview(self.copyButtonInstagram)
-        setupConstraints()
-    }
-    
-    private func setupConstraints() {
-        // TODO: organizar
+        addSubview(instagramLabel)
+        addSubview(copyButtonInstagram)
+        
         NSLayoutConstraint.activate([
-            discordView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
-            discordView.heightAnchor.constraint(equalTo: self.discordLabel.heightAnchor, constant: 24),
-            discordView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
-            discordView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
-            discordLabel.centerYAnchor.constraint(equalTo: self.discordView.centerYAnchor),
-            discordLabel.leftAnchor.constraint(equalTo: self.discordView.leftAnchor, constant: 16),
-            copyButtonDiscord.centerYAnchor.constraint(equalTo: discordView.centerYAnchor),
-            copyButtonDiscord.rightAnchor.constraint(equalTo: self.discordView.rightAnchor, constant: -8),
-
-            steamView.topAnchor.constraint(equalTo: self.discordView.bottomAnchor, constant: 8),
-            steamView.heightAnchor.constraint(equalTo: self.discordView.heightAnchor),
-            steamView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
-            steamView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
-            steamLabel.centerYAnchor.constraint(equalTo: self.steamView.centerYAnchor),
-            steamLabel.leftAnchor.constraint(equalTo: self.steamView.leftAnchor, constant: 16),
-            copyButtonSteam.centerYAnchor.constraint(equalTo: steamView.centerYAnchor),
-            copyButtonSteam.rightAnchor.constraint(equalTo: self.steamView.rightAnchor, constant: -8),
-
-            instagramView.topAnchor.constraint(equalTo: self.steamView.bottomAnchor, constant: 8),
-            instagramView.heightAnchor.constraint(equalTo: self.steamView.heightAnchor),
-            instagramView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
-            instagramView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
+            instagramView.topAnchor.constraint(equalTo: steamView.bottomAnchor, constant: 8),
+            instagramView.heightAnchor.constraint(equalTo: steamView.heightAnchor),
+            instagramView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
+            instagramView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
             instagramLabel.centerYAnchor.constraint(equalTo: instagramView.centerYAnchor),
             instagramLabel.leftAnchor.constraint(equalTo: instagramView.leftAnchor, constant: 16),
             copyButtonInstagram.centerYAnchor.constraint(equalTo: instagramView.centerYAnchor),
@@ -203,9 +216,9 @@ class UserInfosTableViewCell: UITableViewCell {
         ])
     }
     public func configure(discordName: String, steamName: String, instagramName: String) {
-        self.backgroundColor = .clear
-        self.discordLabel.text = "Discord: \(discordName)"
-        self.steamLabel.text = "Steam: \(steamName)"
-        self.instagramLabel.text = "Instagram: \(instagramName)"
+        backgroundColor = .clear
+        discordLabel.text = "Discord: \(discordName)"
+        steamLabel.text = "Steam: \(steamName)"
+        instagramLabel.text = "Instagram: \(instagramName)"
     }
 }

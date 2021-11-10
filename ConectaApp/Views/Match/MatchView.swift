@@ -13,6 +13,7 @@ class MatchView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    var setView: Bool = false
     
     let collection: UICollectionView = {
         let layout = ZoomAndSnapFlowLayout()
@@ -29,56 +30,61 @@ class MatchView: UIView {
     }()
 
     let tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: UIScreen.main.bounds, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tableView.register(NickNameTableViewCell.self, forCellReuseIdentifier: NickNameTableViewCell.reuseIdentifier)
+        tableView.register(RegisterGameTableViewCell.self, forCellReuseIdentifier: RegisterGameTableViewCell.reuseIdentifier)
+        tableView.register(UserInfosTableViewCell.self, forCellReuseIdentifier: UserInfosTableViewCell.reuseIdentifier)
+        tableView.register(ReportButtonTableViewCell.self, forCellReuseIdentifier: ReportButtonTableViewCell.reuseIdentifier)
+        tableView.register(TitleSectionUser.self,
+                           forHeaderFooterViewReuseIdentifier: TitleSectionUser.reuseIdentifier)
         return tableView
     }()
     
-    let reportButton: UIButton = {
+    let profileButton: UIButton = {
         let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "profileButton"), for: .normal)
         button.sizeToFit()
-        button.setTitle("Denunciar", for: .normal)
-        button.titleLabel?.font = .appRegularFont(with: 18)
-        button.setTitleColor(.actPink, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.shadowOpacity = 1
-        button.layer.shadowRadius = 2
+        button.layer.shadowRadius = 5
         button.layer.shadowOffset = .zero
         button.layer.shadowColor = UIColor.shadowPink.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     override func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundLayout()
+        self.profileButtonLayout()
         self.collectionLayout()
 
         self.tableViewLayout()
-//        self.reportButtonLayout()
+        addMultipleLayers()
     }
     
      func addMultipleLayers() {
-         let sizeCollection = collection.contentSize.width
-         var collectionHeight = collection.contentSize.height
+         
+         let cellWidth = self.bounds.size.width * 0.6
+         var collectionHeight = self.bounds.size.width * 0.5
          var heightTop = 0
-         if collectionHeight >= 260 {
-             collectionHeight = collection.contentSize.height - 30
+         let viewSize = self.bounds.size.width
+         if collectionHeight >= 200 {
+             collectionHeight = self.bounds.size.width * 0.6
              heightTop = 10
          }
-         let viewSize = self.bounds.size.width
-        print(viewSize, sizeCollection)
-        let path1 = UIBezierPath()
-        
+         let path1 = UIBezierPath()
          path1.move(to: CGPoint(x: 0, y: collectionHeight))
-         path1.addLine(to: CGPoint(x: viewSize/2 - sizeCollection/2 + 10, y: collectionHeight))
-         path1.addLine(to: CGPoint(x: Int(viewSize/2 - sizeCollection/2) + 10, y: heightTop))
-         path1.addLine(to: CGPoint(x: Int(viewSize/2 + sizeCollection/2) - 8, y: heightTop))
-         path1.addLine(to: CGPoint(x: viewSize/2 + sizeCollection/2 - 8, y: collectionHeight))
+         path1.addLine(to: CGPoint(x: viewSize/2 - cellWidth/2 + 5, y: collectionHeight))
+         path1.addLine(to: CGPoint(x: Int(viewSize/2 - cellWidth/2) + 5, y: heightTop))
+         path1.addLine(to: CGPoint(x: Int(viewSize/2 + cellWidth/2) - 5, y: heightTop))
+         path1.addLine(to: CGPoint(x: viewSize/2 + cellWidth/2 - 5, y: collectionHeight))
          path1.addLine(to: CGPoint(x: viewSize + 3, y: collectionHeight))
 
          path1.addLine(to: CGPoint(x: viewSize + 3, y: self.bounds.size.height))
@@ -94,8 +100,10 @@ class MatchView: UIView {
         shapeLayer1.shadowOffset = .zero
         shapeLayer1.shadowOpacity = 1
         shapeLayer1.lineWidth = 2
-        
-        self.bgView.layer.addSublayer(shapeLayer1)
+         if !setView {
+             self.bgView.layer.addSublayer(shapeLayer1)
+             setView = true
+         }
 
     }
     
@@ -105,7 +113,7 @@ class MatchView: UIView {
             collection.widthAnchor.constraint(equalTo: self.widthAnchor),
             collection.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3),
             collection.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            collection.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            collection.topAnchor.constraint(equalTo: profileButton.bottomAnchor),
             bgView.topAnchor.constraint(equalTo: self.collection.topAnchor)
 
         ])
@@ -123,30 +131,22 @@ class MatchView: UIView {
     }
 
     private func tableViewLayout() {
-        tableView.register(NickNameTableViewCell.self, forCellReuseIdentifier: NickNameTableViewCell.reuseIdentifier)
-        tableView.register(RegisterGameTableViewCell.self, forCellReuseIdentifier: RegisterGameTableViewCell.reuseIdentifier)
-        tableView.register(UserInfosTableViewCell.self, forCellReuseIdentifier: UserInfosTableViewCell.reuseIdentifier)
-        
-        tableView.register(TitleSectionUser.self,
-                           forHeaderFooterViewReuseIdentifier: TitleSectionUser.reuseIdentifier)
-        
         addSubview(self.tableView)
 
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: collection.bottomAnchor, constant: 24),
             tableView.leftAnchor.constraint(equalTo: leftAnchor),
             tableView.rightAnchor.constraint(equalTo: rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
-                                                   constant: -40)
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
-    private func reportButtonLayout() {
-        addSubview(reportButton)
+    private func profileButtonLayout(){
+        addSubview(profileButton)
         NSLayoutConstraint.activate([
-            reportButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            reportButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20)
-//            reportButton.centerYAnchor.constraint(equalTo: centerYAnchor)
+            profileButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor ),
+            profileButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            profileButton.widthAnchor.constraint(equalToConstant: 42),
+            profileButton.heightAnchor.constraint(equalToConstant: 39)
         ])
     }
 }
