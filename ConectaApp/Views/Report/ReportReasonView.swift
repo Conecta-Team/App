@@ -8,12 +8,6 @@
 import UIKit
 
 class ReportReasonView: UIView {
-    
-    enum TypeButton: Int {
-        case fakeProfile
-        case toxicProfile
-        case blockProfile
-    }
 
     let borderView: UIView = {
         let view = UIView()
@@ -65,7 +59,7 @@ class ReportReasonView: UIView {
         return button
     }()
 
-    private func setupButton(with text: String, tag: TypeButton) -> UIButton {
+    private func setupButton(with text: String, tag: Reports) -> UIButton {
         let button = UIButton()
         button.setTitle(text, for: .normal)
         button.contentHorizontalAlignment = .leading
@@ -97,13 +91,13 @@ class ReportReasonView: UIView {
     }
 
     @objc private func handleTap(button: UIButton) {
-        if let typeButton = TypeButton(rawValue: button.tag) {
+        if let typeButton = Reports(rawValue: button.tag) {
             let boolValue: Bool
             switch typeButton {
             case .fakeProfile:
                 self.fakeButtonSelected.toggle()
                 boolValue = self.fakeButtonSelected
-            case .toxicProfile:
+            case .toxicPerson:
                 self.toxicButtonSelected.toggle()
                 boolValue = self.toxicButtonSelected
             case .blockProfile:
@@ -115,9 +109,25 @@ class ReportReasonView: UIView {
         }
     }
     
+    public func getReports() -> [Reports] {
+        var reports: [Reports] = [Reports]()
+
+        if self.fakeButtonSelected {
+            reports.append(.fakeProfile)
+        }
+        if self.toxicButtonSelected {
+            reports.append(.toxicPerson)
+        }
+        if self.blockButtonSelected {
+            reports.append(.blockProfile)
+        }
+
+        return reports
+    }
+
     private func setupView() {
         self.fakeProfileButton = self.setupButton(with: "Esse é um perfil falso", tag: .fakeProfile)
-        self.toxicProfileButton = self.setupButton(with: "Essa pessoa é tóxica", tag: .toxicProfile)
+        self.toxicProfileButton = self.setupButton(with: "Essa pessoa é tóxica", tag: .toxicPerson)
         self.blockProfileButton = self.setupButton(with: "Não quero ver esse perfil", tag: .blockProfile)
         
         self.addSubview(self.borderView)
