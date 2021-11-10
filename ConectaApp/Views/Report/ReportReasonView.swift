@@ -50,8 +50,7 @@ class ReportReasonView: UIView {
         let button = UIButton()
         button.setTitle("Cancelar", for: .normal)
         button.titleLabel?.font = .appRegularFont(with: 14)
-        button.setBackgroundImage(UIImage(named: "logoutButton"), for: .normal)
-        button.contentEdgeInsets = UIEdgeInsets(top: 2, left: 8, bottom: 2, right: 8)
+        button.setBackgroundImage(UIImage(named: "primaryButton"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -61,7 +60,6 @@ class ReportReasonView: UIView {
         button.setTitle("Continuar", for: .normal)
         button.titleLabel?.font = .appRegularFont(with: 14)
         button.setBackgroundImage(UIImage(named: "cancelButton"), for: .normal)
-        button.contentEdgeInsets = UIEdgeInsets(top: 2, left: 8, bottom: 2, right: 8)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isUserInteractionEnabled = false
         return button
@@ -86,8 +84,19 @@ class ReportReasonView: UIView {
         self.setupView()
     }
     
-    private func 
-    @objc func handleTap(button: UIButton) {
+    private func handleStatusContinueButton() {
+        let nameAssetButton: String
+        if self.fakeButtonSelected || self.toxicButtonSelected || self.blockButtonSelected {
+            self.continueButton.isUserInteractionEnabled = true
+            nameAssetButton = "primaryButton"
+        } else {
+            self.continueButton.isUserInteractionEnabled = false
+            nameAssetButton = "cancelButton"
+        }
+        self.continueButton.setBackgroundImage(UIImage(named: nameAssetButton), for: .normal)
+    }
+
+    @objc private func handleTap(button: UIButton) {
         if let typeButton = TypeButton(rawValue: button.tag) {
             let boolValue: Bool
             switch typeButton {
@@ -102,6 +111,7 @@ class ReportReasonView: UIView {
                 boolValue = self.blockButtonSelected
             }
             button.backgroundColor = boolValue ? .actPink : .clear
+            self.handleStatusContinueButton()
         }
     }
     
@@ -154,12 +164,13 @@ class ReportReasonView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            self.continueButton.bottomAnchor.constraint(equalTo: self.borderView.bottomAnchor, constant: -24),
-            self.continueButton.trailingAnchor.constraint(equalTo: self.borderView.trailingAnchor, constant: -24),
-            
-            self.cancelButton.centerYAnchor.constraint(equalTo: self.continueButton.centerYAnchor),
+            self.cancelButton.bottomAnchor.constraint(equalTo: self.borderView.bottomAnchor, constant: -24),
             self.cancelButton.leadingAnchor.constraint(equalTo: self.borderView.leadingAnchor, constant: 24),
-            self.cancelButton.widthAnchor.constraint(equalTo: self.continueButton.widthAnchor)
+            self.cancelButton.widthAnchor.constraint(equalTo: self.cancelButton.widthAnchor),
+        
+            self.continueButton.centerYAnchor.constraint(equalTo: self.cancelButton.centerYAnchor),
+            self.continueButton.trailingAnchor.constraint(equalTo: self.borderView.trailingAnchor, constant: -24),
+            self.continueButton.widthAnchor.constraint(equalTo: self.continueButton.widthAnchor)
         ])
     }
 }
