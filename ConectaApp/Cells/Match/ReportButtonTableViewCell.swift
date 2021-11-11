@@ -29,7 +29,7 @@ class ReportButtonTableViewCell: UITableViewCell {
         backgroundColor = .backgroundPurple
     }
     
-    private func setup(){
+    private func setup() {
         contentView.backgroundColor = .clear
         contentView.isUserInteractionEnabled = false
         
@@ -44,6 +44,4 @@ class ReportButtonTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-
 }

@@ -51,7 +51,7 @@ class MatchViewController: UIViewController {
         navigationController?.pushViewController(profile, animated: true)
     }
     @objc func goReport() {
-        let report = ReportDetailsViewController()
+        let report = ReportReasonViewController()
         navigationController?.pushViewController(report, animated: true)
     }
     public func manageViews() {

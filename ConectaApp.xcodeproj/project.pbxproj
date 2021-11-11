@@ -72,6 +72,7 @@
 		A2ED622127356E570080BEA5 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED622027356E570080BEA5 /* Reports.swift */; };
 		D7B70F38273C0B0500FEE8D2 /* ReportDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */; };
 		D7B70F3A273C0D5B00FEE8D2 /* ReportDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */; };
+		D7B70F3D273C158B00FEE8D2 /* ReportReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F3C273C158B00FEE8D2 /* ReportReasonViewController.swift */; };
 		D7C64828273A97310086E964 /* ReportButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +166,7 @@
 		A2ED622027356E570080BEA5 /* Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
 		D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsView.swift; sourceTree = "<group>"; };
 		D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewController.swift; sourceTree = "<group>"; };
+		D7B70F3C273C158B00FEE8D2 /* ReportReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReasonViewController.swift; sourceTree = "<group>"; };
 		D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -353,12 +355,12 @@
 		A21A224926EF6C450052384A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D7B70F3B273C156900FEE8D2 /* Report */,
 				88EF3FC32721AA9E00819DCA /* Profile */,
 				A2E0FEF1270DE3DC00E7ABC2 /* Match */,
 				A2E0FEF0270DE3D700E7ABC2 /* Login */,
 				A2E0FEEF270DE3CF00E7ABC2 /* Register */,
 				A21A221826EF67260052384A /* ViewController.swift */,
-				D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -543,6 +545,15 @@
 				A226798826F538C400E5B0FF /* MatchViewController.swift */,
 			);
 			path = Match;
+			sourceTree = "<group>";
+		};
+		D7B70F3B273C156900FEE8D2 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */,
+				D7B70F3C273C158B00FEE8D2 /* ReportReasonViewController.swift */,
+			);
+			path = Report;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -745,6 +756,7 @@
 				A226798B26F538D500E5B0FF /* MatchView.swift in Sources */,
 				A2E0FEDE270DCC6100E7ABC2 /* UserCKService.swift in Sources */,
 				A242CEE72722E0A900602602 /* TokenCollViewFlowLayout.swift in Sources */,
+				D7B70F3D273C158B00FEE8D2 /* ReportReasonViewController.swift in Sources */,
 				A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */,
 				A2E0FEDC270DCBA500E7ABC2 /* CloudKitService.swift in Sources */,
 				A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */,
