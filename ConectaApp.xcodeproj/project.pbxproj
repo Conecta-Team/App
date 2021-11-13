@@ -375,7 +375,6 @@
 				A22ECADC27396CF1003403F2 /* Report */,
 				A242CEE32722E00900602602 /* Components */,
 				A21A224426EF67A80052384A /* View.swift */,
-				D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				A22ECADD27396D45003403F2 /* ReportReasonView.swift */,
+				D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";

@@ -15,7 +15,7 @@ class ReportReasonViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: false)
         view = reportReason
         reportReason.continueButton.addTarget(self, action: #selector(goDetails), for: .touchUpInside)
-
+        
     }
     @objc func goDetails(){
         let report = ReportDetailsViewController()
