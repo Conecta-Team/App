@@ -9,7 +9,7 @@ import UIKit
 
 class RegisterSocialInfoView: UIView {
     
-    var isEditScreen = false
+    var isEditScreen: Bool
     
     init(isEditScreen: Bool = false) {
         self.isEditScreen = isEditScreen
@@ -197,59 +197,59 @@ class RegisterSocialInfoView: UIView {
 
         NSLayoutConstraint.activate([
             socialInfoTitle.topAnchor.constraint(equalTo: borderView.topAnchor, constant: 56),
-            socialInfoTitle.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            socialInfoTitle.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
+            socialInfoTitle.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            socialInfoTitle.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16)
         ])
 
         NSLayoutConstraint.activate([
             socialInfoSubtitle.topAnchor.constraint(equalTo: socialInfoTitle.bottomAnchor, constant: 16),
-            socialInfoSubtitle.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            socialInfoSubtitle.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
+            socialInfoSubtitle.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            socialInfoSubtitle.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16)
         ])
         
         NSLayoutConstraint.activate([
             discordLabel.topAnchor.constraint(equalTo: socialInfoSubtitle.bottomAnchor, constant: 16),
-            discordLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            discordLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
+            discordLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            discordLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16)
         ])
         
         NSLayoutConstraint.activate([
             discordTextField.topAnchor.constraint(equalTo: discordLabel.bottomAnchor, constant: 8),
-            discordTextField.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            discordTextField.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8),
+            discordTextField.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            discordTextField.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16),
             discordTextField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)
         ])
         
         NSLayoutConstraint.activate([
             steamLabel.topAnchor.constraint(equalTo: discordTextField.bottomAnchor, constant: 16),
-            steamLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            steamLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
+            steamLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            steamLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16)
         ])
         
         NSLayoutConstraint.activate([
             steamTextField.topAnchor.constraint(equalTo: steamLabel.bottomAnchor, constant: 8),
-            steamTextField.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            steamTextField.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8),
+            steamTextField.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            steamTextField.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16),
             steamTextField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)
         ])
         
         NSLayoutConstraint.activate([
             instagramLabel.topAnchor.constraint(equalTo: steamTextField.bottomAnchor, constant: 16),
-            instagramLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            instagramLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
+            instagramLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            instagramLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16)
         ])
         
         NSLayoutConstraint.activate([
             instagramTextField.topAnchor.constraint(equalTo: instagramLabel.bottomAnchor, constant: 8),
-            instagramTextField.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            instagramTextField.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8),
+            instagramTextField.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            instagramTextField.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16),
             instagramTextField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)
         ])
         
         NSLayoutConstraint.activate([
             errorMessageLabel.topAnchor.constraint(equalTo: instagramTextField.bottomAnchor, constant: 8),
-            errorMessageLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            errorMessageLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
+            errorMessageLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            errorMessageLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16)
         ])
         
         if isEditScreen {

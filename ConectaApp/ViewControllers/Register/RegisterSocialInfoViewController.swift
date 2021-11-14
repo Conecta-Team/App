@@ -12,15 +12,11 @@ class RegisterSocialInfoViewController: UIViewController {
     
     let registerSocialInfo: RegisterSocialInfoView
     weak var delegate: GetSocialInfoToSaveDelegate?
+    let isEditScreen: Bool
     
     init(isEditScreen: Bool = false) {
+        self.isEditScreen = isEditScreen
         self.registerSocialInfo = RegisterSocialInfoView(isEditScreen: isEditScreen)
-        if isEditScreen {
-            let socialInfo = delegate?.getOldSocialInfo()
-            registerSocialInfo.discordTextField.text = socialInfo?.discord
-            registerSocialInfo.steamTextField.text = socialInfo?.steam
-            registerSocialInfo.instagramTextField.text = socialInfo?.instagram
-        }
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,6 +29,15 @@ class RegisterSocialInfoViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.registerSocialInfo.cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
         self.registerSocialInfo.saveButton.addTarget(self, action: #selector(saveAction), for: .touchUpInside)
+        
+        if isEditScreen {
+            self.isModalInPresentation = true
+            self.modalTransitionStyle = .crossDissolve
+            let socialInfo = delegate?.getOldSocialInfo()
+            registerSocialInfo.discordTextField.text = socialInfo?.discord
+            registerSocialInfo.steamTextField.text = socialInfo?.steam
+            registerSocialInfo.instagramTextField.text = socialInfo?.instagram
+        }
     }
     
     public func getSocialInfos() -> (discord: String?, steam: String?, instagram: String?) {
@@ -44,18 +49,20 @@ class RegisterSocialInfoViewController: UIViewController {
     }
     
     @objc func cancelAction() {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     @objc func saveAction() {
         let socialInfo = getSocialInfos()
-        delegate?.editSocialInfos(discord: socialInfo.discord, steam: socialInfo.steam, instagram: socialInfo.instagram) {
-            self.navigationController?.popViewController(animated: true)
+        if let discord = socialInfo.discord, let steam = socialInfo.steam, let instagram = socialInfo.instagram, discord != "" || steam != "" || instagram != "" {
+            registerSocialInfo.saveButton.isUserInteractionEnabled = false
+            delegate?.editSocialInfos(discord: socialInfo.discord, steam: socialInfo.steam, instagram: socialInfo.instagram) {
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true)
+                }
+            }
+        } else {
+            registerSocialInfo.errorMessageLabel.isHidden = false
         }
     }
-}
-
-protocol GetSocialInfoToSaveDelegate: AnyObject {
-    func getOldSocialInfo() -> (discord: String?, steam: String?, instagram: String?)
-    func editSocialInfos(discord: String?, steam: String?, instagram: String?, completion: @escaping () -> Void)
 }

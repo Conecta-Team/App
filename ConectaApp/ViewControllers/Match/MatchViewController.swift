@@ -47,13 +47,14 @@ class MatchViewController: UIViewController {
     }
 
     @objc func goProfile() {
-        let profile = ProfileViewController()
-        
+        let profile = ProfileViewController(userDTO: viewModel.user!)
+        navigationItem.backButtonTitle = "Voltar"
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.appRegularFont(with: 20)], for: .normal)
         navigationController?.pushViewController(profile, animated: true)
     }
     @objc func goReport() {
-        let report = ProfileViewController()
-        navigationController?.pushViewController(report, animated: true)
+//        let report = ProfileViewController()
+//        navigationController?.pushViewController(report, animated: true)
     }
     public func manageViews() {
         if let usersToMatch = self.viewModel.usersToMatch, usersToMatch.count == 0 {

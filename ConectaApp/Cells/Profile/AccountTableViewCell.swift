@@ -53,6 +53,7 @@ class AccountTableViewCell: UITableViewCell {
     
     func setup() {
         self.backgroundColor = .clear
+        contentView.isUserInteractionEnabled = false
 
         addSubview(borderView)
         borderView.addSubview(accountLabel)

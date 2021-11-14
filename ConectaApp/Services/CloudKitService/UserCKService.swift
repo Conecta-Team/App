@@ -181,7 +181,7 @@ extension UserCKService {
             if gamesToCrete.isEmpty && gamesToDelete.isEmpty {
                 completion(.success(userNewData))
             } else {
-                let userReference = CKRecord.Reference(recordID: userNewData.userId, action: .none)
+                let userReference = CKRecord.Reference(recordID: userNewData.userId, action: .deleteSelf)
                 
                 // MARK: criando os registros de UserGames dos novos jogos de um usuario
                 let userGamesToCreate: [CKRecord] = gamesToCrete.compactMap({ game in

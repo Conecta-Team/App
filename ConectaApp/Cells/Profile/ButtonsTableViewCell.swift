@@ -17,6 +17,10 @@ class ButtonsTableViewCell: UITableViewCell {
         button.setTitle("Sair", for: .normal)
         button.titleLabel?.font = .appRegularFont(with: 20)
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
+        button.layer.shadowColor = UIColor.actPink.cgColor
+        button.layer.shadowRadius = 8
+        button.layer.shadowOpacity = 1
+        button.layer.shadowOffset = .zero
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

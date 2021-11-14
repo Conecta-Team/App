@@ -12,12 +12,11 @@ class RegisterNameViewController: UIViewController {
     
     let registerNameView: RegisterNameView
     weak var delegate: GetNameToSaveDelegate?
+    let isEditScreen: Bool
     
     init(isEditScreen: Bool = false) {
+        self.isEditScreen = isEditScreen
         self.registerNameView = RegisterNameView(isEditScreen: isEditScreen)
-        if isEditScreen {
-            registerNameView.nameTextField.text = delegate?.getOldName()
-        }
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,6 +31,12 @@ class RegisterNameViewController: UIViewController {
         
         self.registerNameView.cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
         self.registerNameView.saveButton.addTarget(self, action: #selector(saveAction), for: .touchUpInside)
+        
+        if isEditScreen {
+            self.isModalInPresentation = true
+            self.modalTransitionStyle = .crossDissolve
+            registerNameView.nameTextField.text = delegate?.getOldName()
+        }
     }
     
     public func getName() -> String? {
@@ -43,18 +48,20 @@ class RegisterNameViewController: UIViewController {
     }
     
     @objc func cancelAction() {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     @objc func saveAction() {
         let name = getName()
-        delegate?.editName(name: name, completion: {
-            self.navigationController?.popViewController(animated: true)
-        })
+        if let name = name, name != "" {
+            registerNameView.saveButton.isUserInteractionEnabled = false
+            delegate?.editName(name: name, completion: {
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true)
+                }
+            })
+        } else {
+            registerNameView.errorMessageLabel.isHidden = false
+        }
     }
-}
-
-protocol GetNameToSaveDelegate: AnyObject {
-    func getOldName() -> String?
-    func editName(name: String?, completion: @escaping () -> Void)
 }

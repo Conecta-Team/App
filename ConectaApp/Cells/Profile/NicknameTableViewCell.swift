@@ -12,9 +12,12 @@ class NicknameTableViewCell: UITableViewCell {
     static let reuseIdentifier = "nicknameTableViewCell"
 
     internal lazy var imageProfile: UIImageView = {
-        let image = UIImage(named: "shapeCell")?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(named: "ShapeSquare")
         let imageView = UIImageView(image: image)
-        
+        imageView.layer.shadowColor = UIColor.borderPurple.cgColor
+        imageView.layer.shadowRadius = 8
+        imageView.layer.shadowOpacity = 1
+        imageView.layer.shadowOffset = .zero
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -23,7 +26,8 @@ class NicknameTableViewCell: UITableViewCell {
     internal lazy var letterProfileLabel: UILabel = {
         let label: UILabel = UILabel()
         label.font = .appRegularFont(with: 96)
-        label.text = "H"
+        label.text = "-"
+        label.textColor = .textBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

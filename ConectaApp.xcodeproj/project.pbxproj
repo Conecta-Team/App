@@ -36,6 +36,9 @@
 		88EF3FCC272824EC00819DCA /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FCB272824EC00819DCA /* SectionHeaderView.swift */; };
 		88EF3FCE2728309000819DCA /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FCD2728309000819DCA /* AccountTableViewCell.swift */; };
 		88EF3FD1272836A600819DCA /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FD0272836A600819DCA /* ButtonsTableViewCell.swift */; };
+		88F79DB1273D459400F8B454 /* EditProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB0273D459400F8B454 /* EditProfileProtocols.swift */; };
+		88F79DB3273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB2273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift */; };
+		88F79DB5273EB60500F8B454 /* ProfilePrivacitySecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB4273EB60500F8B454 /* ProfilePrivacitySecurityView.swift */; };
 		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
 		A21425BA26F0EDA600309605 /* CloudKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B926F0EDA600309605 /* CloudKitError.swift */; };
 		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
@@ -121,6 +124,9 @@
 		88EF3FCB272824EC00819DCA /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		88EF3FCD2728309000819DCA /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		88EF3FD0272836A600819DCA /* ButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsTableViewCell.swift; sourceTree = "<group>"; };
+		88F79DB0273D459400F8B454 /* EditProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileProtocols.swift; sourceTree = "<group>"; };
+		88F79DB2273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrivacitySecurityViewController.swift; sourceTree = "<group>"; };
+		88F79DB4273EB60500F8B454 /* ProfilePrivacitySecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrivacitySecurityView.swift; sourceTree = "<group>"; };
 		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A21425B926F0EDA600309605 /* CloudKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitError.swift; sourceTree = "<group>"; };
 		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				88EF3FC12721AA0C00819DCA /* ProfileView.swift */,
+				88F79DB4273EB60500F8B454 /* ProfilePrivacitySecurityView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				88EF3FC42721AAB100819DCA /* ProfileViewController.swift */,
+				88F79DB2273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -397,6 +405,7 @@
 				684C8D9E26F0C24900603526 /* Coordinator.swift */,
 				684C8DA226F21A4C00603526 /* LoginProtocols.swift */,
 				A226798E26F5395300E5B0FF /* ViewModelProtocols.swift */,
+				88F79DB0273D459400F8B454 /* EditProfileProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -707,6 +716,7 @@
 				A2E0FEE0270DCD0200E7ABC2 /* FilterCKService.swift in Sources */,
 				8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */,
 				A2ED621F27356D930080BEA5 /* ReportCKService.swift in Sources */,
+				88F79DB1273D459400F8B454 /* EditProfileProtocols.swift in Sources */,
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
 				88EF3FCE2728309000819DCA /* AccountTableViewCell.swift in Sources */,
 				88EF3FC22721AA0C00819DCA /* ProfileView.swift in Sources */,
@@ -715,6 +725,7 @@
 				A226799326F5417A00E5B0FF /* ProfileCollectionViewCell.swift in Sources */,
 				881BFA5E272C36AD00D00171 /* CustomCollection.swift in Sources */,
 				A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */,
+				88F79DB3273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift in Sources */,
 				886B0AFA26F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift in Sources */,
 				88EF3FD1272836A600819DCA /* ButtonsTableViewCell.swift in Sources */,
 				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
@@ -737,6 +748,7 @@
 				A226798B26F538D500E5B0FF /* MatchView.swift in Sources */,
 				A2E0FEDE270DCC6100E7ABC2 /* UserCKService.swift in Sources */,
 				A242CEE72722E0A900602602 /* TokenCollViewFlowLayout.swift in Sources */,
+				88F79DB5273EB60500F8B454 /* ProfilePrivacitySecurityView.swift in Sources */,
 				A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */,
 				A2E0FEDC270DCBA500E7ABC2 /* CloudKitService.swift in Sources */,
 				A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */,
@@ -925,6 +937,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -947,6 +960,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

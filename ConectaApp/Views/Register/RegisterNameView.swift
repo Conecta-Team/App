@@ -9,7 +9,7 @@ import UIKit
 
 class RegisterNameView: UIView {
     
-    var isEditScreen = false
+    var isEditScreen: Bool
     
     init(isEditScreen: Bool = false) {
         self.isEditScreen = isEditScreen
@@ -138,27 +138,27 @@ class RegisterNameView: UIView {
         
         NSLayoutConstraint.activate([
             nameTitle.topAnchor.constraint(equalTo: borderView.topAnchor, constant: 56),
-            nameTitle.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            nameTitle.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
+            nameTitle.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            nameTitle.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16)
         ])
         
         NSLayoutConstraint.activate([
             nameSubtitle.topAnchor.constraint(equalTo: nameTitle.bottomAnchor, constant: 16),
-            nameSubtitle.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            nameSubtitle.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
+            nameSubtitle.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            nameSubtitle.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16)
         ])
         
         NSLayoutConstraint.activate([
             nameTextField.topAnchor.constraint(equalTo: nameSubtitle.bottomAnchor, constant: 16),
-            nameTextField.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            nameTextField.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8),
+            nameTextField.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            nameTextField.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16),
             nameTextField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)
         ])
         
         NSLayoutConstraint.activate([
             errorMessageLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 8),
-            errorMessageLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 8),
-            errorMessageLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -8)
+            errorMessageLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 16),
+            errorMessageLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -16)
         ])
         
         if isEditScreen {

@@ -11,32 +11,30 @@ class ProfileViewController: UIViewController {
     
     let profileView = ProfileView()
     let profileViewModel = ProfileViewModel()
-    var navController = UINavigationController()
     
-//    init(userDTO: UserDTO) {
-//        self.profileViewModel.userDTO = userDTO
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    init(userDTO: UserDTO) {
+        self.profileViewModel.userDTO = userDTO
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        profileView.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = profileView
+        self.navigationController?.navigationBar.tintColor = .actPink
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.actPink, NSAttributedString.Key.font: UIFont.appRegularFont(with: 20)], for: UIControl.State.normal)
         profileView.tableView.dataSource = self
         profileView.tableView.delegate = self
         profileView.tableView.estimatedRowHeight = 100
     }
-    
-    let games: [(Games, Bool)] = {
-            var array = [(Games, Bool)]()
-            for index in 0...4 {
-                array.append((Games(rawValue: index)!, true))
-            }
-            return array
-        }()
     
     var cellHeight: CGFloat = 0 {
         didSet {
@@ -61,19 +59,21 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: NicknameTableViewCell.reuseIdentifier, for: indexPath) as! NicknameTableViewCell
-            cell.nameLabel.text = "helaine"
-            // cell.nameLabel.text = user.name
+            let name = profileViewModel.userDTO!.name
+            let indexLetter = name.index(name.startIndex, offsetBy: 0)
+            cell.letterProfileLabel.text = String(name[indexLetter]).uppercased()
+            cell.nameLabel.text = profileViewModel.userDTO?.name
             cell.editButton.addTarget(self, action: #selector(editNickname), for: .touchUpInside)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: RegisterGameTableViewCell.reuseIdentifier, for: indexPath) as! RegisterGameTableViewCell
-//            let gamesArray: [(Games, Bool)] = user.games.compactMap { gameInt in
-//                if let games = Games(rawValue: gameInt) {
-//                    return (games, true)
-//                }
-//                return nil
-//            }
-            cell.configureCell(indexPath: indexPath, games: games)
+            let gamesArray: [(Games, Bool)] = profileViewModel.userDTO!.games.compactMap { gameInt in
+                if let games = Games(rawValue: gameInt) {
+                    return (games, true)
+                }
+                return nil
+            }
+            cell.configureCell(indexPath: indexPath, games: gamesArray)
             cell.backgroundColor = .clear
             cell.isUserInteractionEnabled = false
             cell.layoutIfNeeded()
@@ -81,8 +81,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: UserInfosTableViewCell.reuseIdentifier, for: indexPath) as! UserInfosTableViewCell
-            cell.configure(discordName: "öiio", steamName: "ouioo", instagramName: "oijio")
-            // cell.configure(discordName: user.discord, steamName: user.steam, instagramName: user.instagram)
+            // cell.configure(discordName: "öiio", steamName: "ouioo", instagramName: "oijio")
+            cell.configure(discordName: profileViewModel.userDTO!.discord, steamName: profileViewModel.userDTO!.steam, instagramName: profileViewModel.userDTO!.instagram)
             cell.backgroundColor = .clear
             cell.copyButtonDiscord.isHidden = true
             cell.copyButtonSteam.isHidden = true
@@ -91,11 +91,12 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case 3:
            let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.reuseIdentifier, for: indexPath) as! AccountTableViewCell
-            cell.isUserInteractionEnabled = false
+            cell.accountButton.addTarget(self, action: #selector(openPrivacityView), for: .touchUpInside)
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: ButtonsTableViewCell.reuseIdentifier, for: indexPath) as! ButtonsTableViewCell
-            cell.isUserInteractionEnabled = false
+            cell.deleteButton.addTarget(self, action: #selector(deleteUser), for: .touchUpInside)
+            cell.logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
             return cell
         default:
             return UITableViewCell()
@@ -141,16 +142,40 @@ extension ProfileViewController {
     
     @objc func editNickname(_ sender: UIButton) {
         let controller = RegisterNameViewController(isEditScreen: true)
-        self.navigationController?.pushViewController(controller, animated: true)
+        controller.delegate = self.profileViewModel
+        controller.modalTransitionStyle = .crossDissolve
+        self.navigationController?.present(controller, animated: true)
     }
     
     @objc func editSocialInfo(_ sender: UIButton) {
         let controller = RegisterSocialInfoViewController(isEditScreen: true)
         controller.delegate = self.profileViewModel
-        self.navigationController?.pushViewController(controller, animated: true)
+        controller.modalTransitionStyle = .crossDissolve
+        self.navigationController?.present(controller, animated: true)
     }
     
     @objc func editGames(_ sender: UIButton) {
-        self.navigationController?.present(RegisterGameViewController(), animated: true, completion: nil)
+        let controller = RegisterGameViewController(isEditScreen: true)
+        controller.delegate = self.profileViewModel
+        controller.modalTransitionStyle = .crossDissolve
+        self.navigationController?.present(controller, animated: true)
+    }
+    
+    @objc func openPrivacityView(_ sender: UIButton) {
+        let controller = ProfilePrivacitySecurityViewController()
+        controller.modalTransitionStyle = .crossDissolve
+        self.navigationController?.present(controller, animated: true)
+    }
+    
+    @objc func deleteUser(_ sender: UIButton) {
+        self.profileViewModel.deleteUser {
+            DispatchQueue.main.async {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+    }
+    
+    @objc func logout(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
