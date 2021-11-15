@@ -70,6 +70,7 @@
 		A2E0FEE8270DD0F200E7ABC2 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */; };
 		A2ED621F27356D930080BEA5 /* ReportCKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED621E27356D930080BEA5 /* ReportCKService.swift */; };
 		A2ED622127356E570080BEA5 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED622027356E570080BEA5 /* Reports.swift */; };
+		D712213927429E0A0080855F /* ReportAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712213827429E0A0080855F /* ReportAlertView.swift */; };
 		D7B70F38273C0B0500FEE8D2 /* ReportDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */; };
 		D7B70F3A273C0D5B00FEE8D2 /* ReportDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */; };
 		D7B70F3D273C158B00FEE8D2 /* ReportReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F3C273C158B00FEE8D2 /* ReportReasonViewController.swift */; };
@@ -164,6 +165,7 @@
 		A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		A2ED621E27356D930080BEA5 /* ReportCKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCKService.swift; sourceTree = "<group>"; };
 		A2ED622027356E570080BEA5 /* Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
+		D712213827429E0A0080855F /* ReportAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAlertView.swift; sourceTree = "<group>"; };
 		D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsView.swift; sourceTree = "<group>"; };
 		D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewController.swift; sourceTree = "<group>"; };
 		D7B70F3C273C158B00FEE8D2 /* ReportReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReasonViewController.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 			children = (
 				A22ECADD27396D45003403F2 /* ReportReasonView.swift */,
 				D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */,
+				D712213827429E0A0080855F /* ReportAlertView.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				A242CEE52722E03A00602602 /* GamesCollectionView.swift in Sources */,
 				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
 				A2AF500B2727944D0003A290 /* LoadingView.swift in Sources */,
+				D712213927429E0A0080855F /* ReportAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

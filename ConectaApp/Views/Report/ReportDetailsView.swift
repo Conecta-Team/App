@@ -31,7 +31,7 @@ class ReportDetailsView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Você pode nos dar mais detalhes sobre o ocorrido?"
-        label.font = .appRegularFont(with: 18)
+        label.font = .appRegularFont(with: 20)
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = .max
         label.textColor = .textLightBlue
@@ -53,7 +53,7 @@ class ReportDetailsView: UIView {
 //        textField.textContainer.line
         textField.textContainer.lineBreakMode = .byWordWrapping
         textField.textContainer.maximumNumberOfLines = 0
-        textField.text = "Placeholder"
+        textField.text = "Caso não queira, você pode deixar esse espaço em branco."
         textField.textColor = UIColor.lightGray
         
 //        textField.placeholder = " Caso não queira, você pode deixar esse espaço em branco."
@@ -64,7 +64,7 @@ class ReportDetailsView: UIView {
     let backButton: UIButton = {
         let button = UIButton()
         button.setTitle("Voltar", for: .normal)
-        button.titleLabel?.font = .appRegularFont(with: 14)
+        button.titleLabel?.font = .appRegularFont(with: 18)
         button.setBackgroundImage(UIImage(named: "primaryButton"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -73,16 +73,17 @@ class ReportDetailsView: UIView {
     let reportButton: UIButton = {
         let button = UIButton()
         button.setTitle("Reportar", for: .normal)
-        button.titleLabel?.font = .appRegularFont(with: 14)
+        button.titleLabel?.font = .appRegularFont(with: 18)
         button.setBackgroundImage(UIImage(named: "primaryButton"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupView()
+        setupConstraints()
     }
-    func setupView() {
+    
+    func setupConstraints() {
 //        addSubview(blur)
         addSubview(bgView)
         addSubview(titleLabel)
@@ -104,19 +105,22 @@ class ReportDetailsView: UIView {
             titleLabel.trailingAnchor.constraint(equalTo: bgView.trailingAnchor, constant: -24),
 
             detailsTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            detailsTextField.leadingAnchor.constraint(equalTo: bgView.leadingAnchor, constant: 24),
-            detailsTextField.trailingAnchor.constraint(equalTo: bgView.trailingAnchor, constant: -24),
-            detailsTextField.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
-//            detailsTextField.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -50),
+            detailsTextField.leadingAnchor.constraint(equalTo: bgView.leadingAnchor, constant: 16),
+            detailsTextField.trailingAnchor.constraint(equalTo: bgView.trailingAnchor, constant: -16),
+            detailsTextField.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -16),
             
             backButton.bottomAnchor.constraint(equalTo: self.bgView.bottomAnchor, constant: -24),
             backButton.leadingAnchor.constraint(equalTo: self.bgView.leadingAnchor, constant: 24),
-            backButton.widthAnchor.constraint(equalTo: self.backButton.widthAnchor),
-        
+            backButton.heightAnchor.constraint(equalToConstant: 50),
+            backButton.widthAnchor.constraint(equalToConstant: 120),
+
             reportButton.centerYAnchor.constraint(equalTo: self.backButton.centerYAnchor),
+//            reportButton.leadingAnchor.constraint(equalTo: self.backButton.trailingAnchor, constant: 42),
+
             reportButton.trailingAnchor.constraint(equalTo: self.bgView.trailingAnchor, constant: -24),
-            reportButton.widthAnchor.constraint(equalTo: self.reportButton.widthAnchor)
-            
+            reportButton.heightAnchor.constraint(equalToConstant: 50),
+            reportButton.widthAnchor.constraint(equalToConstant: 120)
+
         ])
     }
 }
