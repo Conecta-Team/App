@@ -32,7 +32,7 @@ class MatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = mainView
-//        self.mainView.addMultipleLayers()
+
         self.viewModel.delegate = self
         self.viewModel.initialization()
         
@@ -48,12 +48,16 @@ class MatchViewController: UIViewController {
 
     @objc func goProfile() {
         let profile = ProfileViewController()
-        navigationController?.pushViewController(profile, animated: true)
+        let nav = UINavigationController(rootViewController: profile)
+        navigationController?.pushViewController(nav, animated: true)
     }
+
     @objc func goReport() {
         let report = ReportReasonViewController()
-        navigationController?.pushViewController(report, animated: true)
+        report.modalTransitionStyle = .crossDissolve
+        navigationController?.present(report, animated: true)
     }
+
     public func manageViews() {
         if let usersToMatch = self.viewModel.usersToMatch, usersToMatch.count == 0 {
             self.view = emptyView

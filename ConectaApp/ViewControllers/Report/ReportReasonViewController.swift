@@ -10,16 +10,31 @@ import UIKit
 class ReportReasonViewController: UIViewController {
 
     let reportReason = ReportReasonView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: false)
         view = reportReason
+
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.isModalInPresentation = true
+        self.modalTransitionStyle = .crossDissolve
         reportReason.continueButton.addTarget(self, action: #selector(goDetails), for: .touchUpInside)
-
-    }
-    @objc func goDetails(){
-        let report = ReportDetailsViewController()
-        navigationController?.pushViewController(report, animated: true)
+        reportReason.cancelButton.addTarget(self, action: #selector(cancelButton), for: .touchUpInside)
     }
 
+    @objc func goDetails() {
+//        let report = ReportDetailsViewController()
+//        report.modalTransitionStyle = .crossDissolve
+//        self.present(report, animated: true, completion: nil)
+        let view = UIView()
+        view.backgroundColor = .red
+        self.view = view
+    }
+    
+    @objc func cancelButton() {
+//        self.dismiss(animated: true, completion: nil)
+        let view = UIView()
+        view.backgroundColor = .red
+        self.view = view
+    }
 }

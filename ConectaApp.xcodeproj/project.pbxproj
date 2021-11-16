@@ -35,6 +35,7 @@
 		88EF3FCC272824EC00819DCA /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FCB272824EC00819DCA /* SectionHeaderView.swift */; };
 		88EF3FCE2728309000819DCA /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FCD2728309000819DCA /* AccountTableViewCell.swift */; };
 		88EF3FD1272836A600819DCA /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FD0272836A600819DCA /* ButtonsTableViewCell.swift */; };
+		A201F64A273EA8A4009E9B1D /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201F649273EA8A4009E9B1D /* ReportViewModel.swift */; };
 		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
 		A21425BA26F0EDA600309605 /* CloudKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B926F0EDA600309605 /* CloudKitError.swift */; };
 		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
@@ -123,6 +124,7 @@
 		88EF3FCB272824EC00819DCA /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		88EF3FCD2728309000819DCA /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		88EF3FD0272836A600819DCA /* ButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsTableViewCell.swift; sourceTree = "<group>"; };
+		A201F649273EA8A4009E9B1D /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A21425B926F0EDA600309605 /* CloudKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitError.swift; sourceTree = "<group>"; };
 		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +265,14 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		A201F648273EA891009E9B1D /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				A201F649273EA8A4009E9B1D /* ReportViewModel.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		A21425B026F0DC6500309605 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +355,7 @@
 		A21A224826EF6C390052384A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A201F648273EA891009E9B1D /* Report */,
 				A2E0FEEE270DE37500E7ABC2 /* Match */,
 				A2E0FEED270DE36D00E7ABC2 /* Register */,
 				A2E0FEEC270DE36400E7ABC2 /* Login */,
@@ -765,6 +776,7 @@
 				889DADFB272981B8002EDAB0 /* GameButtonCollectionViewCell.swift in Sources */,
 				A2ED622127356E570080BEA5 /* Reports.swift in Sources */,
 				A2E0FEE6270DCF5300E7ABC2 /* Goals.swift in Sources */,
+				A201F64A273EA8A4009E9B1D /* ReportViewModel.swift in Sources */,
 				A242CEE52722E03A00602602 /* GamesCollectionView.swift in Sources */,
 				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
 				A2AF500B2727944D0003A290 /* LoadingView.swift in Sources */,

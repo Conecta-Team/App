@@ -8,6 +8,14 @@
 import UIKit
 
 class ReportReasonView: UIView {
+    
+    let blurView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.alpha = 0.4
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     let borderView: UIView = {
         let view = UIView()
@@ -129,7 +137,8 @@ class ReportReasonView: UIView {
         self.fakeProfileButton = self.setupButton(with: "Esse é um perfil falso", tag: .fakeProfile)
         self.toxicProfileButton = self.setupButton(with: "Essa pessoa é tóxica", tag: .toxicPerson)
         self.blockProfileButton = self.setupButton(with: "Não quero ver esse perfil", tag: .blockProfile)
-        
+
+        self.addSubview(self.blurView)
         self.addSubview(self.borderView)
         self.addSubview(self.title)
         self.addSubview(self.fakeProfileButton)
@@ -141,6 +150,13 @@ class ReportReasonView: UIView {
     }
 
     private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            self.blurView.topAnchor.constraint(equalTo: self.topAnchor),
+            self.blurView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.blurView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.blurView.rightAnchor.constraint(equalTo: self.rightAnchor)
+        ])
+
         NSLayoutConstraint.activate([
             self.borderView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.borderView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
