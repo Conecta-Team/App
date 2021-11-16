@@ -50,7 +50,7 @@ class ButtonsTableViewCell: UITableViewCell {
     func setup() {
         self.backgroundColor = .clear
         self.contentView.isUserInteractionEnabled = false
-        
+        self.selectionStyle = .none
         addSubview(deleteButton)
         addSubview(logoutButton)
         

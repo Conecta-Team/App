@@ -144,6 +144,7 @@ extension ProfileViewController {
         let controller = RegisterNameViewController(isEditScreen: true)
         controller.delegate = self.profileViewModel
         controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .fullScreen
         self.navigationController?.present(controller, animated: true)
     }
     
@@ -151,6 +152,7 @@ extension ProfileViewController {
         let controller = RegisterSocialInfoViewController(isEditScreen: true)
         controller.delegate = self.profileViewModel
         controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .fullScreen
         self.navigationController?.present(controller, animated: true)
     }
     
@@ -158,12 +160,14 @@ extension ProfileViewController {
         let controller = RegisterGameViewController(isEditScreen: true)
         controller.delegate = self.profileViewModel
         controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .fullScreen
         self.navigationController?.present(controller, animated: true)
     }
     
     @objc func openPrivacityView(_ sender: UIButton) {
         let controller = ProfilePrivacitySecurityViewController()
         controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .fullScreen
         self.navigationController?.present(controller, animated: true)
     }
     

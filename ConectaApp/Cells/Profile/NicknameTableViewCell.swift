@@ -77,7 +77,7 @@ class NicknameTableViewCell: UITableViewCell {
     func setupView() {
         self.backgroundColor = .clear
         self.contentView.isUserInteractionEnabled = false
-
+        self.selectionStyle = .none
         addSubview(imageProfile)
         imageProfile.addSubview(letterProfileLabel)
         addSubview(nicknameLabel)
