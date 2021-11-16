@@ -41,7 +41,7 @@ class ReportCKService: CloudKitService {
         }
         self.publicDatabase.add(operation)
     }
-    
+
     public func blockUser(userToBlock: UserDTO, myUser: UserDTO, completion: @escaping (Result<CKRecord, CloudKitError>) -> Void) {
         self.userCKService.getUser(userID: myUser.userId) { result in
             switch result {

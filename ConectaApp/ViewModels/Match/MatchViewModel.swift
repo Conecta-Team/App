@@ -19,13 +19,17 @@ class MatchViewModel: ViewModelType {
 
     public var user: UserDTO? {
         didSet {
-            self.getAllUsersToMatch()
+            if self.user != nil {
+                self.getAllUsersToMatch()
+            }
         }
     }
 
     var usersToMatch: [UserDTO]? = [UserDTO]() {
         didSet {
-            self.delegate?.didLoadData()
+            if self.usersToMatch != nil {
+                self.delegate?.didLoadData()
+            }
         }
     }
 
@@ -41,9 +45,24 @@ class MatchViewModel: ViewModelType {
             self.getCurrentUser()
         }
     }
+    
+    func reloadData() {
+        self.delegate?.willLoadData()
+        self.user = nil
+        self.usersToMatch = nil
+        self.indexCurrentUser = 0
+        self.getCurrentUser()
+    }
 
     public func setIndexUser(index: Int) {
         self.indexCurrentUser = index
+    }
+
+    public func getCurrentProfile() -> UserDTO? {
+        if let user = self.usersToMatch?[self.indexCurrentUser] {
+            return user
+        }
+        return nil
     }
 
     public func getUserName() -> String {
@@ -99,6 +118,7 @@ extension MatchViewModel {
             self.filterCKService.getAllUsersToMatch(currentUser: user) { result in
                 switch result {
                 case .success(let usersRecord):
+                    self.usersToMatch = nil
                     self.usersToMatch = usersRecord.compactMap({ userRecord in
                         UserDTO(record: userRecord)
                     })

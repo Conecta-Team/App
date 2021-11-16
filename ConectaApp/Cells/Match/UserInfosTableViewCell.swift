@@ -151,7 +151,7 @@ class UserInfosTableViewCell: UITableViewCell {
         setupSteam()
         setupInstagram()
     }
-    private func setupDiscord(){
+    private func setupDiscord() {
         copyButtonDiscord.addTarget(self, action: #selector(handleTouch), for: .touchUpInside)
         
         discordView = setupView()
@@ -172,7 +172,7 @@ class UserInfosTableViewCell: UITableViewCell {
         
         ])
     }
-    private func setupSteam(){
+    private func setupSteam() {
         copyButtonSteam.addTarget(self, action: #selector(handleTouch), for: .touchUpInside)
        
         steamView = setupView()

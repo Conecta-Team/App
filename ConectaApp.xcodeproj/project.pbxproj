@@ -36,6 +36,7 @@
 		88EF3FCC272824EC00819DCA /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FCB272824EC00819DCA /* SectionHeaderView.swift */; };
 		88EF3FCE2728309000819DCA /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FCD2728309000819DCA /* AccountTableViewCell.swift */; };
 		88EF3FD1272836A600819DCA /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FD0272836A600819DCA /* ButtonsTableViewCell.swift */; };
+		A201F64A273EA8A4009E9B1D /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201F649273EA8A4009E9B1D /* ReportViewModel.swift */; };
 		88F79DB1273D459400F8B454 /* EditProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB0273D459400F8B454 /* EditProfileProtocols.swift */; };
 		88F79DB3273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB2273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift */; };
 		88F79DB5273EB60500F8B454 /* ProfilePrivacitySecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB4273EB60500F8B454 /* ProfilePrivacitySecurityView.swift */; };
@@ -60,6 +61,7 @@
 		A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */; };
 		A226799D26F6881A00E5B0FF /* TitleSectionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */; };
 		A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */; };
+		A22ECADE27396D45003403F2 /* ReportReasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22ECADD27396D45003403F2 /* ReportReasonView.swift */; };
 		A242CEE52722E03A00602602 /* GamesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242CEE42722E03A00602602 /* GamesCollectionView.swift */; };
 		A242CEE72722E0A900602602 /* TokenCollViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242CEE62722E0A900602602 /* TokenCollViewFlowLayout.swift */; };
 		A253B99D272B472400E665B2 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A253B99C272B472400E665B2 /* EmptyStateView.swift */; };
@@ -73,6 +75,10 @@
 		A2E0FEE8270DD0F200E7ABC2 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */; };
 		A2ED621F27356D930080BEA5 /* ReportCKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED621E27356D930080BEA5 /* ReportCKService.swift */; };
 		A2ED622127356E570080BEA5 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED622027356E570080BEA5 /* Reports.swift */; };
+		D712213927429E0A0080855F /* ReportAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712213827429E0A0080855F /* ReportAlertView.swift */; };
+		D7B70F38273C0B0500FEE8D2 /* ReportDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */; };
+		D7B70F3A273C0D5B00FEE8D2 /* ReportDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */; };
+		D7B70F3D273C158B00FEE8D2 /* ReportReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B70F3C273C158B00FEE8D2 /* ReportReasonViewController.swift */; };
 		D7C64828273A97310086E964 /* ReportButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +133,7 @@
 		88F79DB0273D459400F8B454 /* EditProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileProtocols.swift; sourceTree = "<group>"; };
 		88F79DB2273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrivacitySecurityViewController.swift; sourceTree = "<group>"; };
 		88F79DB4273EB60500F8B454 /* ProfilePrivacitySecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrivacitySecurityView.swift; sourceTree = "<group>"; };
+		A201F649273EA8A4009E9B1D /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A21425B926F0EDA600309605 /* CloudKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitError.swift; sourceTree = "<group>"; };
 		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +161,7 @@
 		A226799A26F680D800E5B0FF /* UserInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfosTableViewCell.swift; sourceTree = "<group>"; };
 		A226799C26F6881A00E5B0FF /* TitleSectionUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSectionUser.swift; sourceTree = "<group>"; };
 		A226799E26F6D7C300E5B0FF /* UserInfosButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfosButton.swift; sourceTree = "<group>"; };
+		A22ECADD27396D45003403F2 /* ReportReasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReasonView.swift; sourceTree = "<group>"; };
 		A242CEE42722E03A00602602 /* GamesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesCollectionView.swift; sourceTree = "<group>"; };
 		A242CEE62722E0A900602602 /* TokenCollViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCollViewFlowLayout.swift; sourceTree = "<group>"; };
 		A253B99C272B472400E665B2 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
@@ -167,6 +175,10 @@
 		A2E0FEE7270DD0F200E7ABC2 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		A2ED621E27356D930080BEA5 /* ReportCKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCKService.swift; sourceTree = "<group>"; };
 		A2ED622027356E570080BEA5 /* Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
+		D712213827429E0A0080855F /* ReportAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAlertView.swift; sourceTree = "<group>"; };
+		D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsView.swift; sourceTree = "<group>"; };
+		D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsViewController.swift; sourceTree = "<group>"; };
+		D7B70F3C273C158B00FEE8D2 /* ReportReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReasonViewController.swift; sourceTree = "<group>"; };
 		D7C64827273A97310086E964 /* ReportButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,6 +285,14 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		A201F648273EA891009E9B1D /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				A201F649273EA8A4009E9B1D /* ReportViewModel.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		A21425B026F0DC6500309605 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				882A5B1C273951F70028397C /* Profile */,
+				A201F648273EA891009E9B1D /* Report */,
 				A2E0FEEE270DE37500E7ABC2 /* Match */,
 				A2E0FEED270DE36D00E7ABC2 /* Register */,
 				A2E0FEEC270DE36400E7ABC2 /* Login */,
@@ -366,6 +387,7 @@
 		A21A224926EF6C450052384A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D7B70F3B273C156900FEE8D2 /* Report */,
 				88EF3FC32721AA9E00819DCA /* Profile */,
 				A2E0FEF1270DE3DC00E7ABC2 /* Match */,
 				A2E0FEF0270DE3D700E7ABC2 /* Login */,
@@ -382,6 +404,7 @@
 				A2E0FEEB270DE33600E7ABC2 /* Match */,
 				A2E0FEEA270DE31B00E7ABC2 /* Register */,
 				A2E0FEE9270DE31400E7ABC2 /* Login */,
+				A22ECADC27396CF1003403F2 /* Report */,
 				A242CEE32722E00900602602 /* Components */,
 				A21A224426EF67A80052384A /* View.swift */,
 			);
@@ -437,6 +460,16 @@
 				A2E0FEDA270DCA0E00E7ABC2 /* CloudKitService */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A22ECADC27396CF1003403F2 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				A22ECADD27396D45003403F2 /* ReportReasonView.swift */,
+				D7B70F37273C0B0500FEE8D2 /* ReportDetailsView.swift */,
+				D712213827429E0A0080855F /* ReportAlertView.swift */,
+			);
+			path = Report;
 			sourceTree = "<group>";
 		};
 		A242CEE32722E00900602602 /* Components */ = {
@@ -546,6 +579,15 @@
 				A226798826F538C400E5B0FF /* MatchViewController.swift */,
 			);
 			path = Match;
+			sourceTree = "<group>";
+		};
+		D7B70F3B273C156900FEE8D2 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				D7B70F39273C0D5B00FEE8D2 /* ReportDetailsViewController.swift */,
+				D7B70F3C273C158B00FEE8D2 /* ReportReasonViewController.swift */,
+			);
+			path = Report;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -706,6 +748,7 @@
 				886B0AFE26F7E5C400A4E7D7 /* RegisterGameView.swift in Sources */,
 				A21A224526EF67A80052384A /* View.swift in Sources */,
 				886B0AF626F7B9F100A4E7D7 /* RegisterNameViewController.swift in Sources */,
+				D7B70F3A273C0D5B00FEE8D2 /* ReportDetailsViewController.swift in Sources */,
 				88EF3FC52721AAB100819DCA /* ProfileViewController.swift in Sources */,
 				A253B99D272B472400E665B2 /* EmptyStateView.swift in Sources */,
 				886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */,
@@ -727,6 +770,7 @@
 				A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */,
 				88F79DB3273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift in Sources */,
 				886B0AFA26F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift in Sources */,
+				A22ECADE27396D45003403F2 /* ReportReasonView.swift in Sources */,
 				88EF3FD1272836A600819DCA /* ButtonsTableViewCell.swift in Sources */,
 				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
 				886B0B0226F7F78900A4E7D7 /* RegisterGameTableViewCell.swift in Sources */,
@@ -739,6 +783,7 @@
 				886B0B0426F8025600A4E7D7 /* RegisterTitleSectionCell.swift in Sources */,
 				886B0AFC26F7DC6700A4E7D7 /* RegisterNameView.swift in Sources */,
 				887D518126F8C8ED00DC8BEC /* LoginViewModel.swift in Sources */,
+				D7B70F38273C0B0500FEE8D2 /* ReportDetailsView.swift in Sources */,
 				A226799726F6806500E5B0FF /* NickNameTableViewCell.swift in Sources */,
 				A2E0FEE2270DCD4000E7ABC2 /* Games.swift in Sources */,
 				A226799D26F6881A00E5B0FF /* TitleSectionUser.swift in Sources */,
@@ -749,6 +794,7 @@
 				A2E0FEDE270DCC6100E7ABC2 /* UserCKService.swift in Sources */,
 				A242CEE72722E0A900602602 /* TokenCollViewFlowLayout.swift in Sources */,
 				88F79DB5273EB60500F8B454 /* ProfilePrivacitySecurityView.swift in Sources */,
+				D7B70F3D273C158B00FEE8D2 /* ReportReasonViewController.swift in Sources */,
 				A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */,
 				A2E0FEDC270DCBA500E7ABC2 /* CloudKitService.swift in Sources */,
 				A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */,
@@ -757,9 +803,11 @@
 				889DADFB272981B8002EDAB0 /* GameButtonCollectionViewCell.swift in Sources */,
 				A2ED622127356E570080BEA5 /* Reports.swift in Sources */,
 				A2E0FEE6270DCF5300E7ABC2 /* Goals.swift in Sources */,
+				A201F64A273EA8A4009E9B1D /* ReportViewModel.swift in Sources */,
 				A242CEE52722E03A00602602 /* GamesCollectionView.swift in Sources */,
 				8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */,
 				A2AF500B2727944D0003A290 /* LoadingView.swift in Sources */,
+				D712213927429E0A0080855F /* ReportAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

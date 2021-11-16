@@ -32,7 +32,7 @@ class MatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = mainView
-//        self.mainView.addMultipleLayers()
+
         self.viewModel.delegate = self
         self.viewModel.initialization()
         
@@ -46,16 +46,30 @@ class MatchViewController: UIViewController {
         mainView.tableView.delegate = self
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let count = self.viewModel.usersToMatch?.count, count > 0 {
+            self.mainView.collection.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+        }
+        self.viewModel.reloadData()
+    }
+
     @objc func goProfile() {
         let profile = ProfileViewController(userDTO: viewModel.user!)
         navigationItem.backButtonTitle = "Voltar"
         navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.appRegularFont(with: 20)], for: .normal)
         navigationController?.pushViewController(profile, animated: true)
     }
+
     @objc func goReport() {
-//        let report = ProfileViewController()
-//        navigationController?.pushViewController(report, animated: true)
+        if let myUser = self.viewModel.user, let userToReport = self.viewModel.getCurrentProfile() {
+            let report = ReportReasonViewController(myUser: myUser, userToReport: userToReport)
+            report.modalTransitionStyle = .crossDissolve
+            report.modalPresentationStyle = .fullScreen
+            navigationController?.present(report, animated: true)
+        }
     }
+
     public func manageViews() {
         if let usersToMatch = self.viewModel.usersToMatch, usersToMatch.count == 0 {
             self.view = emptyView
@@ -196,6 +210,7 @@ extension MatchViewController: ViewModelDelegate {
     func willLoadData() {
         DispatchQueue.main.async {
             self.view = self.loadingView
+            self.view.layoutIfNeeded()
         }
     }
     
@@ -204,6 +219,7 @@ extension MatchViewController: ViewModelDelegate {
             self.view = self.mainView
             self.mainView.collection.reloadData()
             self.mainView.tableView.reloadData()
+            self.view.layoutIfNeeded()
         }
     }
 }

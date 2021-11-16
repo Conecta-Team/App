@@ -78,8 +78,19 @@ extension LoginViewController: ViewModelDelegate {
     func didLoadData() {
         DispatchQueue.main.async {
             if let user = self.viewModel.user {
-                let nextController = MatchViewController(user: user)
-                self.navigationController?.pushViewController(nextController, animated: true)
+                let nextController: UIViewController
+                if user.blocked {
+                    nextController = UIViewController()
+                    let emptyView = EmptyStateView()
+                    emptyView.setupMessage(text: "Seu usuário foi banido por excesso de reports. Se isso foi um erro, entre em contato conosco pelo nosso instagram @conectaapp.oficial")
+                    nextController.view = emptyView
+                    nextController.modalTransitionStyle = .crossDissolve
+                    nextController.modalPresentationStyle = .fullScreen
+                    self.present(nextController, animated: true)
+                } else {
+                    nextController = MatchViewController(user: user)
+                    self.navigationController?.pushViewController(nextController, animated: true)
+                }
             } else {
                 self.navigationController?.pushViewController(RegisterManagerViewController(), animated: true)
             }
