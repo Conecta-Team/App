@@ -134,7 +134,7 @@ class MatchView: UIView {
         addSubview(self.tableView)
 
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: collection.bottomAnchor, constant: 24),
+            tableView.topAnchor.constraint(equalTo: collection.bottomAnchor),
             tableView.leftAnchor.constraint(equalTo: leftAnchor),
             tableView.rightAnchor.constraint(equalTo: rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)

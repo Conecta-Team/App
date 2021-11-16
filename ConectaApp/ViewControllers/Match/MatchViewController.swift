@@ -53,9 +53,11 @@ class MatchViewController: UIViewController {
     }
 
     @objc func goReport() {
-        let report = ReportReasonViewController()
-        report.modalTransitionStyle = .crossDissolve
-        navigationController?.present(report, animated: true)
+        if let myUser = self.viewModel.user, let userToReport = self.viewModel.getCurrentProfile() {
+            let report = ReportReasonViewController(myUser: myUser, userToReport: userToReport)
+            report.modalTransitionStyle = .crossDissolve
+            navigationController?.present(report, animated: true)
+        }
     }
 
     public func manageViews() {

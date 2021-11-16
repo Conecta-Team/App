@@ -46,6 +46,13 @@ class MatchViewModel: ViewModelType {
         self.indexCurrentUser = index
     }
 
+    public func getCurrentProfile() -> UserDTO? {
+        if let user = self.usersToMatch?[self.indexCurrentUser] {
+            return user
+        }
+        return nil
+    }
+
     public func getUserName() -> String {
         if let user = self.usersToMatch?[self.indexCurrentUser] {
             return user.name
