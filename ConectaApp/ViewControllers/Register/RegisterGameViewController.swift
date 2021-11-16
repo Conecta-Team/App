@@ -10,17 +10,41 @@ import UIKit
 
 class RegisterGameViewController: UIViewController {
     
-    let registerGameView = RegisterGameView()
-    var gameSelected = String()
+    let registerGameView: RegisterGameView
+    // var gameSelected = String()
     let viewModel = RegisterGameViewModel()
+    weak var delegate: GetGamesToSaveDelegate?
+    var isEditScreen: Bool
+    
+    init(isEditScreen: Bool = false) {
+        self.isEditScreen = isEditScreen
+        self.viewModel.isEditScreen = isEditScreen
+        self.registerGameView = RegisterGameView(isEditScreen: isEditScreen)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        if isEditScreen, let oldGames = delegate?.getOldGames() {
+            self.isModalInPresentation = true
+            self.modalTransitionStyle = .crossDissolve
+            viewModel.oldGames = oldGames
+        }
+        
         viewModel.initialization()
         viewModel.delegate = self
 
         registerGameView.gamesTableView.delegate = self
         registerGameView.gamesTableView.dataSource = self
+        
+        self.registerGameView.cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
+        self.registerGameView.saveButton.addTarget(self, action: #selector(saveAction), for: .touchUpInside)
 
         self.view = registerGameView
     }
@@ -36,9 +60,26 @@ class RegisterGameViewController: UIViewController {
     public func setErrorMessage(ishidden: Bool) {
         registerGameView.errorMessageLabel.isHidden = ishidden
     }
+    
+    @objc func cancelAction() {
+        self.dismiss(animated: true)
+    }
+    
+    @objc func saveAction() {
+        let games = getSelectedGames()
+        if let games = games {
+            registerGameView.saveButton.isUserInteractionEnabled = false
+            delegate?.editGames(games: games, completion: {
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true)
+                }
+            })
+        } else {
+            registerGameView.errorMessageLabel.isHidden = false
+        }
+    }
 }
 
-// TODO: Falta preparar o autolayout das celulas da tableview.
 extension RegisterGameViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         viewModel.games.count

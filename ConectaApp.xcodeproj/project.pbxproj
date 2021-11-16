@@ -16,6 +16,7 @@
 		8816D10126F654BB00AB6C4E /* FontConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10026F654BB00AB6C4E /* FontConfiguration.swift */; };
 		8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */; };
 		881BFA5E272C36AD00D00171 /* CustomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881BFA5D272C36AD00D00171 /* CustomCollection.swift */; };
+		882A5B1E273952150028397C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882A5B1D273952150028397C /* ProfileViewModel.swift */; };
 		8861524826F8CD7400E6E759 /* RegisterManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */; };
 		8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861524926F952B100E6E759 /* RegisterGameViewModel.swift */; };
 		886B0AF326F7B7D700A4E7D7 /* RegisterManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B0AF226F7B7D700A4E7D7 /* RegisterManagerViewController.swift */; };
@@ -35,6 +36,9 @@
 		88EF3FCC272824EC00819DCA /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FCB272824EC00819DCA /* SectionHeaderView.swift */; };
 		88EF3FCE2728309000819DCA /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FCD2728309000819DCA /* AccountTableViewCell.swift */; };
 		88EF3FD1272836A600819DCA /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FD0272836A600819DCA /* ButtonsTableViewCell.swift */; };
+		88F79DB1273D459400F8B454 /* EditProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB0273D459400F8B454 /* EditProfileProtocols.swift */; };
+		88F79DB3273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB2273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift */; };
+		88F79DB5273EB60500F8B454 /* ProfilePrivacitySecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB4273EB60500F8B454 /* ProfilePrivacitySecurityView.swift */; };
 		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
 		A21425BA26F0EDA600309605 /* CloudKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B926F0EDA600309605 /* CloudKitError.swift */; };
 		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
@@ -99,6 +103,7 @@
 		8816D10026F654BB00AB6C4E /* FontConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfiguration.swift; sourceTree = "<group>"; };
 		8816D10226F6606D00AB6C4E /* ColorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfiguration.swift; sourceTree = "<group>"; };
 		881BFA5D272C36AD00D00171 /* CustomCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollection.swift; sourceTree = "<group>"; };
+		882A5B1D273952150028397C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8835AAE326F6A3400006398E /* ConectaApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ConectaApp.entitlements; sourceTree = "<group>"; };
 		8861524726F8CD7400E6E759 /* RegisterManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManagerViewModel.swift; sourceTree = "<group>"; };
 		8861524926F952B100E6E759 /* RegisterGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGameViewModel.swift; sourceTree = "<group>"; };
@@ -119,6 +124,9 @@
 		88EF3FCB272824EC00819DCA /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		88EF3FCD2728309000819DCA /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		88EF3FD0272836A600819DCA /* ButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsTableViewCell.swift; sourceTree = "<group>"; };
+		88F79DB0273D459400F8B454 /* EditProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileProtocols.swift; sourceTree = "<group>"; };
+		88F79DB2273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrivacitySecurityViewController.swift; sourceTree = "<group>"; };
+		88F79DB4273EB60500F8B454 /* ProfilePrivacitySecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrivacitySecurityView.swift; sourceTree = "<group>"; };
 		A21425B126F0DC6500309605 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A21425B926F0EDA600309605 /* CloudKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitError.swift; sourceTree = "<group>"; };
 		A21A221126EF67260052384A /* ConectaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConectaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +206,14 @@
 			path = Extras;
 			sourceTree = "<group>";
 		};
+		882A5B1C273951F70028397C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				882A5B1D273952150028397C /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		889DADFC27298378002EDAB0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				88EF3FC12721AA0C00819DCA /* ProfileView.swift */,
+				88F79DB4273EB60500F8B454 /* ProfilePrivacitySecurityView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -218,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				88EF3FC42721AAB100819DCA /* ProfileViewController.swift */,
+				88F79DB2273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -337,6 +355,7 @@
 		A21A224826EF6C390052384A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				882A5B1C273951F70028397C /* Profile */,
 				A2E0FEEE270DE37500E7ABC2 /* Match */,
 				A2E0FEED270DE36D00E7ABC2 /* Register */,
 				A2E0FEEC270DE36400E7ABC2 /* Login */,
@@ -386,6 +405,7 @@
 				684C8D9E26F0C24900603526 /* Coordinator.swift */,
 				684C8DA226F21A4C00603526 /* LoginProtocols.swift */,
 				A226798E26F5395300E5B0FF /* ViewModelProtocols.swift */,
+				88F79DB0273D459400F8B454 /* EditProfileProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -696,6 +716,7 @@
 				A2E0FEE0270DCD0200E7ABC2 /* FilterCKService.swift in Sources */,
 				8861524A26F952B100E6E759 /* RegisterGameViewModel.swift in Sources */,
 				A2ED621F27356D930080BEA5 /* ReportCKService.swift in Sources */,
+				88F79DB1273D459400F8B454 /* EditProfileProtocols.swift in Sources */,
 				A21A221926EF67260052384A /* ViewController.swift in Sources */,
 				88EF3FCE2728309000819DCA /* AccountTableViewCell.swift in Sources */,
 				88EF3FC22721AA0C00819DCA /* ProfileView.swift in Sources */,
@@ -704,11 +725,13 @@
 				A226799326F5417A00E5B0FF /* ProfileCollectionViewCell.swift in Sources */,
 				881BFA5E272C36AD00D00171 /* CustomCollection.swift in Sources */,
 				A226799B26F680D800E5B0FF /* UserInfosTableViewCell.swift in Sources */,
+				88F79DB3273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift in Sources */,
 				886B0AFA26F7BA3400A4E7D7 /* RegisterSocialInfoViewController.swift in Sources */,
 				88EF3FD1272836A600819DCA /* ButtonsTableViewCell.swift in Sources */,
 				A21A221526EF67260052384A /* AppDelegate.swift in Sources */,
 				886B0B0226F7F78900A4E7D7 /* RegisterGameTableViewCell.swift in Sources */,
 				886B0AF826F7BA2200A4E7D7 /* RegisterGameViewController.swift in Sources */,
+				882A5B1E273952150028397C /* ProfileViewModel.swift in Sources */,
 				684C8D9B26EF769200603526 /* LoginView.swift in Sources */,
 				8816D10326F6606D00AB6C4E /* ColorConfiguration.swift in Sources */,
 				A21425BA26F0EDA600309605 /* CloudKitError.swift in Sources */,
@@ -725,6 +748,7 @@
 				A226798B26F538D500E5B0FF /* MatchView.swift in Sources */,
 				A2E0FEDE270DCC6100E7ABC2 /* UserCKService.swift in Sources */,
 				A242CEE72722E0A900602602 /* TokenCollViewFlowLayout.swift in Sources */,
+				88F79DB5273EB60500F8B454 /* ProfilePrivacitySecurityView.swift in Sources */,
 				A226798926F538C400E5B0FF /* MatchViewController.swift in Sources */,
 				A2E0FEDC270DCBA500E7ABC2 /* CloudKitService.swift in Sources */,
 				A226799F26F6D7C300E5B0FF /* UserInfosButton.swift in Sources */,
@@ -908,10 +932,12 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -929,10 +955,12 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

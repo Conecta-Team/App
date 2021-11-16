@@ -11,6 +11,9 @@ import CloudKit
 class RegisterGameViewModel: ViewModelType {
     weak var delegate: ViewModelDelegate?
 
+    var isEditScreen = false
+    var oldGames = [Games]()
+
     let filterService: FilterCKService = FilterCKService()
 
     var games: [Category: [(Games, Bool)]] = [Category: [(Games, Bool)]]() {
@@ -23,7 +26,10 @@ class RegisterGameViewModel: ViewModelType {
         self.games = filterService.getAllGames().reduce([Category: [(Games, Bool)]]()) { partialResult, newValue in
             var dict = partialResult
             dict[newValue.key] = newValue.value.map({ game in
-                (game, false)
+                if isEditScreen, oldGames.contains(game) {
+                    return (game, true)
+                }
+                return (game, false)
             })
             return dict
         }
