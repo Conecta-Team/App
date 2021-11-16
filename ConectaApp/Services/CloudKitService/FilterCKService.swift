@@ -55,6 +55,8 @@ class FilterCKService: CloudKitService {
         usersQueryOperation.completionBlock = {
             self.recordNamesToFilter = []
             completion(.success(self.users))
+            self.users = []
+            self.usersID = []
         }
 
         self.publicDatabase.add(userGamesQueryOperation)

@@ -8,6 +8,7 @@
 // swiftlint:disable line_length
 import UIKit
 import AuthenticationServices
+import CloudKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var coordinator: MainCoordinator?

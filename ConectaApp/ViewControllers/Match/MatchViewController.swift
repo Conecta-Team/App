@@ -46,16 +46,26 @@ class MatchViewController: UIViewController {
         mainView.tableView.delegate = self
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let count = self.viewModel.usersToMatch?.count, count > 0 {
+            self.mainView.collection.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+        }
+        self.viewModel.reloadData()
+    }
+
     @objc func goProfile() {
-        let profile = ProfileViewController()
-        let nav = UINavigationController(rootViewController: profile)
-        navigationController?.pushViewController(nav, animated: true)
+        let profile = ProfileViewController(userDTO: viewModel.user!)
+        navigationItem.backButtonTitle = "Voltar"
+        navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.appRegularFont(with: 20)], for: .normal)
+        navigationController?.pushViewController(profile, animated: true)
     }
 
     @objc func goReport() {
         if let myUser = self.viewModel.user, let userToReport = self.viewModel.getCurrentProfile() {
             let report = ReportReasonViewController(myUser: myUser, userToReport: userToReport)
             report.modalTransitionStyle = .crossDissolve
+            report.modalPresentationStyle = .fullScreen
             navigationController?.present(report, animated: true)
         }
     }
@@ -200,6 +210,7 @@ extension MatchViewController: ViewModelDelegate {
     func willLoadData() {
         DispatchQueue.main.async {
             self.view = self.loadingView
+            self.view.layoutIfNeeded()
         }
     }
     
@@ -208,6 +219,7 @@ extension MatchViewController: ViewModelDelegate {
             self.view = self.mainView
             self.mainView.collection.reloadData()
             self.mainView.tableView.reloadData()
+            self.view.layoutIfNeeded()
         }
     }
 }
