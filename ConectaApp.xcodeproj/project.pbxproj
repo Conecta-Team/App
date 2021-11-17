@@ -36,10 +36,10 @@
 		88EF3FCC272824EC00819DCA /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FCB272824EC00819DCA /* SectionHeaderView.swift */; };
 		88EF3FCE2728309000819DCA /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FCD2728309000819DCA /* AccountTableViewCell.swift */; };
 		88EF3FD1272836A600819DCA /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EF3FD0272836A600819DCA /* ButtonsTableViewCell.swift */; };
-		A201F64A273EA8A4009E9B1D /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201F649273EA8A4009E9B1D /* ReportViewModel.swift */; };
 		88F79DB1273D459400F8B454 /* EditProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB0273D459400F8B454 /* EditProfileProtocols.swift */; };
 		88F79DB3273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB2273EB5B200F8B454 /* ProfilePrivacitySecurityViewController.swift */; };
 		88F79DB5273EB60500F8B454 /* ProfilePrivacitySecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F79DB4273EB60500F8B454 /* ProfilePrivacitySecurityView.swift */; };
+		A201F64A273EA8A4009E9B1D /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201F649273EA8A4009E9B1D /* ReportViewModel.swift */; };
 		A21425B226F0DC6500309605 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21425B126F0DC6500309605 /* CloudKit.framework */; };
 		A21425BA26F0EDA600309605 /* CloudKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21425B926F0EDA600309605 /* CloudKitError.swift */; };
 		A21A221526EF67260052384A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A221426EF67260052384A /* AppDelegate.swift */; };
@@ -977,16 +977,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYHH9YALN2;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = helaine.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1000,16 +1000,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ConectaApp/ConectaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = D56NG2Q3UR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYHH9YALN2;
 				INFOPLIST_FILE = ConectaApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = josejoao.ConectaApp;
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = helaine.ConectaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

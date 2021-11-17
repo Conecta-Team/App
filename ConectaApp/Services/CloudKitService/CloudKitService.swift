@@ -13,7 +13,7 @@ class CloudKitService {
     var privateDatabase: CKDatabase
 
     init() {
-        container = CKContainer(identifier: "iCloud.ConectApp")
+        container = CKContainer(identifier: "iCloud.ConectaDataBase")
         publicDatabase = container.publicCloudDatabase
         privateDatabase = container.privateCloudDatabase
     }
